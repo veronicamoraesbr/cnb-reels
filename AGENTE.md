@@ -76,7 +76,7 @@ Desafio R$ 3.000 em 21 dias: faça um Caixa Rápido e saia do aperto financeiro.
 
 ---
 
-## RODADA 1 – Preparação (04:00)
+## RODADA 1 – Preparação (06:00)
 
 1. Descubra HOJE e o volume/CTA/horários pelo calendário acima. Se `plantao/registro.json` tiver item com `compensar_em` = HOJE e sem `compensado`, faça 1 post a menos (tire o de menor potencial) e marque `"compensado": true`.
 2. Pesquise e selecione as notícias. Monte `pautas/HOJE.json`:
@@ -90,9 +90,9 @@ Desafio R$ 3.000 em 21 dias: faça um Caixa Rápido e saia do aperto financeiro.
    Confira 1 frame de 2 vídeos (ffmpeg) para garantir que o texto coube.
 4. Commit e push de `pautas/HOJE.json` e `videos/HOJE/` (git user "CNB Agent", email noreply@anthropic.com). Antes do push: `git fetch origin main && git rebase origin/main`.
 5. Grave a pauta na página: `ArtifactData` action `set`, collection `dias`, doc_id HOJE, data = o JSON da pauta + `"criadoEm": <ISO>`.
-6. Termine com uma mensagem curta (vai como notificação): "Pauta de DD/MM pronta: N Reels. Aprove até 6h30 na página Pauta CNB: https://claude.ai/artifact/V83YmaokEYY2h33EFJk5KY" + as 3 manchetes mais fortes.
+6. Termine com uma mensagem curta (vai como notificação): "Pauta de DD/MM pronta: N Reels. Aprove até 7h30 na página Pauta CNB: https://claude.ai/artifact/V83YmaokEYY2h33EFJk5KY" + as 3 manchetes mais fortes.
 
-## RODADA 2 – Agendamento (06:30)
+## RODADA 2 – Agendamento (07:30)
 
 1. Leia `aprovacoes/HOJE` (ArtifactData `get`).
    - Não existe ou `status` = "rejeitado": não agende nada. Termine com "Pauta de DD/MM não foi aprovada; nada foi agendado."
@@ -125,7 +125,7 @@ Objetivo: pegar notícia BOMBÁSTICA, nível "plantão interrompe a programaçã
 7. Commit e push do vídeo (mesmo processo da Rodada 1). Espere ~1 min e confira que o link raw responde 200.
 8. Agende no Metricool com `createScheduledPost` para AGORA + 10 min, mesmo `info` da Rodada 2 (com `"videoCoverMilliseconds":3000`), legenda no modelo "seguir" com "🚨 URGENTE: " antes do resumo e 2 hashtags do assunto.
    **Até 03/11/2026 (plano gratuito do Metricool: 20 posts em outubro e 20 em 01–03/11, todos já reservados): o plantão NÃO soma post no dia, ele substitui um post normal.** Escolha a vítima entre os posts normais de HOJE ainda não publicados e com pelo menos 20 min de folga: a notícia de menor potencial de engajamento (empate → a de horário mais tarde). Então:
-   - Se a Rodada 2 de hoje ainda não rodou (antes das 6h30): faça o post do plantão com `createScheduledPost` normalmente e acrescente o `n` da vítima em `excluidos` de `aprovacoes/HOJE` (ArtifactData `update` com `if_version`; se o doc não existir, não precisa — sem aprovação nada normal é postado mesmo).
+   - Se a Rodada 2 de hoje ainda não rodou (antes das 7h30): faça o post do plantão com `createScheduledPost` normalmente e acrescente o `n` da vítima em `excluidos` de `aprovacoes/HOJE` (ArtifactData `update` com `if_version`; se o doc não existir, não precisa — sem aprovação nada normal é postado mesmo).
    - Se já rodou: NÃO use `createScheduledPost`. Ache o post da vítima com `getScheduledPosts` (brandId 7648862, timezone America/Sao_Paulo, intervalo de hoje) e transforme-o no plantão com `updateScheduledPost` (mesmos `id` e `uuid`): troque `media`, `text` e `publicationDate` (AGORA + 10 min), mantendo o resto do `info`. Assim o total de posts do dia não muda.
    - Se não sobrar nenhum post normal pendente hoje: poste o plantão e anote em `plantao/registro.json` `"compensar_em": "<amanhã>"`; a Rodada 1 do dia seguinte faz 1 post a menos (o de menor potencial) e marca a compensação como feita (`"compensado": true`).
    - Registre a vítima no registro (`"substituiu": {"n":…, "titulo":…}`) e cite na notificação: "(substituiu o post das HH:MM)".
