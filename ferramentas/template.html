@@ -1,0 +1,80 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+/* Tema da notícia vai no <html>; a tela de CTA usa sempre o tema oposto */
+.t-dark{--bg:#000;--fg:#e7e9ea;--muted:#8b9096;--line:#2f3336}
+.t-light{--bg:#fff;--fg:#0f1419;--muted:#536471;--line:#e6eaec}
+:root{--navy:#0f1f3d;--gold:#f5c22b;--red:#e5242b}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:var(--fg);font-family:Inter,"DejaVu Sans",sans-serif}
+.stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:0 80px}
+.av{width:124px;height:124px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;flex:none;font-weight:900;font-size:46px;color:#fff;letter-spacing:-1px}
+.av b{color:var(--gold);font-weight:900}
+.card{width:100%;animation:cardIn .55s cubic-bezier(.2,.8,.2,1) both, cardOut .6s cubic-bezier(.6,0,.4,1) 6.6s forwards}
+.head{display:flex;gap:26px;align-items:center}
+.name{font-weight:800;font-size:44px;line-height:1.15}
+.handle{font-size:38px;color:var(--muted);margin-top:4px}
+.text{font-size:60px;line-height:1.28;font-weight:500;margin-top:44px;letter-spacing:-.4px;animation:fade .5s ease .35s both}
+.text strong{font-weight:800}
+.foot{margin-top:44px;padding-top:30px;border-top:2px solid var(--line);font-size:36px;color:var(--muted);display:flex;justify-content:space-between;animation:fade .5s ease .6s both}
+.bar{position:absolute;left:80px;right:80px;bottom:150px;height:6px;border-radius:3px;background:var(--line);overflow:hidden;animation:fadeOut .3s ease 6.5s forwards}
+.bar i{display:block;height:100%;background:var(--gold);transform-origin:left;animation:grow 6.5s linear both}
+
+.cta{position:absolute;inset:0;background:var(--bg);color:var(--fg);animation:panelIn .65s cubic-bezier(.7,0,.2,1) 6.55s both}
+.cta .in{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 90px;gap:40px;animation:rise .55s cubic-bezier(.2,.8,.2,1) 7.0s both}
+.cta .av{width:220px;height:220px;font-size:82px}
+.cta h2{font-size:80px;line-height:1.08;font-weight:900;letter-spacing:-1.5px;text-wrap:balance}
+.cta p{font-size:46px;color:var(--muted);line-height:1.3;text-wrap:balance}
+.cta p.lead{color:var(--fg);font-weight:600}
+.price{display:flex;flex-direction:column;align-items:center;gap:6px}
+.price .de{font-size:46px;color:var(--muted)}
+.price .de s{color:var(--red);font-weight:700;text-decoration-thickness:5px}
+.price .por{font-size:54px;font-weight:700}
+.price .por b{display:inline-block;font-size:138px;font-weight:900;letter-spacing:-3px;background:var(--gold);color:#111;padding:0 26px;border-radius:18px;line-height:1.1;margin-left:10px;vertical-align:middle}
+.btn{font-size:44px;font-weight:800;padding:30px 64px;border-radius:999px;background:var(--fg);color:var(--bg);animation:pulse 1s ease-in-out 7.7s 2 both}
+.follow .btn{background:var(--gold);color:#111}
+
+@keyframes cardIn{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
+@keyframes cardOut{to{opacity:0;transform:translateY(-220px)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes fadeOut{to{opacity:0}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes panelIn{from{transform:translateY(100%)}to{transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(80px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+</style></head>
+<body>
+<div class="stage"><div class="card">
+  <div class="head"><div class="av">CN<b>B</b></div>
+    <div><div class="name" id="name"></div><div class="handle" id="handle"></div></div></div>
+  <div class="text" id="text"></div>
+  <div class="foot"><span id="when"></span><span id="src"></span></div>
+</div></div>
+<div class="bar"><i></i></div>
+<div class="cta" id="cta"></div>
+<script>
+// Copys fixas dos CTAs (definidas pela VECA em 25/10/2026)
+const CTA = {
+  seguir: a => `<div class="in follow"><div class="av">CN<b>B</b></div>
+    <h2>Siga a CNB e fique por dentro de tudo que acontece no mundo.</h2>
+    <div class="btn">Seguir ${a}</div></div>`,
+  venda: () => `<div class="in sale"><h2>Desafio R$&nbsp;3.000 em&nbsp;21&nbsp;dias</h2>
+    <p class="lead">Faça um Caixa Rápido e saia do aperto financeiro.</p>
+    <p>Mais de 100 formas de ganhar dinheiro rápido.</p>
+    <div class="price"><span class="de">De <s>R$&nbsp;47,00</s></span><span class="por">por<b>R$&nbsp;17,00</b></span></div>
+    <div class="btn">Clique no link da Bio e saiba mais</div></div>`
+};
+function setup(d){
+  const $=id=>document.getElementById(id);
+  const dark=d.tema!=="claro";
+  document.documentElement.className=dark?"t-dark":"t-light";
+  $("cta").className="cta "+(dark?"t-light":"t-dark");
+  $("name").textContent=d.nome;$("handle").textContent=d.arroba;
+  $("text").innerHTML=d.texto;$("when").textContent=d.quando;$("src").textContent="Fonte: "+d.fonte;
+  $("cta").innerHTML=CTA[d.cta](d.arroba);
+  let fs=60;const tx=$("text");while(tx.scrollHeight>760&&fs>40){fs-=2;tx.style.fontSize=fs+"px"}
+  document.getAnimations().forEach(a=>a.pause());
+}
+function seek(ms){document.getAnimations().forEach(a=>{a.currentTime=ms})}
+</script>
+</body></html>
