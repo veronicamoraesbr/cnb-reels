@@ -90,7 +90,7 @@ Desafio R$ 3.000 em 21 dias: faça um Caixa Rápido e saia do aperto financeiro.
    Confira 1 frame de 2 vídeos (ffmpeg) para garantir que o texto coube.
 4. Commit e push de `pautas/HOJE.json` e `videos/HOJE/` (git user "CNB Agent", email noreply@anthropic.com). Antes do push: `git fetch origin main && git rebase origin/main`.
 5. Grave a pauta na página: `ArtifactData` action `set`, collection `dias`, doc_id HOJE, data = o JSON da pauta + `"criadoEm": <ISO>`.
-6. Termine com uma mensagem curta (vai como notificação): "Pauta de DD/MM pronta: N Reels. Aprove até 6h30 na página Pauta CNB." + as 3 manchetes mais fortes.
+6. Termine com uma mensagem curta (vai como notificação): "Pauta de DD/MM pronta: N Reels. Aprove até 6h30 na página Pauta CNB: https://claude.ai/artifact/V83YmaokEYY2h33EFJk5KY" + as 3 manchetes mais fortes.
 
 ## RODADA 2 – Agendamento (06:30)
 
