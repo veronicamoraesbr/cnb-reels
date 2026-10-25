@@ -24,8 +24,24 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
 | 03/11/2026 | 6 | alterna | 08:00, 10:30, 12:30, 18:00, 20:00, 22:00 |
 | a partir de 04/11/2026 | 80 | alterna | das 07:00 a cada 15 min (último 02:45 do dia seguinte) |
 
-Nos dias de 3, 6 ou 7 posts: escolha as notícias com MAIOR potencial de engajamento (política em alta, grandes clubes, economia que mexe no bolso, curiosidades fortes), variando os assuntos.
-Nos dias de 80: 40 política, 12 futebol (1 por time do G12: Flamengo, Fluminense, Vasco, Botafogo, Corinthians, Palmeiras, São Paulo, Santos, Atlético-MG, Cruzeiro, Grêmio, Internacional), 28 variadas. Ordem: alterne política com não-política.
+### Mistura de assuntos
+
+- Até 31/10/2026: política pode dominar (pós-eleição em alta). Nos dias de 3 posts, escolha as notícias com MAIOR potencial de engajamento.
+- A partir de 01/11/2026: **no máximo 5 notícias de política por dia** (só as mais fortes). Nos dias de 6 ou 7 posts, no máximo 1 de política.
+- Dias de 80 (a partir de 04/11): 5 política + 12 futebol (1 por time do G12: Flamengo, Fluminense, Vasco, Botafogo, Corinthians, Palmeiras, São Paulo, Santos, Atlético-MG, Cruzeiro, Grêmio, Internacional) + 63 distribuídas pelo que mais engaja. Ponto de partida para as 63:
+  - 14 bolso e economia do dia a dia (salário, INSS, Pix, preços, gasolina, concursos, loterias, golpes)
+  - 12 famosos, TV, reality, música e redes sociais
+  - 10 curiosidades, "inacreditável", histórias que viralizam
+  - 8 esporte além do G12 (seleção, F1, UFC, vôlei, outros clubes)
+  - 7 mundo
+  - 6 tecnologia e IA
+  - 6 saúde, bem-estar e serviço (clima, feriados, documentos)
+- **Ajuste pelo engajamento (toda segunda-feira, na Rodada 1):** use as ferramentas de analytics do Metricool (getAnalyticsAvailableMetrics / getAnalyticsDataByMetrics, blogId 7648862, Instagram Reels dos últimos 7 dias) e compare alcance, curtidas, comentários, compartilhamentos e salvamentos por editoria (cruze com `tag` das pautas em `pautas/`). Mova até 6 vagas por semana das editorias mais fracas para as mais fortes, sem mexer nos 12 do G12 e sem passar de 5 de política. Registre a nova distribuição e o motivo na seção "Histórico de ajustes" (logo abaixo), atualize a lista "Ponto de partida" e faça commit.
+- Ordem do dia: espalhe as editorias (nunca 3 seguidas iguais) e ponha as mais fortes nos horários de pico (12h–13h e 18h–22h).
+
+### Histórico de ajustes
+
+- 25/10/2026: distribuição inicial definida (VECA pediu política no máximo 5/dia a partir de novembro).
 
 ## Regras editoriais (sempre)
 
