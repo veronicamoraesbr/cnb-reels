@@ -42,9 +42,29 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:
 @keyframes panelIn{from{transform:translateY(100%)}to{transform:none}}
 @keyframes rise{from{opacity:0;transform:translateY(80px)}to{opacity:1;transform:none}}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+
+/* Plantão (it.urgente): carimbo URGENTE acima da notícia, tremida no impacto, barra vermelha */
+.stamp{display:none}
+.urg .stamp{display:flex;justify-content:center;margin-bottom:56px;animation:stampIn .32s cubic-bezier(.5,0,.75,0) .15s both}
+.stamp span{display:inline-block;transform:rotate(-4deg);border:16px solid var(--red);padding:6px 46px 2px;color:var(--red);
+  font-family:"DejaVu Serif Condensed","DejaVu Serif",serif;font-weight:700;font-size:150px;letter-spacing:4px;line-height:1.1;filter:url(#grunge)}
+.urg .card{animation:cardIn .4s cubic-bezier(.2,.8,.2,1) both, shake .35s linear .47s both, cardOut .6s cubic-bezier(.6,0,.4,1) 6.6s forwards}
+.urg .bar i{background:var(--red)}
+.urg .flash{position:absolute;inset:0;background:var(--red);opacity:0;pointer-events:none;animation:flash .5s ease-out .47s forwards}
+@keyframes stampIn{from{opacity:0;transform:scale(2.6)}60%{opacity:1}to{opacity:1;transform:scale(1)}}
+@keyframes shake{0%,100%{translate:0 0}20%{translate:-14px 8px}40%{translate:12px -6px}60%{translate:-8px 4px}80%{translate:5px -2px}}
+@keyframes flash{from{opacity:.35}to{opacity:0}}
 </style></head>
 <body>
+<svg width="0" height="0" style="position:absolute"><filter id="grunge" x="-5%" y="-5%" width="110%" height="110%">
+  <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="4" seed="7" result="n"/>
+  <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -9 5.8" result="holes"/>
+  <feComposite in="SourceGraphic" in2="holes" operator="in" result="worn"/>
+  <feTurbulence type="turbulence" baseFrequency=".9" numOctaves="1" seed="2" result="f"/>
+  <feDisplacementMap in="worn" in2="f" scale="5"/></filter></svg>
+<div class="flash"></div>
 <div class="stage"><div class="card">
+  <div class="stamp"><span>URGENTE</span></div>
   <div class="head"><div class="av">CN<b>B</b></div>
     <div><div class="name" id="name"></div><div class="handle" id="handle"></div></div></div>
   <div class="text" id="text"></div>
@@ -67,12 +87,12 @@ const CTA = {
 function setup(d){
   const $=id=>document.getElementById(id);
   const dark=d.tema!=="claro";
-  document.documentElement.className=dark?"t-dark":"t-light";
+  document.documentElement.className=(dark?"t-dark":"t-light")+(d.urgente?" urg":"");
   $("cta").className="cta "+(dark?"t-light":"t-dark");
   $("name").textContent=d.nome;$("handle").textContent=d.arroba;
   $("text").innerHTML=d.texto;$("when").textContent=d.quando;$("src").textContent="Fonte: "+d.fonte;
   $("cta").innerHTML=CTA[d.cta](d.arroba);
-  let fs=60;const tx=$("text");while(tx.scrollHeight>760&&fs>40){fs-=2;tx.style.fontSize=fs+"px"}
+  let fs=60;const tx=$("text");const lim=d.urgente?560:760;while(tx.scrollHeight>lim&&fs>40){fs-=2;tx.style.fontSize=fs+"px"}
   document.getAnimations().forEach(a=>a.pause());
 }
 function seek(ms){document.getAnimations().forEach(a=>{a.currentTime=ms})}
