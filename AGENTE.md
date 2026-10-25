@@ -9,6 +9,7 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
   Se o repositório não estiver na sessão, use a ferramenta `add_repo` (owner `veronicamoraesbr`, repo `cnb-reels`, access `push`) e clone com `git clone --depth 1 https://github.com/veronicamoraesbr/cnb-reels /home/claude/cnb-reels`.
 - Página de aprovação (Artifact com db): `https://claude.ai/artifact/V83YmaokEYY2h33EFJk5KY`.
   Use a ferramenta `ArtifactData` (carregue com ToolSearch) com esse `url`.
+  Toda escrita num documento que já existe precisa de `if_version` (pegue o `version` com um `get` antes).
   - Pauta do dia: documento `dias/HOJE` (coleção `dias`, doc id = HOJE).
   - Aprovação: documento `aprovacoes/HOJE` → `{status: "aprovado"|"rejeitado", excluidos: [n...], em}`.
 - Metricool: brand `blogId` = `7648862`, rede `instagram`, Instagram `canalnewsdobrasil`.
