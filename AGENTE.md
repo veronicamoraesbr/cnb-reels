@@ -107,19 +107,19 @@ Desafio R$ 3.000 em 21 dias: faça um Caixa Rápido e saia do aperto financeiro.
 
 ## RODADA 3 – Plantão (de hora em hora, o dia todo)
 
-Objetivo: pegar notícia BOMBÁSTICA, nível "plantão interrompe a programação", e postar sozinho na hora (a VECA autorizou postar sem aprovação, desde que confirmado por 2 veículos grandes).
+Objetivo: pegar notícia BOMBÁSTICA, nível "plantão interrompe a programação", e postar sozinho na hora (a VECA autorizou postar sem aprovação, desde que confirmado por 3 veículos grandes).
 
-1. Pesquise as notícias da última ~1h30 (WebSearch "extended" + páginas de últimas: g1, Folha, Estadão, UOL, CNN Brasil, Agência Brasil, Poder360, ge).
+1. Pesquise as notícias da última ~1h30 SOMENTE com WebSearch "extended" (várias buscas no mesmo turno, com termos de plantão + a data de hoje). NÃO use WebFetch nem abra páginas: abrir página pede aprovação manual e trava a rodada (decisão da VECA, 25/10/2026).
 2. Só vale como plantão se for de um destes tipos:
    - morte de pessoa MUITO famosa no Brasil (ex-presidente, ídolo nacional do esporte, da música ou da TV);
    - acidente aéreo, desabamento ou tragédia com vítimas no Brasil; desastre natural de grande porte no Brasil;
    - ataque, guerra ou catástrofe no mundo de repercussão enorme;
    - renúncia, afastamento, prisão ou morte de alguém do topo do poder (presidente, ministro do STF, presidente da Câmara/Senado, governador).
    Não é plantão: resultado esperado (eleição, sorteio, jogo), boato, "estado de saúde", "segundo redes sociais", notícia que só um veículo deu.
-3. CONFIRMAÇÃO OBRIGATÓRIA: o fato precisa estar publicado por pelo menos 2 veículos grandes diferentes (da lista do passo 1), com confirmação oficial ou de família/órgão responsável. Morte só com confirmação oficial. Na dúvida, NÃO poste.
+3. CONFIRMAÇÃO OBRIGATÓRIA: o fato precisa estar publicado HOJE por pelo menos 3 veículos grandes e confiáveis diferentes (g1, Folha, Estadão, UOL, CNN Brasil, Agência Brasil, Poder360, ge, BBC Brasil, Reuters, AFP), com confirmação oficial ou de família/órgão responsável. Confira a data de cada resultado (notícia antiga não vale); blogs, portais pequenos e redes sociais não contam. Morte só com confirmação oficial. Na dúvida, NÃO poste.
 4. Não repita: leia `plantao/registro.json` e `pautas/HOJE.json`. Se a CNB já postou ou agendou esse assunto, pare. Máximo de 3 plantões por dia.
 5. Se não houver plantão: termine em silêncio, SEM notificação e sem commit.
-6. Se houver: monte um JSON temporário `{"data":"HOJE","itens":[{"n":1,"id":"<slug-curto>","urgente":true,"titulo":"…","resumo":"…","fonte":"<veículo 1> e <veículo 2>","cta":"seguir"}]}` (regras editoriais valem: título curto, resumo de 1 frase com palavras próprias, nada além do que as fontes dizem) e gere o vídeo:
+6. Se houver: monte um JSON temporário `{"data":"HOJE","itens":[{"n":1,"id":"<slug-curto>","urgente":true,"titulo":"…","resumo":"…","fonte":"<veículo 1>, <veículo 2> e <veículo 3>","cta":"seguir"}]}` (regras editoriais valem: título curto, resumo de 1 frase com palavras próprias, nada além do que as fontes dizem) e gere o vídeo:
    `cd /home/claude/cnb-reels/ferramentas && node batch.js /tmp/plantao.json ../videos/HOJE`
    (sai `cnb-HOJE-urgente-<id>.mp4`, com carimbo URGENTE e trilha de alerta). Confira o frame de 3 s com ffmpeg.
 7. Commit e push do vídeo (mesmo processo da Rodada 1). Espere ~1 min e confira que o link raw responde 200.
@@ -130,5 +130,5 @@ Objetivo: pegar notícia BOMBÁSTICA, nível "plantão interrompe a programaçã
    - Se não sobrar nenhum post normal pendente hoje: poste o plantão e anote em `plantao/registro.json` `"compensar_em": "<amanhã>"`; a Rodada 1 do dia seguinte faz 1 post a menos (o de menor potencial) e marca a compensação como feita (`"compensado": true`).
    - Registre a vítima no registro (`"substituiu": {"n":…, "titulo":…}`) e cite na notificação: "(substituiu o post das HH:MM)".
    A partir de 04/11/2026 (plano Starter) o plantão é post extra (vale o passo 8 normal). Se a compensação cair em 01/11, vale normalmente; se cair em 04/11 ou depois, ignore-a.
-9. Acrescente em `plantao/registro.json` → `{"data","hora","titulo","fontes":[url1,url2],"agendado_para"}`; apague o vídeo de `videos/HOJE/` só se a Rodada 2 de hoje já tiver rodado (senão ela apaga junto); commit e push.
-10. Termine com notificação curta: "🚨 Plantão postado às HH:MM: <título>. Fontes: <veículo 1>, <veículo 2>."
+9. Acrescente em `plantao/registro.json` → `{"data","hora","titulo","fontes":[url1,url2,url3],"agendado_para"}`; apague o vídeo de `videos/HOJE/` só se a Rodada 2 de hoje já tiver rodado (senão ela apaga junto); commit e push.
+10. Termine com notificação curta: "🚨 Plantão postado às HH:MM: <título>. Fontes: <veículo 1>, <veículo 2>, <veículo 3>."
