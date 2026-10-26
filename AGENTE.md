@@ -42,6 +42,7 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
 ### Histórico de ajustes
 
 - 25/10/2026: distribuição inicial definida (VECA pediu política no máximo 5/dia a partir de novembro).
+- 26/10/2026: sem mudança. Metricool (19–26/10) só tem 2 Reels, ambos de política (111 e 17 de alcance); não há dados para comparar editorias.
 
 ## Regras editoriais (sempre)
 
