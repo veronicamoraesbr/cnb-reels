@@ -20,9 +20,13 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
 | Período | Posts/dia | CTA | Horários |
 |---|---|---|---|
 | 26/10 a 31/10/2026 | 3 | todos "seguir" | 12:00, 18:30, 21:00 |
-| 01/11 a 30/11/2026 | 8 | alterna: n ímpar "seguir", n par "venda" | 08:00, 10:30, 12:00, 13:00, 15:30, 18:30, 20:00, 21:30 |
+| 01/11/2026 | 8 | alterna: n ímpar "seguir", n par "venda" | 08:00, 10:30, 12:00, 13:00, 15:30, 18:30, 20:00, 21:30 |
+| 02/11/2026 | 7 | alterna | 08:00, 10:30, 12:00, 13:00, 18:30, 20:00, 21:30 |
+| 03/11/2026 | 5 | alterna | 10:30, 12:00, 18:30, 20:00, 21:30 |
+| 04/11 a 30/11/2026 | 8 | alterna | 08:00, 10:30, 12:00, 13:00, 15:30, 18:30, 20:00, 21:30 |
 | a partir de 01/12/2026 | continua 8 até a VECA definir o próximo degrau | alterna | os mesmos de novembro |
 
+**01–03/11 = 8 + 7 + 5 = 20 posts**, o limite do plano grátis do Metricool nesse período (VECA, 28/10/2026).
 **Aumento gradual (decisão da VECA, 28/10/2026):** o volume sobe aos poucos para o Instagram não bloquear o perfil. Os 80/dia (plano antigo) ficaram suspensos; só mude o volume quando a VECA pedir e registre aqui.
 
 ### Mistura de assuntos
@@ -59,8 +63,10 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
   1. `python3 ferramentas/fotos.py buscar "<pessoa, lugar ou instituição da notícia>"`
   2. Escolha a candidata que mostra claramente o assunto (pela descrição) e baixe: `python3 ferramentas/fotos.py baixar "File:…" /tmp/fotos-HOJE` → devolve `foto`, `foto_credito`, `foto_fonte` e `foto_licenca`; copie os 4 campos para o item da pauta.
 - É foto de arquivo/ilustrativa: tem de mostrar a pessoa, o lugar ou a instituição citada, nunca fingir ser do fato (nada de foto de outro acidente, outra enchente, outro jogo). Proibido: fotos de vítimas, feridos, crianças e cenas de tragédia; montagens; fotos que deixem alguém em situação vexatória.
+- Confira o frame de 3 s: a foto NÃO pode mostrar faixas, placas ou números que contradigam a notícia (ex.: cartaz "Mega vai pagar 72 milhões" numa notícia de R$ 320 milhões). Se mostrar, troque a foto.
+- Se a busca não achar nada, tente variações (sem hífen, nome da instituição, do lugar ou do cargo: "Mega Sena", "Loteria", "Caixa Econômica Federal").
 - Sem foto boa → Reel sem foto (o card normal). Não force.
-- Se o `fotos.py` der erro de rede (403/bloqueio), faça todos os Reels sem foto e avise na mensagem final: "fotos: Wikimedia bloqueado".
+- Se o `fotos.py` der erro de rede (403/bloqueio ou 429 "too many requests" do Wikimedia que não passa após as tentativas automáticas), siga sem foto nos Reels que faltarem e avise na mensagem final: "fotos: Wikimedia bloqueado".
 - As fotos ficam fora do repositório (`/tmp/fotos-HOJE`); só o vídeo vai para o git.
 - O crédito aparece sobre a foto no vídeo e TAMBÉM na legenda (linha "Foto:" abaixo).
 - O recorte padrão mira o rosto no alto do retrato. Ao conferir o frame de 3 s, se o rosto/assunto estiver cortado, ajuste `foto_posicao` no item (ex.: "50% 40%") e gere de novo.
