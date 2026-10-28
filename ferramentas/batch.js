@@ -50,6 +50,7 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
       const mime = ext === '.png' ? 'image/png' : ext === '.webp' ? 'image/webp' : 'image/jpeg';
       data.foto = `data:${mime};base64,${fs.readFileSync(fp).toString('base64')}`;
       data.fotoCredito = it.foto_credito || '';
+      data.fotoPosicao = it.foto_posicao;   // opcional, ex.: "50% 30%" (padrão 50% 18%: rosto no alto do retrato)
     }
     const frames = fs.mkdtempSync(path.join(os.tmpdir(), 'cnbf-'));
     // Narração: mede a fala e empurra a saída do card / entrada do CTA (tempos >= 6,4 s do template) pelo necessário

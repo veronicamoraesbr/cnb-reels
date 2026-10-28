@@ -10,18 +10,28 @@ uso:
 
 Precisa dos domínios commons.wikimedia.org e upload.wikimedia.org liberados na rede.
 """
-import html, json, os, re, sys, urllib.parse, urllib.request
+import html, json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
 
 API = 'https://commons.wikimedia.org/w/api.php'
 UA = 'CNB-Reels/1.0 (https://github.com/veronicamoraesbr/cnb-reels)'
 LIVRES = re.compile(r'^(public domain|pd|cc0|cc[ -]by(-sa)?([ -]\d(\.\d)?)?( [a-z-]+)?)$', re.I)
 
 
+def pegar(url, tentativas=6):
+    """GET com espera e nova tentativa quando o Wikimedia responde 429/503 (limite de acessos)."""
+    for i in range(tentativas):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': UA}), timeout=60) as r:
+                return r.read()
+        except urllib.error.HTTPError as e:
+            if e.code not in (429, 503) or i == tentativas - 1:
+                raise
+            time.sleep(min(int(e.headers.get('Retry-After') or 0) or 5 * 2 ** i, 60))
+
+
 def api(**p):
-    p.update(format='json', formatversion='2')
-    req = urllib.request.Request(API + '?' + urllib.parse.urlencode(p), headers={'User-Agent': UA})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.load(r)
+    p.update(format='json', formatversion='2', maxlag='5')
+    return json.loads(pegar(API + '?' + urllib.parse.urlencode(p)))
 
 
 def limpa(v):
@@ -63,9 +73,8 @@ def baixar(titulo, pasta):
     os.makedirs(pasta, exist_ok=True)
     nome = re.sub(r'[^A-Za-z0-9._-]+', '_', f['titulo'].split(':', 1)[1])[:80]
     destino = os.path.join(pasta, nome if nome.lower().endswith(('.jpg', '.jpeg', '.png')) else nome + '.jpg')
-    req = urllib.request.Request(f['thumb'], headers={'User-Agent': UA})
-    with urllib.request.urlopen(req, timeout=60) as r, open(destino, 'wb') as out:
-        out.write(r.read())
+    with open(destino, 'wb') as out:
+        out.write(pegar(f['thumb']))
     autor = f['autor'] if len(f['autor']) <= 40 else f['autor'][:37] + '…'
     print(json.dumps({'foto': os.path.abspath(destino),
                       'foto_credito': f'Foto: {autor} / Wikimedia Commons, {f["licenca"]}',

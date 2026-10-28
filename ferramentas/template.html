@@ -19,7 +19,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:
 /* Foto com licença livre (it.foto): entre o cabeçalho e o texto, com crédito sobre a foto */
 .foto{display:none;position:relative;margin-top:40px;border-radius:24px;overflow:hidden;background:var(--line);animation:fade .5s ease .25s both}
 .com-foto .foto{display:block}
-.foto img{display:block;width:100%;height:460px;object-fit:cover}
+.foto img{display:block;width:100%;height:460px;object-fit:cover;object-position:50% 18%}
 .foto figcaption{position:absolute;right:0;bottom:0;max-width:100%;padding:8px 16px;font-size:24px;line-height:1.25;color:#fff;background:rgba(0,0,0,.62);border-top-left-radius:14px}
 .com-foto .text{margin-top:36px}
 .foot{margin-top:44px;padding-top:30px;border-top:2px solid var(--line);font-size:36px;color:var(--muted);display:flex;justify-content:space-between;animation:fade .5s ease .6s both}
@@ -99,7 +99,7 @@ function setup(d){
   $("name").textContent=d.nome;$("handle").textContent=d.arroba;
   $("text").innerHTML=d.texto;$("when").textContent=d.quando;$("src").textContent="Fonte: "+d.fonte;
   $("cta").innerHTML=CTA[d.cta](d.arroba);
-  if(d.foto){document.documentElement.classList.add("com-foto");$("fotoimg").src=d.foto;$("fotocred").textContent=d.fotoCredito||"";}
+  if(d.foto){document.documentElement.classList.add("com-foto");$("fotoimg").src=d.foto;if(d.fotoPosicao)$("fotoimg").style.objectPosition=d.fotoPosicao;$("fotocred").textContent=d.fotoCredito||"";}
   let fs=60;const tx=$("text");const lim=d.foto?(d.urgente?440:640):(d.urgente?560:760);while(tx.scrollHeight>lim&&fs>40){fs-=2;tx.style.fontSize=fs+"px"}
   document.getAnimations().forEach(a=>a.pause());
 }

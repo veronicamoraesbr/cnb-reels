@@ -63,6 +63,8 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
 - Se o `fotos.py` der erro de rede (403/bloqueio), faça todos os Reels sem foto e avise na mensagem final: "fotos: Wikimedia bloqueado".
 - As fotos ficam fora do repositório (`/tmp/fotos-HOJE`); só o vídeo vai para o git.
 - O crédito aparece sobre a foto no vídeo e TAMBÉM na legenda (linha "Foto:" abaixo).
+- O recorte padrão mira o rosto no alto do retrato. Ao conferir o frame de 3 s, se o rosto/assunto estiver cortado, ajuste `foto_posicao` no item (ex.: "50% 40%") e gere de novo.
+- Prefira fotos com autor identificado (ex.: "Isac Nóbrega/PR", "U.S. Consulate"); evite as marcadas como "arquivo pessoal" ou com autor desconhecido.
 
 ## Legenda
 
