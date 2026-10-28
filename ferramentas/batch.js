@@ -59,8 +59,10 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
     if (comVoz) {
       vozN = path.join(frames, 'noticia.wav'); vozC = path.join(frames, 'cta.wav');
       const fala = it.narracao || `${urg ? 'Urgente! ' : ''}${it.titulo.replace(/[.!?]$/, '')}. ${it.resumo}`;
-      // Áudios prontos (gerados pelo conector do ElevenLabs): it.audio_noticia e it.audio_cta (mp3/wav; caminho absoluto
-      // ou relativo ao JSON da pauta). Se faltar algum, usa narrar.py.
+      // Áudios prontos (gerados pelo conector do ElevenLabs, voz Dyego): it.audio_noticia (+ it.audio_cta opcional)
+      // (mp3/wav; caminho absoluto ou relativo ao JSON da pauta). Sem audio_noticia, usa narrar.py (voz grátis).
+      // A fala do CTA é fixa: se só vier audio_noticia, usa ferramentas/cta_<seguir|venda>_dyego.mp3 (gerados 1 vez).
+      if (it.audio_noticia && !it.audio_cta) it.audio_cta = path.join(__dirname, `cta_${data.cta}_dyego.mp3`);
       const pronto = k => it[k] && path.resolve(path.dirname(dayPath), it[k]);
       let n, c;
       if (pronto('audio_noticia') && pronto('audio_cta') && fs.existsSync(pronto('audio_noticia')) && fs.existsSync(pronto('audio_cta'))) {
