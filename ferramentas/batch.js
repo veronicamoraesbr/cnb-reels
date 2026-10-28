@@ -49,9 +49,21 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
     if (comVoz) {
       vozN = path.join(frames, 'noticia.wav'); vozC = path.join(frames, 'cta.wav');
       const fala = it.narracao || `${urg ? 'Urgente! ' : ''}${it.titulo.replace(/[.!?]$/, '')}. ${it.resumo}`;
-      let n = narrar(vozN, fala);
-      const c = narrar(vozC, FALA_CTA[data.cta], n.voz === 'gratis' ? { ...process.env, CNB_VOZ: 'gratis' } : process.env);
-      if (n.voz !== c.voz) n = narrar(vozN, fala, { ...process.env, CNB_VOZ: 'gratis' });   // nunca 2 vozes no mesmo vídeo
+      // Áudios prontos (gerados pelo conector do ElevenLabs): it.audio_noticia e it.audio_cta (mp3/wav; caminho absoluto
+      // ou relativo ao JSON da pauta). Se faltar algum, usa narrar.py.
+      const pronto = k => it[k] && path.resolve(path.dirname(dayPath), it[k]);
+      let n, c;
+      if (pronto('audio_noticia') && pronto('audio_cta') && fs.existsSync(pronto('audio_noticia')) && fs.existsSync(pronto('audio_cta'))) {
+        const conv = (src, wav) => {
+          execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', src, '-ar', '44100', '-ac', '1', wav]);
+          return { dur: Number(execFileSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', wav]).toString()), voz: 'elevenlabs' };
+        };
+        n = conv(pronto('audio_noticia'), vozN); c = conv(pronto('audio_cta'), vozC);
+      } else {
+        n = narrar(vozN, fala);
+        c = narrar(vozC, FALA_CTA[data.cta], n.voz === 'gratis' ? { ...process.env, CNB_VOZ: 'gratis' } : process.env);
+        if (n.voz !== c.voz) n = narrar(vozN, fala, { ...process.env, CNB_VOZ: 'gratis' });   // nunca 2 vozes no mesmo vídeo
+      }
       vozes[c.voz]++;
       const dN = n.dur, dC = c.dur;
       desloc = Math.max(0, 0.6 + dN + 0.4 - 6.55);
