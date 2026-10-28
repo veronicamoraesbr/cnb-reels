@@ -1,1 +1,19 @@
-{"itens":[]}
+{
+  "itens": [
+    {
+      "data": "2026-10-28",
+      "hora": "09:45",
+      "titulo": "Colisão de trens na Espanha deixa ao menos 30 mortos",
+      "fontes": [
+        "https://www.cnnbrasil.com.br/internacional/colisao-de-trem-em-toledo-marca-terceiro-acidente-na-espanha-este-ano/",
+        "https://www.npr.org/2026/10/28/nx-s1-6020217/spain-train-disaster",
+        "https://www.nbcnews.com/world/spain/spain-train-crash-high-speed-collision-toledo-rcna606070"
+      ],
+      "agendado_para": "2026-10-28T09:56:00-03:00",
+      "substituiu": {
+        "n": 3,
+        "titulo": "Justiça proíbe deputada de incentivar demissão por voto"
+      }
+    }
+  ]
+}
