@@ -27,7 +27,12 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
   const FPS = 30;
   const TEMPLATE = fs.readFileSync(path.join(__dirname, 'template.html'), 'utf8');
   const tmpHtml = path.join(os.tmpdir(), `cnb-template-${process.pid}.html`);
-  const narrar = (wav, txt) => Number(execFileSync('python3', [path.join(__dirname, 'narrar.py'), wav, txt]).toString().trim());
+  // narrar.py devolve "<duração> <voz>"; voz = elevenlabs | gratis
+  const narrar = (wav, txt, env = process.env) => {
+    const [dur, voz] = execFileSync('python3', [path.join(__dirname, 'narrar.py'), wav, txt], { env }).toString().trim().split(/\s+/);
+    return { dur: Number(dur), voz };
+  };
+  const vozes = { elevenlabs: 0, gratis: 0 };
   const browser = await chromium.launch();
   for (const it of day.itens) {
     const urg = !!it.urgente;              // Plantão: fundo preto, carimbo URGENTE, trilha de alerta, CTA seguir
@@ -44,7 +49,11 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
     if (comVoz) {
       vozN = path.join(frames, 'noticia.wav'); vozC = path.join(frames, 'cta.wav');
       const fala = it.narracao || `${urg ? 'Urgente! ' : ''}${it.titulo.replace(/[.!?]$/, '')}. ${it.resumo}`;
-      const dN = narrar(vozN, fala), dC = narrar(vozC, FALA_CTA[data.cta]);
+      let n = narrar(vozN, fala);
+      const c = narrar(vozC, FALA_CTA[data.cta], n.voz === 'gratis' ? { ...process.env, CNB_VOZ: 'gratis' } : process.env);
+      if (n.voz !== c.voz) n = narrar(vozN, fala, { ...process.env, CNB_VOZ: 'gratis' });   // nunca 2 vozes no mesmo vídeo
+      vozes[c.voz]++;
+      const dN = n.dur, dC = c.dur;
       desloc = Math.max(0, 0.6 + dN + 0.4 - 6.55);
       iniCta = 6.55 + desloc + 0.5;
       DUR = Math.ceil(Math.max(10 + desloc, iniCta + dC + 0.8) * 10) / 10;
@@ -79,4 +88,6 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
   }
   await browser.close();
   fs.rmSync(tmpHtml, { force: true });
+  if (vozes.elevenlabs + vozes.gratis) console.log(`VOZES: ${vozes.elevenlabs} ElevenLabs, ${vozes.gratis} voz grátis` +
+    (fs.existsSync(path.join(__dirname, 'voz', '.elevenlabs_sem_creditos')) ? ' (ElevenLabs SEM CRÉDITOS)' : ''));
 })();

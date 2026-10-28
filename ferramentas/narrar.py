@@ -64,26 +64,39 @@ def elevenlabs(saida, texto, chave):
     os.remove(mp3)
 
 
-def main():
-    saida, texto = sys.argv[1], sys.argv[2]
-    chave = os.environ.get('ELEVENLABS_API_KEY', '').strip()
-    if chave:
-        try:
-            elevenlabs(saida, texto, chave)
-            return duracao(saida)
-        except Exception as e:  # cai na voz grátis para não parar o dia
-            det = e.read().decode(errors='ignore')[:200] if isinstance(e, urllib.error.HTTPError) else str(e)
-            print(f'AVISO: ElevenLabs falhou ({det}); usando voz grátis', file=sys.stderr)
+SEM_CREDITO = os.path.join(VOZ_DIR, '.elevenlabs_sem_creditos')   # marca da rodada: não tenta mais o ElevenLabs
+
+
+def piper(saida, texto):
     preparar()
     subprocess.run([sys.executable, '-m', 'piper', '-m', MODELO, '-c', MODELO + '.json',
                     '--length-scale', VELOCIDADE, '-f', saida],
                    input=normalizar(texto).encode(), check=True, capture_output=True)
-    duracao(saida)
 
 
-def duracao(wav):
+def main():
+    """Imprime "<duração> <voz>" (voz = elevenlabs | gratis). CNB_VOZ=gratis força a voz grátis."""
+    saida, texto = sys.argv[1], sys.argv[2]
+    chave = os.environ.get('ELEVENLABS_API_KEY', '').strip()
+    if chave and os.environ.get('CNB_VOZ') != 'gratis' and not os.path.exists(SEM_CREDITO):
+        try:
+            elevenlabs(saida, texto, chave)
+            return duracao(saida, 'elevenlabs')
+        except Exception as e:  # cai na voz grátis para não parar o dia
+            det = e.read().decode(errors='ignore')[:300] if isinstance(e, urllib.error.HTTPError) else str(e)
+            if 'quota' in det.lower() or 'credit' in det.lower() or getattr(e, 'code', 0) == 402:
+                os.makedirs(VOZ_DIR, exist_ok=True)
+                open(SEM_CREDITO, 'w').write(det)
+                print('AVISO: ElevenLabs SEM CRÉDITOS; o resto da rodada usa a voz grátis', file=sys.stderr)
+            else:
+                print(f'AVISO: ElevenLabs falhou ({det}); usando voz grátis neste áudio', file=sys.stderr)
+    piper(saida, texto)
+    duracao(saida, 'gratis')
+
+
+def duracao(wav, voz):
     with wave.open(wav) as w:
-        print(round(w.getnframes() / w.getframerate(), 3))
+        print(round(w.getnframes() / w.getframerate(), 3), voz)
 
 
 if __name__ == '__main__':

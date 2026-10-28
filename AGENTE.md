@@ -20,15 +20,16 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
 | Período | Posts/dia | CTA | Horários |
 |---|---|---|---|
 | 26/10 a 31/10/2026 | 3 | todos "seguir" | 12:00, 18:30, 21:00 |
-| 01/11 e 02/11/2026 | 7 | alterna: n ímpar "seguir", n par "venda" | 08:00, 10:30, 12:30, 15:00, 18:00, 20:00, 22:00 |
-| 03/11/2026 | 6 | alterna | 08:00, 10:30, 12:30, 18:00, 20:00, 22:00 |
-| a partir de 04/11/2026 | 80 | alterna | das 07:00 a cada 15 min (último 02:45 do dia seguinte) |
+| 01/11 a 30/11/2026 | 8 | alterna: n ímpar "seguir", n par "venda" | 08:00, 10:30, 12:00, 13:00, 15:30, 18:30, 20:00, 21:30 |
+| a partir de 01/12/2026 | continua 8 até a VECA definir o próximo degrau | alterna | os mesmos de novembro |
+
+**Aumento gradual (decisão da VECA, 28/10/2026):** o volume sobe aos poucos para o Instagram não bloquear o perfil. Os 80/dia (plano antigo) ficaram suspensos; só mude o volume quando a VECA pedir e registre aqui.
 
 ### Mistura de assuntos
 
 - Até 31/10/2026: política pode dominar (pós-eleição em alta). Nos dias de 3 posts, escolha as notícias com MAIOR potencial de engajamento.
-- A partir de 01/11/2026: **no máximo 5 notícias de política por dia** (só as mais fortes). Nos dias de 6 ou 7 posts, no máximo 1 de política.
-- Dias de 80 (a partir de 04/11): 5 política + 12 futebol (1 por time do G12: Flamengo, Fluminense, Vasco, Botafogo, Corinthians, Palmeiras, São Paulo, Santos, Atlético-MG, Cruzeiro, Grêmio, Internacional) + 63 distribuídas pelo que mais engaja. Ponto de partida para as 63:
+- A partir de 01/11/2026: **no máximo 5 notícias de política por dia** (só as mais fortes). Nos dias de até 8 posts, no máximo 1 de política; as outras 7 vão para as editorias que mais engajam (lista abaixo), sem repetir editoria mais de 2 vezes.
+- Dias de 80 (se a VECA voltar a esse volume): 5 política + 12 futebol (1 por time do G12: Flamengo, Fluminense, Vasco, Botafogo, Corinthians, Palmeiras, São Paulo, Santos, Atlético-MG, Cruzeiro, Grêmio, Internacional) + 63 distribuídas pelo que mais engaja. Ponto de partida para as 63:
   - 14 bolso e economia do dia a dia (salário, INSS, Pix, preços, gasolina, concursos, loterias, golpes)
   - 12 famosos, TV, reality, música e redes sociais
   - 10 curiosidades, "inacreditável", histórias que viralizam
@@ -88,10 +89,10 @@ Desafio R$ 3.000 em 21 dias: faça um Caixa Rápido e saia do aperto financeiro.
 3. Gere os vídeos (1080x1920, NARRADOS, com a trilha da CNB baixa por baixo da voz):
    `cd /home/claude/cnb-reels/ferramentas && node batch.js ../pautas/HOJE.json ../videos/HOJE`
    (fundo da notícia alterna por n; o CTA vem do campo `cta`; copys dos CTAs estão no template.html — não mude).
-   - **Narração (padrão desde 28/10/2026, pedido da VECA):** `batch.js` chama `narrar.py` (voz brasileira grátis "faber"; na 1ª vez instala o `piper-tts` e baixa a voz do GitHub para `ferramentas/voz/`, fora do git). A voz lê "título. resumo" e depois a copy do CTA; o vídeo passa a ter 10–30 s (a notícia fica na tela o tempo da leitura). Cada linha de saída deve dizer `(narrado, XXs)`.
+   - **Narração (padrão desde 28/10/2026, pedido da VECA):** `batch.js` chama `narrar.py`. Voz principal: **ElevenLabs**, usada quando a variável `ELEVENLABS_API_KEY` existir (a chave vem nas instruções da tarefa agendada; exporte-a antes de rodar o batch e NUNCA grave a chave em arquivo do repositório nem em commit). **Quando os créditos do ElevenLabs acabarem** (ou ele falhar), a narração continua sozinha com a voz grátis "faber" (Piper; na 1ª vez instala o `piper-tts` e baixa a voz do GitHub para `ferramentas/voz/`, fora do git). Um vídeo nunca mistura as duas vozes. O batch termina com a linha `VOZES: X ElevenLabs, Y voz grátis`; se aparecer "SEM CRÉDITOS", acrescente na mensagem final "ElevenLabs sem créditos: Y vídeos com a voz grátis". A voz lê "título. resumo" e depois a copy do CTA; o vídeo passa a ter 10–30 s (a notícia fica na tela o tempo da leitura). Cada linha de saída deve dizer `(narrado, XXs)`.
    - Campo opcional `narracao` no item: texto falado no lugar de "título. resumo". Use quando a leitura automática puder sair errada: siglas que devem ser soletradas (ex.: "P F", "S T F"), números grandes ou com ponto, nomes estrangeiros. `narrar.py` já converte sozinho º/ª, R$, %, "3.076" e "(PL-RJ)".
    - Se a narração falhar (pip, download da voz ou piper), NÃO pare o dia: gere sem voz com `CNB_SEM_NARRACAO=1 node batch.js …` e avise na mensagem final "vídeos sem narração: <erro>".
-   - Tempo: ~40 s por vídeo narrado. Em dias de 80 posts, gere em lotes (divida a pauta em JSONs de ~15 itens) para não estourar o tempo de cada comando.
+   - Tempo: ~40 s por vídeo narrado. Com 8 posts, gere em 2 lotes de 4 itens (JSONs temporários com os mesmos `n`) para não estourar o tempo de cada comando.
    Confira 1 frame de 2 vídeos (ffmpeg, aos 3 s) para garantir que o texto coube.
 4. Commit e push de `pautas/HOJE.json` e `videos/HOJE/` (git user "CNB Agent", email noreply@anthropic.com). Antes do push: `git fetch origin main && git rebase origin/main`.
 5. Grave a pauta na página: `ArtifactData` action `set`, collection `dias`, doc_id HOJE, data = o JSON da pauta + `"criadoEm": <ISO>`.
