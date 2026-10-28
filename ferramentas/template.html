@@ -16,6 +16,12 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:
 .handle{font-size:38px;color:var(--muted);margin-top:4px}
 .text{font-size:60px;line-height:1.28;font-weight:500;margin-top:44px;letter-spacing:-.4px;animation:fade .5s ease .35s both}
 .text strong{font-weight:800}
+/* Foto com licença livre (it.foto): entre o cabeçalho e o texto, com crédito sobre a foto */
+.foto{display:none;position:relative;margin-top:40px;border-radius:24px;overflow:hidden;background:var(--line);animation:fade .5s ease .25s both}
+.com-foto .foto{display:block}
+.foto img{display:block;width:100%;height:460px;object-fit:cover}
+.foto figcaption{position:absolute;right:0;bottom:0;max-width:100%;padding:8px 16px;font-size:24px;line-height:1.25;color:#fff;background:rgba(0,0,0,.62);border-top-left-radius:14px}
+.com-foto .text{margin-top:36px}
 .foot{margin-top:44px;padding-top:30px;border-top:2px solid var(--line);font-size:36px;color:var(--muted);display:flex;justify-content:space-between;animation:fade .5s ease .6s both}
 .bar{position:absolute;left:80px;right:80px;bottom:150px;height:6px;border-radius:3px;background:var(--line);overflow:hidden;animation:fadeOut .3s ease 6.5s forwards}
 .bar i{display:block;height:100%;background:var(--gold);transform-origin:left;animation:grow 6.5s linear both}
@@ -67,6 +73,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:
   <div class="stamp"><span>URGENTE</span></div>
   <div class="head"><div class="av">CN<b>B</b></div>
     <div><div class="name" id="name"></div><div class="handle" id="handle"></div></div></div>
+  <figure class="foto"><img id="fotoimg" alt=""><figcaption id="fotocred"></figcaption></figure>
   <div class="text" id="text"></div>
   <div class="foot"><span id="when"></span><span id="src"></span></div>
 </div></div>
@@ -92,7 +99,8 @@ function setup(d){
   $("name").textContent=d.nome;$("handle").textContent=d.arroba;
   $("text").innerHTML=d.texto;$("when").textContent=d.quando;$("src").textContent="Fonte: "+d.fonte;
   $("cta").innerHTML=CTA[d.cta](d.arroba);
-  let fs=60;const tx=$("text");const lim=d.urgente?560:760;while(tx.scrollHeight>lim&&fs>40){fs-=2;tx.style.fontSize=fs+"px"}
+  if(d.foto){document.documentElement.classList.add("com-foto");$("fotoimg").src=d.foto;$("fotocred").textContent=d.fotoCredito||"";}
+  let fs=60;const tx=$("text");const lim=d.foto?(d.urgente?440:640):(d.urgente?560:760);while(tx.scrollHeight>lim&&fs>40){fs-=2;tx.style.fontSize=fs+"px"}
   document.getAnimations().forEach(a=>a.pause());
 }
 function seek(ms){document.getAnimations().forEach(a=>{a.currentTime=ms})}

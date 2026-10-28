@@ -42,6 +42,15 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
       texto: `<strong>${esc(it.titulo)}.</strong> ${esc(it.resumo)}`.replace('..</strong>', '.</strong>'),
       cta: urg ? 'seguir' : (it.cta || (par ? 'venda' : 'seguir')), urgente: urg,
     };
+    // Foto com licença livre (opcional): it.foto = arquivo local (caminho absoluto ou relativo ao JSON) e
+    // it.foto_credito = texto do crédito exibido sobre a foto (ex.: "Foto: Fulano / Wikimedia Commons, CC BY 4.0")
+    if (it.foto) {
+      const fp = path.resolve(path.dirname(dayPath), it.foto);
+      const ext = path.extname(fp).toLowerCase();
+      const mime = ext === '.png' ? 'image/png' : ext === '.webp' ? 'image/webp' : 'image/jpeg';
+      data.foto = `data:${mime};base64,${fs.readFileSync(fp).toString('base64')}`;
+      data.fotoCredito = it.foto_credito || '';
+    }
     const frames = fs.mkdtempSync(path.join(os.tmpdir(), 'cnbf-'));
     // Narração: mede a fala e empurra a saída do card / entrada do CTA (tempos >= 6,4 s do template) pelo necessário
     const comVoz = process.env.CNB_SEM_NARRACAO !== '1' && it.narrar !== false;
@@ -73,7 +82,7 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
     fs.writeFileSync(tmpHtml, TEMPLATE.replace(/(\d+\.\d+)s\b/g, (m, v) => Number(v) >= 6.4 ? `${(Number(v) + desloc).toFixed(2)}s` : m));
     const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
     await page.goto('file://' + tmpHtml);
-    await page.evaluate(x => setup(x), data);
+    await page.evaluate(async x => { setup(x); const i = document.getElementById('fotoimg'); if (x.foto) await i.decode(); }, data);
     for (let f = 0; f < FPS * DUR; f++) {
       await page.evaluate(ms => seek(ms), f * 1000 / FPS);
       await page.screenshot({ path: `${frames}/${String(f).padStart(4, '0')}.png` });

@@ -53,6 +53,17 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
 - `titulo`: manchete curta (até ~55 caracteres), sem ponto final.
 - `resumo`: UMA frase, com palavras próprias (nunca copiar a fonte).
 
+## Fotos (licença livre, decisão da VECA em 28/10/2026)
+
+- Use SÓ fotos com licença livre do Wikimedia Commons, via `ferramentas/fotos.py` (aceita domínio público, CC0, CC BY e CC BY-SA; recusa sozinho NC, ND e o resto). NUNCA use fotos tiradas dos sites de notícia, de agências (Reuters, AFP, Folhapress, Estadão Conteúdo…), do Google ou de redes sociais, mesmo com crédito.
+  1. `python3 ferramentas/fotos.py buscar "<pessoa, lugar ou instituição da notícia>"`
+  2. Escolha a candidata que mostra claramente o assunto (pela descrição) e baixe: `python3 ferramentas/fotos.py baixar "File:…" /tmp/fotos-HOJE` → devolve `foto`, `foto_credito`, `foto_fonte` e `foto_licenca`; copie os 4 campos para o item da pauta.
+- É foto de arquivo/ilustrativa: tem de mostrar a pessoa, o lugar ou a instituição citada, nunca fingir ser do fato (nada de foto de outro acidente, outra enchente, outro jogo). Proibido: fotos de vítimas, feridos, crianças e cenas de tragédia; montagens; fotos que deixem alguém em situação vexatória.
+- Sem foto boa → Reel sem foto (o card normal). Não force.
+- Se o `fotos.py` der erro de rede (403/bloqueio), faça todos os Reels sem foto e avise na mensagem final: "fotos: Wikimedia bloqueado".
+- As fotos ficam fora do repositório (`/tmp/fotos-HOJE`); só o vídeo vai para o git.
+- O crédito aparece sobre a foto no vídeo e TAMBÉM na legenda (linha "Foto:" abaixo).
+
 ## Legenda
 
 CTA "seguir":
@@ -60,6 +71,7 @@ CTA "seguir":
 <resumo>
 
 Fonte: <fonte>
+[se tiver foto] Foto: <autor> / Wikimedia Commons (<licença>) <foto_fonte>
 
 Siga @canalnewsdobrasil e fique por dentro de tudo que acontece no mundo.
 
@@ -70,6 +82,7 @@ CTA "venda":
 <resumo>
 
 Fonte: <fonte>
+[se tiver foto] Foto: <autor> / Wikimedia Commons (<licença>) <foto_fonte>
 
 Desafio R$ 3.000 em 21 dias: faça um Caixa Rápido e saia do aperto financeiro. Mais de 100 formas de ganhar dinheiro rápido. De R$ 47 por R$ 17. Clique no link da bio e saiba mais.
 
@@ -85,7 +98,8 @@ Desafio R$ 3.000 em 21 dias: faça um Caixa Rápido e saia do aperto financeiro.
    ```json
    {"data":"HOJE","itens":[{"n":1,"horario":"12:00","cat":"politica","tag":"Política","titulo":"…","resumo":"…","fonte":"…","url":"…","cta":"seguir","legenda":"…","video":"https://raw.githubusercontent.com/…/videos/HOJE/cnb-HOJE-001.mp4"}]}
    ```
-   Valide com Python (quantidade certa, campos preenchidos, JSON válido).
+   Para cada item, tente uma foto livre (seção "Fotos"); com foto, inclua no item `foto`, `foto_credito`, `foto_fonte`, `foto_licenca` e a linha "Foto:" na legenda.
+   Valide com Python (quantidade certa, campos preenchidos, JSON válido, e todo item com `foto` tem `foto_credito` e a linha "Foto:" na legenda).
 3. Gere os vídeos (1080x1920, NARRADOS, com a trilha da CNB baixa por baixo da voz):
    `cd /home/claude/cnb-reels/ferramentas && node batch.js ../pautas/HOJE.json ../videos/HOJE`
    (fundo da notícia alterna por n; o CTA vem do campo `cta`; copys dos CTAs estão no template.html — não mude).
@@ -127,7 +141,7 @@ Objetivo: pegar notícia BOMBÁSTICA, nível "plantão interrompe a programaçã
 5. Se não houver plantão: termine em silêncio, SEM notificação e sem commit.
 6. Se houver: monte um JSON temporário `{"data":"HOJE","itens":[{"n":1,"id":"<slug-curto>","urgente":true,"titulo":"…","resumo":"…","fonte":"<veículo 1>, <veículo 2> e <veículo 3>","cta":"seguir"}]}` (regras editoriais valem: título curto, resumo de 1 frase com palavras próprias, nada além do que as fontes dizem) e gere o vídeo:
    `cd /home/claude/cnb-reels/ferramentas && node batch.js /tmp/plantao.json ../videos/HOJE`
-   (sai `cnb-HOJE-urgente-<id>.mp4`, com carimbo URGENTE, trilha de alerta e narração que começa com "Urgente!"; se a narração falhar, use `CNB_SEM_NARRACAO=1`). Confira o frame de 3 s com ffmpeg.
+   (pode ter foto livre como na Rodada 1, se achar uma em até 2 buscas — não atrase o plantão por isso; sai `cnb-HOJE-urgente-<id>.mp4`, com carimbo URGENTE, trilha de alerta e narração que começa com "Urgente!"; se a narração falhar, use `CNB_SEM_NARRACAO=1`). Confira o frame de 3 s com ffmpeg.
 7. Commit e push do vídeo (mesmo processo da Rodada 1). Espere ~1 min e confira que o link raw responde 200.
 8. Agende no Metricool com `createScheduledPost` para AGORA + 10 min, mesmo `info` da Rodada 2 (com `"videoCoverMilliseconds":3000`), legenda no modelo "seguir" com "🚨 URGENTE: " antes do resumo e 2 hashtags do assunto.
    **Até 03/11/2026 (plano gratuito do Metricool: 20 posts em outubro e 20 em 01–03/11, todos já reservados): o plantão NÃO soma post no dia, ele substitui um post normal.** Escolha a vítima entre os posts normais de HOJE ainda não publicados e com pelo menos 20 min de folga: a notícia de menor potencial de engajamento (empate → a de horário mais tarde). Então:
