@@ -1,0 +1,55 @@
+{
+  "data": "2026-10-30",
+  "itens": [
+    {
+      "n": 1,
+      "horario": "12:00",
+      "cat": "economia",
+      "tag": "Bolso e economia",
+      "titulo": "Dívidas de 3,6 milhões de MEIs serão perdoadas",
+      "resumo": "O ministro Paulo Pereira disse que o perdão automático das dívidas federais dos MEIs, que passam de R$ 12 bilhões, é uma medida fiscal necessária, já que a maior parte nunca seria paga.",
+      "narracao": "Dívidas de três vírgula seis milhões de MEIs serão perdoadas. O ministro Paulo Pereira disse que o perdão automático das dívidas federais dos MEIs, que passam de 12 bilhões de reais, é uma medida fiscal necessária, já que a maior parte nunca seria paga.",
+      "fonte": "Agência Brasil",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/perdao-das-dividas-de-meis-e-medida-fiscal-necessaria-diz-ministro",
+      "cta": "seguir",
+      "legenda": "O ministro Paulo Pereira disse que o perdão automático das dívidas federais dos MEIs, que passam de R$ 12 bilhões, é uma medida fiscal necessária, já que a maior parte nunca seria paga.\n\nFonte: Agência Brasil\n\nSiga @canalnewsdobrasil e fique por dentro de tudo que acontece no mundo.\n\n#noticias #brasil #cnb #mei #empreendedorismo",
+      "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-10-30/cnb-2026-10-30-001.mp4"
+    },
+    {
+      "n": 2,
+      "horario": "18:30",
+      "cat": "politica",
+      "tag": "Política",
+      "titulo": "PF indicia Vorcaro e mais 14 no caso Banco Master",
+      "resumo": "Em relatório enviado ao STF, a PF indiciou o ex-dono do Master Daniel Vorcaro, o ex-presidente do BRB e mais 13 pessoas, e diz que ao menos R$ 12,2 bilhões em créditos vendidos ao BRB não tinham comprovação.",
+      "narracao": "PF indicia Vorcaro e mais 14 no caso Banco Master. Em relatório enviado ao S T F, a Polícia Federal indiciou o ex-dono do Master, Daniel Vorcaro, o ex-presidente do B R B e mais 13 pessoas, e diz que ao menos 12 vírgula 2 bilhões de reais em créditos vendidos ao B R B não tinham comprovação.",
+      "fonte": "CNN Brasil",
+      "url": "https://www.cnnbrasil.com.br/politica/pf-indicia-vorcaro-e-ex-presidente-do-brb-por-fraudes-no-caso-master/",
+      "foto": "/tmp/fotos-2026-10-30/Edif_cio_sede_do_BRB_48991026626_.jpg",
+      "foto_credito": "Foto: Agência Brasília from Brasília, Brasil / Wikimedia Commons, CC BY 2.0",
+      "foto_fonte": "https://commons.wikimedia.org/wiki/File:Edif%C3%ADcio_sede_do_BRB_(48991026626).jpg",
+      "foto_licenca": "CC BY 2.0",
+      "cta": "seguir",
+      "legenda": "Em relatório enviado ao STF, a PF indiciou o ex-dono do Master Daniel Vorcaro, o ex-presidente do BRB e mais 13 pessoas, e diz que ao menos R$ 12,2 bilhões em créditos vendidos ao BRB não tinham comprovação.\n\nFonte: CNN Brasil\nFoto: Agência Brasília / Wikimedia Commons (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Edif%C3%ADcio_sede_do_BRB_(48991026626).jpg\n\nSiga @canalnewsdobrasil e fique por dentro de tudo que acontece no mundo.\n\n#noticias #brasil #cnb #bancomaster #policiafederal",
+      "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-10-30/cnb-2026-10-30-002.mp4"
+    },
+    {
+      "n": 3,
+      "horario": "21:00",
+      "cat": "futebol",
+      "tag": "Futebol",
+      "titulo": "Flamengo goleia o Vasco e abre 3 pontos na ponta",
+      "resumo": "Com dois gols de Pedro e dois de Samuel Lino, o Flamengo venceu o Vasco por 4 a 1 no Nilton Santos e chegou a 73 pontos, três a mais que o vice-líder Palmeiras.",
+      "narracao": "Flamengo goleia o Vasco e abre três pontos na ponta. Com dois gols de Pedro e dois de Samuel Lino, o Flamengo venceu o Vasco por 4 a 1 no Nilton Santos e chegou a 73 pontos, três a mais que o vice-líder Palmeiras.",
+      "fonte": "Metrópoles",
+      "url": "https://www.metropoles.com/esportes/com-dois-de-pedro-e-samuel-lino-flamengo-goleia-o-vasco-no-brasileirao",
+      "foto": "/tmp/fotos-2026-10-30/Pedro_in_a_match_for_Flamengo7658.png",
+      "foto_credito": "Foto: Jester77aa08 / Wikimedia Commons, CC BY-SA 4.0",
+      "foto_fonte": "https://commons.wikimedia.org/wiki/File:Pedro_in_a_match_for_Flamengo7658.png",
+      "foto_licenca": "CC BY-SA 4.0",
+      "cta": "seguir",
+      "legenda": "Com dois gols de Pedro e dois de Samuel Lino, o Flamengo venceu o Vasco por 4 a 1 no Nilton Santos e chegou a 73 pontos, três a mais que o vice-líder Palmeiras.\n\nFonte: Metrópoles\nFoto: Jester77aa08 / Wikimedia Commons (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Pedro_in_a_match_for_Flamengo7658.png\n\nSiga @canalnewsdobrasil e fique por dentro de tudo que acontece no mundo.\n\n#noticias #brasil #cnb #flamengo #brasileirao",
+      "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-10-30/cnb-2026-10-30-003.mp4"
+    }
+  ]
+}
