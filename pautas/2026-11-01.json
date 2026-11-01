@@ -130,21 +130,18 @@
   {
    "n": 8,
    "horario": "21:30",
-   "cat": "mundo",
-   "tag": "Mundo",
-   "titulo": "França põe 70 mil agentes nas ruas no Halloween",
-   "resumo": "A França mobilizou cerca de 70 mil agentes de segurança e fechou mais de 40 estações do metrô de Paris para evitar a repetição dos tumultos de 17 de outubro durante os protestos de Halloween.",
-   "narracao": "França põe setenta mil agentes nas ruas no Halloween. A França mobilizou cerca de setenta mil agentes de segurança e fechou mais de quarenta estações do metrô de Paris para evitar a repetição dos tumultos de 17 de outubro durante os protestos de Halloween.",
-   "fonte": "Euronews e The Times of Israel",
-   "url": "https://www.euronews.com/2026/10/31/france-to-deploy-70000-security-personnel-as-it-prepares-for-halloween-protests",
-   "foto": "/tmp/fotos-2026-11-01/Police_Nationale_Paris_13_April_2011.jpg",
-   "foto_credito": "Foto: Juanedc / Wikimedia Commons, CC BY 2.0",
-   "foto_fonte": "https://commons.wikimedia.org/wiki/File:Police_Nationale,_Paris_13_April_2011.jpg",
-   "foto_licenca": "CC BY 2.0",
+   "cat": "futebol",
+   "tag": "Futebol",
+   "titulo": "Cruzeiro conquista Libertadores feminina inédita",
+   "resumo": "Em sua primeira participação, o Cruzeiro buscou o empate em 4 a 4 com o Corinthians, dono de seis títulos, e venceu nos pênaltis por 5 a 4, neste sábado (31), em Quito, no Equador.",
+   "narracao": "Cruzeiro conquista Libertadores feminina inédita. Em sua primeira participação, o Cruzeiro buscou o empate em quatro a quatro com o Corinthians, dono de seis títulos, e venceu nos pênaltis por cinco a quatro, neste sábado, em Quito, no Equador.",
+   "fonte": "CNN Brasil",
+   "url": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/libertadores-da-america/cruzeiro-bate-corinthians-nos-penaltis-e-conquista-a-libertadores-feminina/",
    "cta": "venda",
-   "legenda": "A França mobilizou cerca de 70 mil agentes de segurança e fechou mais de 40 estações do metrô de Paris para evitar a repetição dos tumultos de 17 de outubro durante os protestos de Halloween.\n\nFonte: Euronews e The Times of Israel\nFoto: Juanedc / Wikimedia Commons (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Police_Nationale,_Paris_13_April_2011.jpg\n\nDesafio R$ 3.000 em 21 dias: faça um Caixa Rápido e saia do aperto financeiro. Mais de 100 formas de ganhar dinheiro rápido. De R$ 47 por R$ 17. Clique no link da bio e saiba mais.\n\n#noticias #brasil #cnb #franca #paris",
+   "legenda": "Em sua primeira participação, o Cruzeiro buscou o empate em 4 a 4 com o Corinthians, dono de seis títulos, e venceu nos pênaltis por 5 a 4, neste sábado (31), em Quito, no Equador.\n\nFonte: CNN Brasil\n\nDesafio R$ 3.000 em 21 dias: faça um Caixa Rápido e saia do aperto financeiro. Mais de 100 formas de ganhar dinheiro rápido. De R$ 47 por R$ 17. Clique no link da bio e saiba mais.\n\n#noticias #brasil #cnb #cruzeiro #futebolfeminino",
    "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-01/cnb-2026-11-01-008.mp4",
-   "audio_noticia": "/tmp/audios-2026-11-01/n-008.mp3"
+   "audio_noticia": "/tmp/audios-2026-11-01/n-008.mp3",
+   "substituiu": "França põe 70 mil agentes nas ruas no Halloween (pedido da VECA)"
   }
  ]
 }
