@@ -48,6 +48,7 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
 
 - 25/10/2026: distribuição inicial definida (VECA pediu política no máximo 5/dia a partir de novembro).
 - 26/10/2026: sem mudança. Metricool (19–26/10) só tem 2 Reels, ambos de política (111 e 17 de alcance); não há dados para comparar editorias.
+- 02/11/2026: sem mudança. Metricool (26/10–01/11): 22 Reels, quase todos de política; fora dela, os melhores alcances foram futebol (Flamengo 4x1 Vasco: 44) e conta de luz (14). Os 4 Reels de 01/11 ainda estão com alcance 0–3, amostra pequena demais para mover vagas. Reavaliar na próxima segunda, já com a mistura nova.
 
 ## Regras editoriais (sempre)
 
