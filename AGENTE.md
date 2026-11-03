@@ -110,7 +110,7 @@ Desafio R$ 3.000 em 21 dias: faça um Caixa Rápido e saia do aperto financeiro.
    {"data":"HOJE","itens":[{"n":1,"horario":"12:00","cat":"politica","tag":"Política","titulo":"…","resumo":"…","fonte":"…","url":"…","cta":"seguir","legenda":"…","video":"https://raw.githubusercontent.com/…/videos/HOJE/cnb-HOJE-001.mp4"}]}
    ```
    Para cada item, tente uma foto livre (seção "Fotos"); com foto, inclua no item `foto`, `foto_credito`, `foto_fonte`, `foto_licenca` e a linha "Foto:" na legenda.
-   Valide com Python (quantidade certa, campos preenchidos, JSON válido, e todo item com `foto` tem `foto_credito` e a linha "Foto:" na legenda; legenda sem URL e sem a palavra "bio", com no máximo 5 hashtags, no modelo da seção Legenda).
+   Valide com Python (quantidade certa, campos preenchidos, JSON válido, e todo item com `foto` tem `foto_credito` e a linha "Foto:" na legenda; legenda sem URL (exceto o link da foto na linha "Foto:") e sem a palavra "bio", com no máximo 5 hashtags, no modelo da seção Legenda).
 3. Gere os vídeos (1080x1920, NARRADOS, com a trilha da CNB baixa por baixo da voz):
    `cd /home/claude/cnb-reels/ferramentas && node batch.js ../pautas/HOJE.json ../videos/HOJE`
    (fundo da notícia alterna por n; o CTA vem do campo `cta`; copys dos CTAs estão no template.html — não mude).
