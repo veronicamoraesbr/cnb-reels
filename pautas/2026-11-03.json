@@ -1,0 +1,53 @@
+{
+ "data": "2026-11-03",
+ "itens": [
+  {
+   "n": 1,
+   "horario": "12:00",
+   "cat": "futebol",
+   "tag": "Futebol",
+   "titulo": "Santos perde para o Bragantino e cai para 9º",
+   "resumo": "O Bragantino venceu o Santos por 2 a 1 em Bragança Paulista, chegou aos 47 pontos e passou o Peixe, que caiu para a 9ª posição do Brasileirão.",
+   "narracao": "Santos perde para o Bragantino e cai para nono. O Bragantino venceu o Santos por 2 a 1 em Bragança Paulista, chegou aos 47 pontos e passou o Peixe, que caiu para a nona posição do Brasileirão.",
+   "fonte": "Gazeta Esportiva",
+   "url": "https://www.gazetaesportiva.com/campeonatos/brasileiro-serie-a/santos-perde-bragantino-cai-nono-brasileirao-2026/",
+   "foto": "/tmp/fotos-2026-11-03/Est_dio_C_cero_de_Souza_Marques.jpg",
+   "foto_credito": "Foto: BP Drones / Wikimedia Commons, CC BY 3.0",
+   "foto_fonte": "https://commons.wikimedia.org/wiki/File:Est%C3%A1dio_C%C3%ADcero_de_Souza_Marques.jpg",
+   "foto_licenca": "CC BY 3.0",
+   "foto_posicao": "50% 50%",
+   "cta": "seguir",
+   "redes": [
+    "instagram"
+   ],
+   "legenda": "O Bragantino venceu o Santos por 2 a 1 em Bragança Paulista, chegou aos 47 pontos e passou o Peixe, que caiu para a 9ª posição do Brasileirão.\n\nFonte: Gazeta Esportiva\nFoto: BP Drones / Wikimedia Commons (CC BY 3.0) https://commons.wikimedia.org/wiki/File:Est%C3%A1dio_C%C3%ADcero_de_Souza_Marques.jpg\n\nSiga a CNB e fique por dentro de tudo que acontece no mundo.\n\n🤖 Narração gerada por IA.\n\n#noticias #brasil #cnb #santos #brasileirao",
+   "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-03/cnb-2026-11-03-001.mp4",
+   "audio_noticia": "/tmp/audios-2026-11-03/n-001.mp3"
+  },
+  {
+   "n": 2,
+   "horario": "18:30",
+   "cat": "tecnologia",
+   "tag": "Tecnologia",
+   "titulo": "Hackers esquentam freezers de mercados na Europa",
+   "resumo": "Redes de supermercados da Bélgica, de Luxemburgo e da Suécia relataram ataques que mexeram nas geladeiras e freezers, com temperatura ajustada para até 50 °C, o que estragou alimentos.",
+   "narracao": "Hackers esquentam freezers de mercados na Europa. Redes de supermercados da Bélgica, de Luxemburgo e da Suécia relataram ataques que mexeram nas geladeiras e freezers, com temperatura ajustada para até 50 graus, o que estragou alimentos.",
+   "fonte": "Agência Brasil",
+   "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-11/supermercados-europeus-sao-atingidos-por-novo-ataque-cibernetico",
+   "foto": "/tmp/fotos-2026-11-03/Freezer_cabinet_with_food.jpg",
+   "foto_credito": "Foto: Leon Brooks / Wikimedia Commons, domínio público",
+   "foto_fonte": "https://commons.wikimedia.org/wiki/File:Freezer_cabinet_with_food.jpg",
+   "foto_licenca": "domínio público",
+   "foto_posicao": "50% 50%",
+   "cta": "venda",
+   "redes": [
+    "instagram",
+    "tiktok",
+    "youtube"
+   ],
+   "legenda": "📢 Publicidade\n\nRedes de supermercados da Bélgica, de Luxemburgo e da Suécia relataram ataques que mexeram nas geladeiras e freezers, com temperatura ajustada para até 50 °C, o que estragou alimentos.\n\nFonte: Agência Brasil\nFoto: Leon Brooks / Wikimedia Commons (domínio público) https://commons.wikimedia.org/wiki/File:Freezer_cabinet_with_food.jpg\n\nCaixa Rápido: mais de 100 opções de serviço para você sair do aperto financeiro. Clique no link da bio e saiba mais.\n\n🤖 Narração gerada por IA.\n\n#noticias #brasil #cnb #tecnologia #hackers",
+   "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-03/cnb-2026-11-03-002.mp4",
+   "audio_noticia": "/tmp/audios-2026-11-03/n-002.mp3"
+  }
+ ]
+}
