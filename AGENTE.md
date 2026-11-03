@@ -22,11 +22,14 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
 | 26/10 a 31/10/2026 | 3 | todos "seguir" | 12:00, 18:30, 21:00 |
 | 01/11/2026 | 8 | alterna: n ímpar "seguir", n par "venda" | 08:00, 10:30, 12:00, 13:00, 15:30, 18:30, 20:00, 21:30 |
 | 02/11/2026 | 7 | alterna | 08:00, 10:30, 12:00, 13:00, 18:30, 20:00, 21:30 |
-| 03/11/2026 | 5 | alterna | 10:30, 12:00, 18:30, 20:00, 21:30 |
-| 04/11 a 30/11/2026 | 8 | alterna | 08:00, 10:30, 12:00, 13:00, 15:30, 18:30, 20:00, 21:30 |
-| a partir de 01/12/2026 | continua 8 até a VECA definir o próximo degrau | alterna | os mesmos de novembro |
+| 03/11/2026 | 2 | n1 "seguir", n2 "venda" | n1 12:00 → `"redes":["instagram"]`; n2 18:30 → `"redes":["instagram","tiktok","youtube"]` |
+| 04/11/2026 | 1 | "venda" | n1 18:30 → `"redes":["instagram","tiktok","youtube"]` |
+| 05/11 a 30/11/2026 | **PAUSADO** (plano grátis do Metricool esgotado) — ver abaixo | — | — |
+| a partir de 01/12/2026 | continua pausado até a VECA definir o volume | — | — |
 
-**01–03/11 = 8 + 7 + 5 = 20 posts**, o limite do plano grátis do Metricool nesse período (VECA, 28/10/2026).
+**Limite do Metricool grátis (confirmado em 02/11/2026 na ajuda do Metricool):** 20 publicações por mês do calendário, contadas **por rede** (1 vídeo em Instagram + TikTok + YouTube = 3 publicações) e só quando realmente publicadas; zera no dia 1º. Em novembro já foram publicadas 13 (8 em 01/11 + 5 em 02/11, só Instagram) → restam 7, divididas pela VECA entre 03/11 (1 + 3) e 04/11 (3).
+**Dias PAUSADOS:** a Rodada 1 não monta pauta nem gera vídeo; só envia, UMA vez (no primeiro dia pausado), a notificação "CNB pausado: limite do Metricool grátis atingido. Avise quando o plano pago estiver ativo para voltar aos 8 posts/dia." Nos dias seguintes, termina em silêncio. A Rodada 2 não agenda nada. O plantão também fica parado (não há publicação livre). Quando a VECA confirmar o plano pago, volte à linha "8/dia" (08:00, 10:30, 12:00, 13:00, 15:30, 18:30, 20:00, 21:30, CTA alternando, as 3 redes) e registre aqui.
+**Campo `redes` no item da pauta:** lista das redes daquele vídeo. Sem o campo = as 3 redes.
 **Aumento gradual (decisão da VECA, 28/10/2026):** o volume sobe aos poucos para o Instagram não bloquear o perfil. Os 80/dia (plano antigo) ficaram suspensos; só mude o volume quando a VECA pedir e registre aqui.
 
 ### Mistura de assuntos
@@ -75,7 +78,7 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
 
 ## Legenda
 
-A MESMA legenda vai para Instagram, TikTok e YouTube, então ela não cita rede: "link do perfil" (vale para a bio do Instagram/TikTok e para os links do canal no YouTube) e "Siga a CNB" (sem @, porque o @ do YouTube pode ser diferente). Não ponha outras URLs na legenda (nas três redes elas não são clicáveis); a única exceção é o link da foto na linha "Foto:", exigido pelo crédito da licença. Até 5 hashtags (o YouTube mostra as 3 primeiras acima do título; mais de 15 ele ignora todas).
+A MESMA legenda vai para Instagram, TikTok e YouTube: "link da bio" (a VECA quer essa forma nas 3 redes, inclusive no YouTube) e "Siga a CNB" (sem @, porque o @ do YouTube pode ser diferente). **Aviso de IA só na legenda** (decisão da VECA, 02/11/2026): a linha "🤖 Narração gerada por IA." vai em toda legenda, antes das hashtags; NUNCA entra na narração nem no vídeo, e as marcações de IA das plataformas (`isAiGenerated`, `isAigc`, `isAiGeneratedContent`) ficam false. Não ponha outras URLs na legenda (nas três redes elas não são clicáveis); a única exceção é o link da foto na linha "Foto:", exigido pelo crédito da licença. Até 5 hashtags (o YouTube mostra as 3 primeiras acima do título; mais de 15 ele ignora todas).
 
 CTA "seguir":
 ```
@@ -86,6 +89,8 @@ Fonte: <fonte>
 
 Siga a CNB e fique por dentro de tudo que acontece no mundo.
 
+🤖 Narração gerada por IA.
+
 #noticias #brasil #cnb <2 hashtags do assunto>
 ```
 CTA "venda":
@@ -95,7 +100,9 @@ CTA "venda":
 Fonte: <fonte>
 [se tiver foto] Foto: <autor> / Wikimedia Commons (<licença>) <foto_fonte>
 
-Desafio R$ 3.000 em 21 dias: faça um Caixa Rápido e saia do aperto financeiro. Mais de 100 formas de ganhar dinheiro rápido. De R$ 47 por R$ 17. Clique no link do perfil e saiba mais.
+Desafio R$ 3.000 em 21 dias: faça um Caixa Rápido e saia do aperto financeiro. Mais de 100 formas de ganhar dinheiro rápido. De R$ 47 por R$ 17. Clique no link da bio e saiba mais.
+
+🤖 Narração gerada por IA.
 
 #noticias #brasil #cnb <2 hashtags do assunto>
 ```
@@ -110,7 +117,7 @@ Desafio R$ 3.000 em 21 dias: faça um Caixa Rápido e saia do aperto financeiro.
    {"data":"HOJE","itens":[{"n":1,"horario":"12:00","cat":"politica","tag":"Política","titulo":"…","resumo":"…","fonte":"…","url":"…","cta":"seguir","legenda":"…","video":"https://raw.githubusercontent.com/…/videos/HOJE/cnb-HOJE-001.mp4"}]}
    ```
    Para cada item, tente uma foto livre (seção "Fotos"); com foto, inclua no item `foto`, `foto_credito`, `foto_fonte`, `foto_licenca` e a linha "Foto:" na legenda.
-   Valide com Python (quantidade certa, campos preenchidos, JSON válido, e todo item com `foto` tem `foto_credito` e a linha "Foto:" na legenda; legenda sem URL (exceto o link da foto na linha "Foto:") e sem a palavra "bio", com no máximo 5 hashtags, no modelo da seção Legenda).
+   Valide com Python (quantidade certa, campos preenchidos, JSON válido, e todo item com `foto` tem `foto_credito` e a linha "Foto:" na legenda; legenda sem URL (exceto o link da foto na linha "Foto:"), com a linha "🤖 Narração gerada por IA.", no máximo 5 hashtags, e `redes` conforme o calendário, no modelo da seção Legenda).
 3. Gere os vídeos (1080x1920, NARRADOS, com a trilha da CNB baixa por baixo da voz):
    `cd /home/claude/cnb-reels/ferramentas && node batch.js ../pautas/HOJE.json ../videos/HOJE`
    (fundo da notícia alterna por n; o CTA vem do campo `cta`; copys dos CTAs estão no template.html — não mude).
@@ -133,9 +140,9 @@ Desafio R$ 3.000 em 21 dias: faça um Caixa Rápido e saia do aperto financeiro.
 
 1. Leia `aprovacoes/HOJE` (ArtifactData `get`).
    - Não existe ou `status` = "rejeitado": não agende nada. Termine com "Pauta de DD/MM não foi aprovada; nada foi agendado."
-2. Leia `dias/HOJE`. Para cada item cujo `n` NÃO está em `excluidos`, agende no Metricool com `createScheduledPost` — UM post por item com as 3 redes:
+2. Leia `dias/HOJE`. Para cada item cujo `n` NÃO está em `excluidos`, agende no Metricool com `createScheduledPost` — UM post por item, com as redes do campo `redes` (sem o campo: as 3). Inclua `tiktokData`/`youtubeData` só se a rede estiver na lista:
    - `blogId` "7648862"; `date` = HOJE + horario com -03:00 (horários depois da meia-noite caem no dia seguinte); horário já passado → pule e registre.
-   - `info`: `{"autoPublish":true,"draft":false,"descendants":[],"firstCommentText":"","hasNotReadNotes":false,"media":[<video>],"videoCoverMilliseconds":3000,"mediaAltText":[],"providers":[{"network":"instagram"},{"network":"tiktok"},{"network":"youtube"}],"publicationDate":{"dateTime":"AAAA-MM-DDTHH:MM:00","timezone":"America/Sao_Paulo"},"shortener":false,"smartLinkData":{"ids":[]},"text":<legenda>,"instagramData":{"type":"REEL","showReelOnFeed":true,"isAiGenerated":false},"tiktokData":{"privacyOption":"PUBLIC_TO_EVERYONE","disableComment":false,"disableDuet":false,"disableStitch":false,"autoAddMusic":false,"commercialContentThirdParty":false,"commercialContentOwnBrand":<true se cta = "venda", senão false>,"isAigc":false},"youtubeData":{"title":<titulo>,"type":"short","privacy":"public","madeForKids":false,"isAiGeneratedContent":false,"category":<"SPORTS" se cat for futebol/esporte, senão "NEWS_POLITICS">,"tags":["noticias","brasil","cnb",<as 2 hashtags do assunto, sem #>]}}`
+   - `info`: `{"autoPublish":true,"draft":false,"descendants":[],"firstCommentText":"","hasNotReadNotes":false,"media":[<video>],"videoCoverMilliseconds":3000,"mediaAltText":[],"providers":<um {"network":…} para cada rede em `redes` do item (sem o campo: instagram, tiktok e youtube)>,"publicationDate":{"dateTime":"AAAA-MM-DDTHH:MM:00","timezone":"America/Sao_Paulo"},"shortener":false,"smartLinkData":{"ids":[]},"text":<legenda>,"instagramData":{"type":"REEL","showReelOnFeed":true,"isAiGenerated":false},"tiktokData":{"privacyOption":"PUBLIC_TO_EVERYONE","disableComment":false,"disableDuet":false,"disableStitch":false,"autoAddMusic":false,"commercialContentThirdParty":false,"commercialContentOwnBrand":<true se cta = "venda", senão false>,"isAigc":false},"youtubeData":{"title":<titulo>,"type":"short","privacy":"public","madeForKids":false,"isAiGeneratedContent":false,"category":<"SPORTS" se cat for futebol/esporte, senão "NEWS_POLITICS">,"tags":["noticias","brasil","cnb",<as 2 hashtags do assunto, sem #>]}}`
    - YouTube: `title` = o `titulo` do item (até 100 caracteres, sem `<` nem `>`); a legenda vira a descrição do Short.
    - TikTok: posts com CTA "venda" divulgam produto da própria VECA → `commercialContentOwnBrand: true` (o TikTok exige essa marcação de conteúdo comercial).
    - `videoCoverMilliseconds: 3000` é a capa (Reel, TikTok e Short): o 1º frame do vídeo é preto (a notícia ainda está entrando), e aos 3 s o card está completo. Se o Metricool recusar com `VIDEO_THUMBNAIL_NOT_APPLICABLE`, repita esse item uma vez sem `videoCoverMilliseconds` e registre.
@@ -165,11 +172,11 @@ Objetivo: pegar notícia BOMBÁSTICA, nível "plantão interrompe a programaçã
    (pode ter foto livre como na Rodada 1, se achar uma em até 2 buscas — não atrase o plantão por isso; sai `cnb-HOJE-urgente-<id>.mp4`, com carimbo URGENTE, trilha de alerta e narração que começa com "Urgente!"; se a narração falhar, use `CNB_SEM_NARRACAO=1`). Confira o frame de 3 s com ffmpeg.
 7. Commit e push do vídeo (mesmo processo da Rodada 1). Espere ~1 min e confira que o link raw responde 200.
 8. Agende no Metricool com `createScheduledPost` para AGORA + 10 min, mesmo `info` da Rodada 2 (as 3 redes, com `"videoCoverMilliseconds":3000`; `youtubeData.title` = "URGENTE: <titulo>"; `commercialContentOwnBrand` false), legenda no modelo "seguir" com "🚨 URGENTE: " antes do resumo e 2 hashtags do assunto.
-   **Até 03/11/2026 (plano gratuito do Metricool: 20 posts em outubro e 20 em 01–03/11, todos já reservados): o plantão NÃO soma post no dia, ele substitui um post normal.** Escolha a vítima entre os posts normais de HOJE ainda não publicados e com pelo menos 20 min de folga: a notícia de menor potencial de engajamento (empate → a de horário mais tarde). Então:
+   **Enquanto o CNB estiver no plano grátis do Metricool (20 publicações/mês por rede, todas já reservadas): o plantão NÃO soma post no dia, ele substitui um post normal, com as mesmas redes da vítima. Em dia PAUSADO não há plantão.** Escolha a vítima entre os posts normais de HOJE ainda não publicados e com pelo menos 20 min de folga: a notícia de menor potencial de engajamento (empate → a de horário mais tarde). Então:
    - Se a Rodada 2 de hoje ainda não rodou (antes das 7h30): faça o post do plantão com `createScheduledPost` normalmente e acrescente o `n` da vítima em `excluidos` de `aprovacoes/HOJE` (ArtifactData `update` com `if_version`; se o doc não existir, não precisa — sem aprovação nada normal é postado mesmo).
    - Se já rodou: NÃO use `createScheduledPost`. Ache o post da vítima com `getScheduledPosts` (brandId 7648862, timezone America/Sao_Paulo, intervalo de hoje) e transforme-o no plantão com `updateScheduledPost` (mesmos `id` e `uuid`): troque `media`, `text`, `publicationDate` (AGORA + 10 min) e `youtubeData.title`/`tags`, ponha `tiktokData.commercialContentOwnBrand` false, mantendo o resto do `info` (as 3 redes). Assim o total de posts do dia não muda.
    - Se não sobrar nenhum post normal pendente hoje: poste o plantão e anote em `plantao/registro.json` `"compensar_em": "<amanhã>"`; a Rodada 1 do dia seguinte faz 1 post a menos (o de menor potencial) e marca a compensação como feita (`"compensado": true`).
    - Registre a vítima no registro (`"substituiu": {"n":…, "titulo":…}`) e cite na notificação: "(substituiu o post das HH:MM)".
-   A partir de 04/11/2026 (plano Starter) o plantão é post extra (vale o passo 8 normal). Se a compensação cair em 01/11, vale normalmente; se cair em 04/11 ou depois, ignore-a.
+   Com o plano pago ativo (a VECA avisa e fica registrado no Calendário), o plantão é post extra nas 3 redes (vale o passo 8 normal) e compensações pendentes são ignoradas.
 9. Acrescente em `plantao/registro.json` → `{"data","hora","titulo","fontes":[url1,url2,url3],"agendado_para"}`; apague o vídeo de `videos/HOJE/` só se a Rodada 2 de hoje já tiver rodado (senão ela apaga junto); commit e push.
 10. Termine com notificação curta: "🚨 Plantão postado às HH:MM: <título>. Fontes: <veículo 1>, <veículo 2>, <veículo 3>."
