@@ -39,6 +39,10 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:
 .price .por b{display:inline-block;font-size:138px;font-weight:900;letter-spacing:-3px;background:var(--gold);color:#111;padding:0 26px;border-radius:18px;line-height:1.1;margin-left:10px;vertical-align:middle}
 .btn{font-size:44px;font-weight:800;padding:30px 64px;border-radius:999px;background:var(--fg);color:var(--bg);animation:pulse 1s ease-in-out 7.7s 2 both}
 .follow .btn{background:var(--gold);color:#111}
+/* CTA venda (02/11/2026): selo Publicidade no topo + marca Caixa Rápido, sem valores */
+.pub{position:absolute;top:150px;left:0;right:0;margin:0 auto;width:fit-content;font-size:34px;font-weight:800;letter-spacing:6px;text-transform:uppercase;color:var(--muted);border:3px solid var(--muted);border-radius:12px;padding:8px 26px;animation:rise .55s cubic-bezier(.2,.8,.2,1) 7.0s both}
+.sale .marca{display:inline-block;font-size:120px;font-weight:900;letter-spacing:-3px;line-height:1.1;background:var(--gold);color:#111;padding:6px 40px;border-radius:22px}
+.sale .lead{font-size:58px;line-height:1.25}
 
 @keyframes cardIn{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
 @keyframes cardOut{to{opacity:0;transform:translateY(-220px)}}
@@ -80,15 +84,14 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:
 <div class="bar"><i></i></div>
 <div class="cta" id="cta"></div>
 <script>
-// Copys fixas dos CTAs (definidas pela VECA em 25/10/2026)
+// Copys fixas dos CTAs (definidas pela VECA em 25/10/2026; CTA venda trocado pela VECA em 02/11/2026: sem valores, com selo Publicidade)
 const CTA = {
   seguir: a => `<div class="in follow"><div class="av">CN<b>B</b></div>
     <h2>Siga a CNB e fique por dentro de tudo que acontece no mundo.</h2>
     <div class="btn">Seguir ${a}</div></div>`,
-  venda: () => `<div class="in sale"><h2>Desafio R$&nbsp;3.000 em&nbsp;21&nbsp;dias</h2>
-    <p class="lead">Faça um Caixa Rápido e saia do aperto financeiro.</p>
-    <p>Mais de 100 formas de ganhar dinheiro rápido.</p>
-    <div class="price"><span class="de">De <s>R$&nbsp;47,00</s></span><span class="por">por<b>R$&nbsp;17,00</b></span></div>
+  venda: () => `<div class="pub">Publicidade</div><div class="in sale">
+    <div class="marca">Caixa Rápido</div>
+    <p class="lead">Mais de 100 opções de serviço para você sair do aperto financeiro.</p>
     <div class="btn">Clique no link da Bio e saiba mais</div></div>`
 };
 function setup(d){

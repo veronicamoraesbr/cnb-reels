@@ -12,7 +12,7 @@ const ARROBA = '@canalnewsdobrasil';
 const NOME = 'CNB – Canal de News do Brasil';
 const FALA_CTA = {   // o que a voz diz na tela de CTA (mesmas copys do template.html)
   seguir: 'Siga a CNB e fique por dentro de tudo que acontece no mundo.',
-  venda: 'Desafio 3 mil reais em 21 dias. Faça um Caixa Rápido e saia do aperto financeiro. Mais de 100 formas de ganhar dinheiro rápido. De 47 por 17 reais. Clique no link da bio e saiba mais.',
+  venda: 'Conheça o Caixa Rápido: mais de 100 opções de serviço para você sair do aperto financeiro. Clique no link da bio e saiba mais.',
 };
 const MESES = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));

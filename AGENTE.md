@@ -20,11 +20,11 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
 | Período | Posts/dia | CTA | Horários |
 |---|---|---|---|
 | 26/10 a 31/10/2026 | 3 | todos "seguir" | 12:00, 18:30, 21:00 |
-| 01/11/2026 | 8 | alterna: n ímpar "seguir", n par "venda" | 08:00, 10:30, 12:00, 13:00, 15:30, 18:30, 20:00, 21:30 |
-| 02/11/2026 | 7 | alterna | 08:00, 10:30, 12:00, 13:00, 18:30, 20:00, 21:30 |
-| 03/11/2026 | 2 | n1 "seguir", n2 "venda" | n1 12:00 → `"redes":["instagram"]`; n2 18:30 → `"redes":["instagram","tiktok","youtube"]` |
-| 04/11/2026 | 1 | "venda" | n1 18:30 → `"redes":["instagram","tiktok","youtube"]` |
-| a partir de 05/11/2026 (plano Pro do Metricool) | 17 | alterna: n ímpar "seguir", n par "venda" | 07:00, 08:00, 09:00, 10:00, 11:00, 12:00, 12:30, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00, 19:00, 20:00, 21:00, 22:00 — as 3 redes |
+| 01/11/2026 | 8 | pela regra "Qual CTA usar" (~metade venda) | 08:00, 10:30, 12:00, 13:00, 15:30, 18:30, 20:00, 21:30 |
+| 02/11/2026 | 7 | pela regra "Qual CTA usar" | 08:00, 10:30, 12:00, 13:00, 18:30, 20:00, 21:30 |
+| 03/11/2026 | 2 | n2 "venda" só se o assunto não for pessoa específica (senão "seguir") | n1 12:00 → `"redes":["instagram"]`; n2 18:30 → `"redes":["instagram","tiktok","youtube"]` |
+| 04/11/2026 | 1 | "venda" só se o assunto não for pessoa específica (senão "seguir") | n1 18:30 → `"redes":["instagram","tiktok","youtube"]` |
+| a partir de 05/11/2026 (plano Pro do Metricool) | 17 | pela regra "Qual CTA usar" (~metade venda) | 07:00, 08:00, 09:00, 10:00, 11:00, 12:00, 12:30, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00, 19:00, 20:00, 21:00, 22:00 — as 3 redes |
 
 **Limite do Metricool grátis (confirmado em 02/11/2026 na ajuda do Metricool):** 20 publicações por mês do calendário, contadas **por rede** (1 vídeo em Instagram + TikTok + YouTube = 3 publicações) e só quando realmente publicadas; zera no dia 1º. Em novembro já foram publicadas 13 (8 em 01/11 + 5 em 02/11, só Instagram) → restam 7, divididas pela VECA entre 03/11 (1 + 3) e 04/11 (3).
 **A partir de 05/11/2026 o CNB está no plano Pro do Metricool** (VECA, 02/11/2026): sem limite mensal, 17 posts/dia nas 3 redes. Se o Metricool recusar por limite do plano, pare e avise (pode ser que o upgrade não tenha sido feito).
@@ -81,6 +81,13 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
 - O recorte padrão mira o rosto no alto do retrato. Ao conferir o frame de 3 s, se o rosto/assunto estiver cortado, ajuste `foto_posicao` no item (ex.: "50% 40%") e gere de novo.
 - Prefira fotos com autor identificado (ex.: "Isac Nóbrega/PR", "U.S. Consulate"); evite as marcadas como "arquivo pessoal" ou com autor desconhecido.
 
+## Qual CTA usar (regra da VECA, 02/11/2026)
+
+- **Notícia sobre uma pessoa específica (ou com foto de pessoa identificável) → SEMPRE CTA "seguir".** Nunca associar a imagem ou o nome de alguém à propaganda (uso comercial de imagem).
+- **CTA "venda" só em assuntos sem pessoa específica:** economia e bolso, serviços, loterias, clima, tecnologia, curiosidades sobre lugares/objetos, resultados de campeonato sem foco em um jogador, etc. A foto desses posts também não pode mostrar pessoa em destaque.
+- Busque metade "venda" e metade "seguir" no dia, mas a regra acima vence a proporção. A alternância por horário (ímpar/par) deixa de ser obrigatória: distribua os "venda" pelo dia sem deixar 2 seguidos quando der.
+- A propaganda (vídeo, narração e legenda) não cita valores nem promessas de ganho: só "Caixa Rápido" e "mais de 100 opções de serviço para sair do aperto financeiro".
+
 ## Legenda
 
 A MESMA legenda vai para Instagram, TikTok e YouTube: "link da bio" (a VECA quer essa forma nas 3 redes, inclusive no YouTube) e "Siga a CNB" (sem @, porque o @ do YouTube pode ser diferente). **Aviso de IA só na legenda** (decisão da VECA, 02/11/2026): a linha "🤖 Narração gerada por IA." vai em toda legenda, antes das hashtags; NUNCA entra na narração nem no vídeo, e as marcações de IA das plataformas (`isAiGenerated`, `isAigc`, `isAiGeneratedContent`) ficam false. Não ponha outras URLs na legenda (nas três redes elas não são clicáveis); a única exceção é o link da foto na linha "Foto:", exigido pelo crédito da licença. Até 5 hashtags (o YouTube mostra as 3 primeiras acima do título; mais de 15 ele ignora todas).
@@ -98,14 +105,16 @@ Siga a CNB e fique por dentro de tudo que acontece no mundo.
 
 #noticias #brasil #cnb <2 hashtags do assunto>
 ```
-CTA "venda":
+CTA "venda" (a partir de 03/11/2026: selo de publicidade NA PRIMEIRA LINHA e propaganda sem valores):
 ```
+📢 Publicidade
+
 <resumo>
 
 Fonte: <fonte>
 [se tiver foto] Foto: <autor> / Wikimedia Commons (<licença>) <foto_fonte>
 
-Desafio R$ 3.000 em 21 dias: faça um Caixa Rápido e saia do aperto financeiro. Mais de 100 formas de ganhar dinheiro rápido. De R$ 47 por R$ 17. Clique no link da bio e saiba mais.
+Caixa Rápido: mais de 100 opções de serviço para você sair do aperto financeiro. Clique no link da bio e saiba mais.
 
 🤖 Narração gerada por IA.
 
@@ -122,14 +131,14 @@ Desafio R$ 3.000 em 21 dias: faça um Caixa Rápido e saia do aperto financeiro.
    {"data":"HOJE","itens":[{"n":1,"horario":"12:00","cat":"politica","tag":"Política","titulo":"…","resumo":"…","fonte":"…","url":"…","cta":"seguir","legenda":"…","video":"https://raw.githubusercontent.com/…/videos/HOJE/cnb-HOJE-001.mp4"}]}
    ```
    Para cada item, tente uma foto livre (seção "Fotos"); com foto, inclua no item `foto`, `foto_credito`, `foto_fonte`, `foto_licenca` e a linha "Foto:" na legenda.
-   Valide com Python (quantidade certa, campos preenchidos, JSON válido, e todo item com `foto` tem `foto_credito` e a linha "Foto:" na legenda; legenda sem URL (exceto o link da foto na linha "Foto:"), com a linha "🤖 Narração gerada por IA.", no máximo 5 hashtags, e `redes` conforme o calendário, no modelo da seção Legenda).
+   Valide com Python (quantidade certa, campos preenchidos, JSON válido, e todo item com `foto` tem `foto_credito` e a linha "Foto:" na legenda; legenda sem URL (exceto o link da foto na linha "Foto:"), com a linha "🤖 Narração gerada por IA.", legendas "venda" começando com "📢 Publicidade", nenhum "venda" sobre pessoa específica, no máximo 5 hashtags, e `redes` conforme o calendário, no modelo da seção Legenda).
 3. Gere os vídeos (1080x1920, NARRADOS, com a trilha da CNB baixa por baixo da voz):
    `cd /home/claude/cnb-reels/ferramentas && node batch.js ../pautas/HOJE.json ../videos/HOJE`
    (fundo da notícia alterna por n; o CTA vem do campo `cta`; copys dos CTAs estão no template.html — não mude).
    - **Narração (padrão desde 28/10/2026, pedido da VECA): voz "Dyego Notícias" do ElevenLabs, pelo CONECTOR do ElevenLabs** (sem chave). Para cada item, ANTES de rodar o batch:
      1. `creative_generate_speech` com `voice_id` "eUAnqvLQWNX29twcYLUM", `model_id` "eleven_multilingual_v2", `generations_count` 1 e `prompt` = `narracao` do item (se houver) ou "<titulo>. <resumo>" (no plantão, comece com "Urgente! "). Pode disparar vários itens seguidos e depois consultar.
-     2. `creative_get_flow_run_status` (flow_id + session_ids) até `all_completed`; baixe o `content_url` com `curl -sSf -o /tmp/audios-HOJE/n-<NNN>.mp3 '<url>'` (o link expira em 2 h) e ponha `"audio_noticia": "/tmp/audios-HOJE/n-<NNN>.mp3"` no item.
-     3. NÃO gere a fala do CTA: ela é fixa e já está em `ferramentas/cta_seguir_dyego.mp3` e `cta_venda_dyego.mp3` (o batch usa sozinho).
+     2. `creative_get_flow_run_status` (flow_id + session_ids) até `all_completed`; baixe o `content_url` com `curl -sSf -o /tmp/audios-HOJE/n-<NNN>.mp3 '<url>'` (o link expira em 2 h; o ElevenLabs entrega por `storage.googleapis.com` ou `elevenlabsusercontent.com` — se o download for bloqueado, siga com a voz grátis e avise "ElevenLabs: download bloqueado (<domínio>)") e ponha `"audio_noticia": "/tmp/audios-HOJE/n-<NNN>.mp3"` no item.
+     3. NÃO gere a fala do CTA: ela é fixa e fica em `ferramentas/cta_seguir_dyego.mp3` e `cta_venda_dyego.mp3` (o batch usa sozinho). Se `cta_venda_dyego.mp3` não existir, os vídeos "venda" saem inteiros com a voz grátis (nunca 2 vozes) — não gere a fala do CTA por conta própria.
      4. Nunca repita uma geração para "tentar de novo" (cobra de novo). Se o conector não estiver disponível, recusar por **créditos esgotados**/limite, ou falhar, NÃO ponha `audio_noticia` nesse item nem nos seguintes: o batch narra com a voz grátis "faber" (Piper; `narrar.py`, que na 1ª vez instala o `piper-tts` e baixa a voz para `ferramentas/voz/`, fora do git). Um vídeo nunca mistura as duas vozes.
      5. O batch termina com `VOZES: X ElevenLabs, Y voz grátis`. Se Y > 0, diga na mensagem final o motivo (ex.: "ElevenLabs sem créditos: Y vídeos com a voz grátis").
      - Os áudios ficam fora do git (`/tmp/audios-HOJE`); a chave antiga de API não é usada.
