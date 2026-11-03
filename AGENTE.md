@@ -75,7 +75,7 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
 
 ## Legenda
 
-A MESMA legenda vai para Instagram, TikTok e YouTube, então ela não cita rede: "link do perfil" (vale para a bio do Instagram/TikTok e para os links do canal no YouTube) e "Siga a CNB" (sem @, porque o @ do YouTube pode ser diferente). Não ponha URL na legenda: nas três redes ela não é clicável. Até 5 hashtags (o YouTube mostra as 3 primeiras acima do título; mais de 15 ele ignora todas).
+A MESMA legenda vai para Instagram, TikTok e YouTube, então ela não cita rede: "link do perfil" (vale para a bio do Instagram/TikTok e para os links do canal no YouTube) e "Siga a CNB" (sem @, porque o @ do YouTube pode ser diferente). Não ponha outras URLs na legenda (nas três redes elas não são clicáveis); a única exceção é o link da foto na linha "Foto:", exigido pelo crédito da licença. Até 5 hashtags (o YouTube mostra as 3 primeiras acima do título; mais de 15 ele ignora todas).
 
 CTA "seguir":
 ```
