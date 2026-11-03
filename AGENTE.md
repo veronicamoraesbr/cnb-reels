@@ -34,23 +34,29 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
 ### Mistura de assuntos
 
 - Até 31/10/2026: política pode dominar (pós-eleição em alta). Nos dias de 3 posts, escolha as notícias com MAIOR potencial de engajamento.
-- A partir de 01/11/2026: **no máximo 5 notícias de política por dia** (só as mais fortes). Nos dias de até 8 posts, no máximo 1 de política. **Dias de 17 (desde 05/11):** até 3 política, 3 futebol (clubes do G12, um time diferente cada), 3 bolso/economia, 2 famosos/TV, 2 curiosidades, 1 esporte além do G12, 1 mundo, 1 tecnologia/IA, 1 saúde/serviço — ajuste fino pelo engajamento na segunda-feira, sem passar de 3 de política; as outras 7 vão para as editorias que mais engajam (lista abaixo), sem repetir editoria mais de 2 vezes.
-- Dias de 80 (se a VECA voltar a esse volume): 5 política + 12 futebol (1 por time do G12: Flamengo, Fluminense, Vasco, Botafogo, Corinthians, Palmeiras, São Paulo, Santos, Atlético-MG, Cruzeiro, Grêmio, Internacional) + 63 distribuídas pelo que mais engaja. Ponto de partida para as 63:
-  - 14 bolso e economia do dia a dia (salário, INSS, Pix, preços, gasolina, concursos, loterias, golpes)
-  - 12 famosos, TV, reality, música e redes sociais
-  - 10 curiosidades, "inacreditável", histórias que viralizam
-  - 8 esporte além do G12 (seleção, F1, UFC, vôlei, outros clubes)
-  - 7 mundo
-  - 6 tecnologia e IA
-  - 6 saúde, bem-estar e serviço (clima, feriados, documentos)
-- **Ajuste pelo engajamento (toda segunda-feira, na Rodada 1):** use as ferramentas de analytics do Metricool (getAnalyticsAvailableMetrics / getAnalyticsDataByMetrics, blogId 7648862, Instagram Reels dos últimos 7 dias) e compare alcance, curtidas, comentários, compartilhamentos e salvamentos por editoria (cruze com `tag` das pautas em `pautas/`). Mova até 6 vagas por semana das editorias mais fracas para as mais fortes, sem mexer nos 12 do G12 e sem passar de 5 de política. Registre a nova distribuição e o motivo na seção "Histórico de ajustes" (logo abaixo), atualize a lista "Ponto de partida" e faça commit.
+- **Política: no máximo 1 por dia, em qualquer volume** (decisão da VECA, 02/11/2026) — só a mais forte do dia.
+- **Nenhum tema passa de 3 posts por dia.** Os temas com mais posts (3) são os que mais engajam nas métricas.
+- **Dias de 17 (desde 05/11), distribuição atual** (definida pelas métricas de 25/10–02/11, ver Histórico):
+  - 3 esporte além do G12 (F1, seleção, UFC, vôlei, tênis, outros clubes) — melhor alcance médio (F1: 125 e 124)
+  - 3 futebol do G12 (um time diferente em cada: Flamengo, Fluminense, Vasco, Botafogo, Corinthians, Palmeiras, São Paulo, Santos, Atlético-MG, Cruzeiro, Grêmio, Internacional) — 2º melhor (Fla 4x1 Vasco: 45; tabela do Brasileirão: 25)
+  - 3 bolso e economia (conta de luz, salário, INSS, Pix, preços, gasolina, concursos, loterias, golpes) — 3º (conta de luz: 14; Mega-Sena: 9–13)
+  - 2 serviço e saúde (Enem, feriados, documentos, clima, vacinas)
+  - 2 famosos, TV, reality e música
+  - 1 política
+  - 1 mundo
+  - 1 curiosidades
+  - 1 tecnologia e IA
+  - Se num dia não houver notícia forte o bastante de um tema de 3, complete com o próximo tema da lista (nunca com política).
+- Dias de 80 (se a VECA voltar a esse volume): mesma lógica — política 1, nenhum tema com mais que a proporção dos temas fortes; redefinir com a VECA antes.
+- **Ajuste pelo engajamento (toda segunda-feira, na Rodada 1):** use as ferramentas de analytics do Metricool (getAnalyticsAvailableMetrics / getAnalyticsDataByMetrics, blogId 7648862, Instagram Reels dos últimos 7 dias) e compare alcance, curtidas, comentários, compartilhamentos e salvamentos por editoria (cruze com `tag` das pautas em `pautas/`). Reordene a distribuição dos dias de 17: os 3 temas com maior alcance médio (e, no empate, mais compartilhamentos/salvamentos) ficam com 3 posts cada, os seguintes com 2 ou 1; política sempre 1; nenhum tema acima de 3; total 17. Use também TikTok e YouTube quando houver dados. Com menos de 3 vídeos de um tema na semana, não tire conclusão sobre ele (mantenha a vaga). Registre a nova distribuição e o motivo na seção "Histórico de ajustes" (logo abaixo), atualize a lista "Dias de 17" e faça commit.
 - Ordem do dia: espalhe as editorias (nunca 3 seguidas iguais) e ponha as mais fortes nos horários de pico (12h–13h e 18h–22h).
 
 ### Histórico de ajustes
 
 - 25/10/2026: distribuição inicial definida (VECA pediu política no máximo 5/dia a partir de novembro).
 - 26/10/2026: sem mudança. Metricool (19–26/10) só tem 2 Reels, ambos de política (111 e 17 de alcance); não há dados para comparar editorias.
-- 02/11/2026: sem mudança. Metricool (26/10–01/11): 22 Reels, quase todos de política; fora dela, os melhores alcances foram futebol (Flamengo 4x1 Vasco: 44) e conta de luz (14). Os 4 Reels de 01/11 ainda estão com alcance 0–3, amostra pequena demais para mover vagas. Reavaliar na próxima segunda, já com a mistura nova.
+- 02/11/2026 (pedido da VECA): política no máximo 1/dia; temas fortes com até 3 posts escolhidos pelas métricas do Instagram (25/10–02/11, 31 Reels). Alcance médio: esporte além do G12 124,5 (2 Reels de F1); futebol G12 ~27 (Cruzeiro feminino, que não é G12, teve 3); política 18,6 no total, mas só ~9 fora do dia da eleição; bolso/economia 9,2; serviço 9; famosos 8; mundo 6,5; curiosidades 0. Amostra pequena (temas com 1–2 Reels) e Reels de 02/11 ainda acumulando — rever na segunda 09/11.
+- 02/11/2026 (análise anterior do dia): sem mudança. Metricool (26/10–01/11): 22 Reels, quase todos de política; fora dela, os melhores alcances foram futebol (Flamengo 4x1 Vasco: 44) e conta de luz (14). Os 4 Reels de 01/11 ainda estão com alcance 0–3, amostra pequena demais para mover vagas. Reavaliar na próxima segunda, já com a mistura nova.
 
 ## Regras editoriais (sempre)
 
