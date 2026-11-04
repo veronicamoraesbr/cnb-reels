@@ -1,7 +1,8 @@
 # Agente CNB – Canal de News do Brasil
 
 Instruções das duas rodadas diárias do perfil @canalnewsdobrasil (dona: VECA).
-Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
+Fuso de tudo: America/Sao_Paulo. "HOJE" = data do DIA DOS POSTS nesse fuso (AAAA-MM-DD).
+**Desde 03/11/2026 (VECA): a Rodada 1 roda às 23h da VÉSPERA, então nela HOJE = AMANHÃ (a data do dia seguinte).** Nas Rodadas 2 (00h30) e 3 (plantão), HOJE = a data corrente.
 
 ## Referências fixas
 
@@ -12,7 +13,7 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
   Toda escrita num documento que já existe precisa de `if_version` (pegue o `version` com um `get` antes).
   - Pauta do dia: documento `dias/HOJE` (coleção `dias`, doc id = HOJE).
   - Aprovação: documento `aprovacoes/HOJE` → `{status: "aprovado"|"rejeitado", excluidos: [n...], em}`.
-- Metricool: brand `blogId` = `7648862`. **Desde 03/11/2026 cada vídeo vai para 3 redes no mesmo post: Instagram (Reel), TikTok e YouTube (Short)** — pedido da VECA. Todas têm o link de venda no perfil.
+- Metricool: brand `blogId` = `7648862`. **Plano Starter (5 marcas), pago pela VECA em 03/11/2026.** **Desde 03/11/2026 cada vídeo vai para 3 redes no mesmo post: Instagram (Reel), TikTok e YouTube (Short)** — pedido da VECA. Todas têm o link de venda no perfil.
 - Link público de um vídeo: `https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/HOJE/<arquivo>.mp4`
 
 ## Calendário de volume
@@ -23,11 +24,15 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
 | 01/11/2026 | 8 | pela regra "Qual CTA usar" (~metade venda) | 08:00, 10:30, 12:00, 13:00, 15:30, 18:30, 20:00, 21:30 |
 | 02/11/2026 | 7 | pela regra "Qual CTA usar" | 08:00, 10:30, 12:00, 13:00, 18:30, 20:00, 21:30 |
 | 03/11/2026 | 2 | n2 "venda" só se o assunto não for pessoa específica (senão "seguir") | n1 12:00 → `"redes":["instagram"]`; n2 18:30 → `"redes":["instagram","tiktok","youtube"]` |
-| 04/11/2026 | 1 | "venda" só se o assunto não for pessoa específica (senão "seguir") | n1 18:30 → `"redes":["instagram","tiktok","youtube"]` |
-| a partir de 05/11/2026 (plano Pro do Metricool) | 17 | pela regra "Qual CTA usar" (~metade venda) | 07:00, 08:00, 09:00, 10:00, 11:00, 12:00, 12:30, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00, 19:00, 20:00, 21:00, 22:00 — as 3 redes |
+| 04/11/2026 | 8 | pela regra "Qual CTA usar" (~metade venda) | 05:00, 07:00, 09:00, 12:00, 13:00, 18:30, 20:00, 21:30 — as 3 redes |
+| 05/11/2026 | 10 | idem | 05:00, 07:00, 09:00, 11:00, 12:00, 13:00, 15:00, 18:30, 20:00, 21:30 — as 3 redes |
+| 06/11/2026 | 12 | idem | 05:00, 07:00, 08:00, 09:00, 11:00, 12:00, 13:00, 15:00, 17:00, 18:30, 20:00, 21:30 — as 3 redes |
+| 07/11/2026 | 14 | idem | 05:00, 06:00, 07:00, 08:00, 09:00, 10:00, 11:00, 12:00, 13:00, 15:00, 17:00, 18:30, 20:00, 21:30 — as 3 redes |
+| 08/11/2026 | 16 | idem | 05:00, 06:00, 07:00, 08:00, 09:00, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 17:00, 18:00, 19:00, 20:00, 21:30 — as 3 redes |
+| a partir de 09/11/2026 | 17 | idem | 05:00, 06:00, 07:00, 08:00, 09:00, 10:00, 11:00, 12:00, 12:30, 13:00, 14:00, 15:00, 17:00, 18:00, 19:00, 20:00, 21:30 — as 3 redes |
 
-**Limite do Metricool grátis (confirmado em 02/11/2026 na ajuda do Metricool):** 20 publicações por mês do calendário, contadas **por rede** (1 vídeo em Instagram + TikTok + YouTube = 3 publicações) e só quando realmente publicadas; zera no dia 1º. Em novembro já foram publicadas 13 (8 em 01/11 + 5 em 02/11, só Instagram) → restam 7, divididas pela VECA entre 03/11 (1 + 3) e 04/11 (3).
-**A partir de 05/11/2026 o CNB está no plano Pro do Metricool** (VECA, 02/11/2026): sem limite mensal, 17 posts/dia nas 3 redes. Se o Metricool recusar por limite do plano, pare e avise (pode ser que o upgrade não tenha sido feito).
+**Aumento de 2 por dia até 17 (VECA, 03/11/2026):** 8 em 04/11 e +2 por dia até chegar a 17/dia (a partir de 09/11). Primeiro post às 05:00. O plano antigo (1 post em 04/11 e 17 já em 05/11 no Pro) foi substituído.
+**Metricool Starter (pago em 03/11/2026):** o limite de 20 publicações/mês do plano grátis não vale mais. Se o Metricool recusar por limite do plano, pare e avise quantos foram agendados.
 **Campo `redes` no item da pauta:** lista das redes daquele vídeo. Sem o campo = as 3 redes.
 **Aumento gradual (decisão da VECA, 28/10/2026):** o volume sobe aos poucos para o Instagram não bloquear o perfil. Os 80/dia (plano antigo) ficaram suspensos; só mude o volume quando a VECA pedir e registre aqui.
 
@@ -36,7 +41,7 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
 - Até 31/10/2026: política pode dominar (pós-eleição em alta). Nos dias de 3 posts, escolha as notícias com MAIOR potencial de engajamento.
 - **Política: no máximo 1 por dia, em qualquer volume** (decisão da VECA, 02/11/2026) — só a mais forte do dia.
 - **Nenhum tema passa de 3 posts por dia.** Os temas com mais posts (3) são os que mais engajam nas métricas.
-- **Dias de 17 (desde 05/11), distribuição atual** (definida pelas métricas de 25/10–02/11, ver Histórico):
+- **Dias de 17 (desde 09/11), distribuição atual** (definida pelas métricas de 25/10–02/11, ver Histórico):
   - 3 esporte além do G12 (F1, seleção, UFC, vôlei, tênis, outros clubes) — melhor alcance médio (F1: 125 e 124)
   - 3 futebol do G12 (um time diferente em cada: Flamengo, Fluminense, Vasco, Botafogo, Corinthians, Palmeiras, São Paulo, Santos, Atlético-MG, Cruzeiro, Grêmio, Internacional) — 2º melhor (Fla 4x1 Vasco: 45; tabela do Brasileirão: 25)
   - 3 bolso e economia (conta de luz, salário, INSS, Pix, preços, gasolina, concursos, loterias, golpes) — 3º (conta de luz: 14; Mega-Sena: 9–13)
@@ -47,8 +52,9 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data de hoje nesse fuso (AAAA-MM-DD).
   - 1 curiosidades
   - 1 tecnologia e IA
   - Se num dia não houver notícia forte o bastante de um tema de 3, complete com o próximo tema da lista (nunca com política).
+- **Dias de 8 a 16 (rampa de 04 a 08/11):** use a mesma lista, cortando vagas de baixo para cima (primeiro tecnologia/IA, curiosidades, mundo; depois os temas de 2; os 3 temas fortes ficam com pelo menos 2 cada). Política no máximo 1, só se for forte.
 - Dias de 80 (se a VECA voltar a esse volume): mesma lógica — política 1, nenhum tema com mais que a proporção dos temas fortes; redefinir com a VECA antes.
-- **Ajuste pelo engajamento (toda segunda-feira, na Rodada 1):** use as ferramentas de analytics do Metricool (getAnalyticsAvailableMetrics / getAnalyticsDataByMetrics, blogId 7648862, Instagram Reels dos últimos 7 dias) e compare alcance, curtidas, comentários, compartilhamentos e salvamentos por editoria (cruze com `tag` das pautas em `pautas/`). Reordene a distribuição dos dias de 17: os 3 temas com maior alcance médio (e, no empate, mais compartilhamentos/salvamentos) ficam com 3 posts cada, os seguintes com 2 ou 1; política sempre 1; nenhum tema acima de 3; total 17. Use também TikTok e YouTube quando houver dados. Com menos de 3 vídeos de um tema na semana, não tire conclusão sobre ele (mantenha a vaga). Registre a nova distribuição e o motivo na seção "Histórico de ajustes" (logo abaixo), atualize a lista "Dias de 17" e faça commit.
+- **Ajuste pelo engajamento (na Rodada 1 em que HOJE for segunda-feira, ou seja, a de domingo às 23h):** use as ferramentas de analytics do Metricool (getAnalyticsAvailableMetrics / getAnalyticsDataByMetrics, blogId 7648862, Instagram Reels dos últimos 7 dias) e compare alcance, curtidas, comentários, compartilhamentos e salvamentos por editoria (cruze com `tag` das pautas em `pautas/`). Reordene a distribuição dos dias de 17: os 3 temas com maior alcance médio (e, no empate, mais compartilhamentos/salvamentos) ficam com 3 posts cada, os seguintes com 2 ou 1; política sempre 1; nenhum tema acima de 3; total 17. Use também TikTok e YouTube quando houver dados. Com menos de 3 vídeos de um tema na semana, não tire conclusão sobre ele (mantenha a vaga). Registre a nova distribuição e o motivo na seção "Histórico de ajustes" (logo abaixo), atualize a lista "Dias de 17" e faça commit.
 - Ordem do dia: espalhe as editorias (nunca 3 seguidas iguais) e ponha as mais fortes nos horários de pico (12h–13h e 18h–22h).
 
 ### Histórico de ajustes
@@ -123,9 +129,11 @@ Caixa Rápido: mais de 100 opções de serviço para você sair do aperto financ
 
 ---
 
-## RODADA 1 – Preparação (06:00)
+## RODADA 1 – Preparação (23:00 da véspera)
 
-1. Descubra HOJE e o volume/CTA/horários pelo calendário acima. Se `plantao/registro.json` tiver item com `compensar_em` = HOJE e sem `compensado`, faça 1 post a menos (tire o de menor potencial) e marque `"compensado": true`.
+Roda às 23h e prepara os posts do DIA SEGUINTE: aqui HOJE = amanhã (ex.: rodando em 03/11 às 23h, HOJE = 2026-11-04). Use essa data em `pautas/HOJE.json`, `videos/HOJE/`, `/tmp/fotos-HOJE`, `/tmp/audios-HOJE` e `dias/HOJE`. As notícias valem se forem das últimas 24–36 h contadas a partir de agora.
+
+1. Descubra HOJE e o volume/CTA/horários pelo calendário acima. (Compensações de plantão não existem mais desde o Metricool Starter.)
 2. Pesquise e selecione as notícias. Monte `pautas/HOJE.json`:
    ```json
    {"data":"HOJE","itens":[{"n":1,"horario":"12:00","cat":"politica","tag":"Política","titulo":"…","resumo":"…","fonte":"…","url":"…","cta":"seguir","legenda":"…","video":"https://raw.githubusercontent.com/…/videos/HOJE/cnb-HOJE-001.mp4"}]}
@@ -145,13 +153,15 @@ Caixa Rápido: mais de 100 opções de serviço para você sair do aperto financ
      - **Créditos do ElevenLabs só para vídeos que vão ao ar** (regra da VECA, 03/11/2026): qualquer teste, amostra, modelo ou vídeo refeito por ajuste visual usa a voz grátis (sem `audio_noticia`) ou reaproveita um áudio do Dyego já baixado. Nunca gere áudio novo para testar.
    - Campo opcional `narracao` no item: texto falado no lugar de "título. resumo". Use quando a leitura automática puder sair errada: siglas que devem ser soletradas (ex.: "P F", "S T F"), números grandes ou com ponto, nomes estrangeiros. `narrar.py` já converte sozinho º/ª, R$, %, "3.076" e "(PL-RJ)".
    - Se a narração falhar (pip, download da voz ou piper), NÃO pare o dia: gere sem voz com `CNB_SEM_NARRACAO=1 node batch.js …` e avise na mensagem final "vídeos sem narração: <erro>".
-   - Tempo: ~40 s por vídeo narrado. Com 8 posts, gere em 2 lotes de 4 itens; com 17, em 5 lotes (4+4+3+3+3) (JSONs temporários com os mesmos `n`) para não estourar o tempo de cada comando.
+   - Tempo: ~40 s por vídeo narrado. Gere em lotes de até 4 itens (8 = 4+4; 10 = 4+3+3; 12 = 4+4+4; 14 = 4+4+3+3; 16 = 4×4; 17 = 4+4+3+3+3) (JSONs temporários com os mesmos `n`) para não estourar o tempo de cada comando.
    Confira 1 frame de 2 vídeos (ffmpeg, aos 3 s) para garantir que o texto coube.
 4. Commit e push de `pautas/HOJE.json` e `videos/HOJE/` (git user "CNB Agent", email noreply@anthropic.com). Antes do push: `git fetch origin main && git rebase origin/main`.
 5. Grave a pauta na página: `ArtifactData` action `set`, collection `dias`, doc_id HOJE, data = o JSON da pauta + `"criadoEm": <ISO>`.
-6. Termine com uma mensagem curta (vai como notificação): "Pauta de DD/MM pronta: N Reels. Aprove até 7h30 na página Pauta CNB: https://claude.ai/artifact/V83YmaokEYY2h33EFJk5KY" + as 3 manchetes mais fortes.
+6. Termine com uma mensagem curta (vai como notificação): "Pauta de DD/MM pronta: N Reels (1º às 05:00). Aprove até meia-noite (no máximo 00h30) na página Pauta CNB: https://claude.ai/artifact/V83YmaokEYY2h33EFJk5KY" + as 3 manchetes mais fortes.
 
-## RODADA 2 – Agendamento (07:30)
+## RODADA 2 – Agendamento (00:30)
+
+Roda logo depois da meia-noite: HOJE = a data corrente (o dia que acabou de começar), a mesma que a Rodada 1 da véspera preparou.
 
 1. Leia `aprovacoes/HOJE` (ArtifactData `get`).
    - Não existe ou `status` = "rejeitado": não agende nada. Termine com "Pauta de DD/MM não foi aprovada; nada foi agendado."
@@ -187,11 +197,6 @@ Objetivo: pegar notícia BOMBÁSTICA, nível "plantão interrompe a programaçã
    (pode ter foto livre como na Rodada 1, se achar uma em até 2 buscas — não atrase o plantão por isso; sai `cnb-HOJE-urgente-<id>.mp4`, com carimbo URGENTE, trilha de alerta e narração que começa com "Urgente!"; se a narração falhar, use `CNB_SEM_NARRACAO=1`). Confira o frame de 3 s com ffmpeg.
 7. Commit e push do vídeo (mesmo processo da Rodada 1). Espere ~1 min e confira que o link raw responde 200.
 8. Agende no Metricool com `createScheduledPost` para AGORA + 10 min, mesmo `info` da Rodada 2 (as 3 redes, com `"videoCoverMilliseconds":3000`; `youtubeData.title` = "URGENTE: <titulo>"; `commercialContentOwnBrand` false), legenda no modelo "seguir" com "🚨 URGENTE: " antes do resumo e 2 hashtags do assunto.
-   **Enquanto o CNB estiver no plano grátis do Metricool (20 publicações/mês por rede, todas já reservadas): o plantão NÃO soma post no dia, ele substitui um post normal, com as mesmas redes da vítima. Vale para 03 e 04/11.** Escolha a vítima entre os posts normais de HOJE ainda não publicados e com pelo menos 20 min de folga: a notícia de menor potencial de engajamento (empate → a de horário mais tarde). Então:
-   - Se a Rodada 2 de hoje ainda não rodou (antes das 7h30): faça o post do plantão com `createScheduledPost` normalmente e acrescente o `n` da vítima em `excluidos` de `aprovacoes/HOJE` (ArtifactData `update` com `if_version`; se o doc não existir, não precisa — sem aprovação nada normal é postado mesmo).
-   - Se já rodou: NÃO use `createScheduledPost`. Ache o post da vítima com `getScheduledPosts` (brandId 7648862, timezone America/Sao_Paulo, intervalo de hoje) e transforme-o no plantão com `updateScheduledPost` (mesmos `id` e `uuid`): troque `media`, `text`, `publicationDate` (AGORA + 10 min) e `youtubeData.title`/`tags`, ponha `tiktokData.commercialContentOwnBrand` false, mantendo o resto do `info` (as 3 redes). Assim o total de posts do dia não muda.
-   - Se não sobrar nenhum post normal pendente hoje: poste o plantão e anote em `plantao/registro.json` `"compensar_em": "<amanhã>"`; a Rodada 1 do dia seguinte faz 1 post a menos (o de menor potencial) e marca a compensação como feita (`"compensado": true`).
-   - Registre a vítima no registro (`"substituiu": {"n":…, "titulo":…}`) e cite na notificação: "(substituiu o post das HH:MM)".
-   A partir de 05/11/2026 (plano Pro), o plantão é post extra nas 3 redes (vale o passo 8 normal) e compensações pendentes são ignoradas.
+   Desde 03/11/2026 (Metricool Starter pago) o plantão é post EXTRA nas 3 redes: não substitui post normal nem gera compensação (`compensar_em` antigos são ignorados).
 9. Acrescente em `plantao/registro.json` → `{"data","hora","titulo","fontes":[url1,url2,url3],"agendado_para"}`; apague o vídeo de `videos/HOJE/` só se a Rodada 2 de hoje já tiver rodado (senão ela apaga junto); commit e push.
 10. Termine com notificação curta: "🚨 Plantão postado às HH:MM: <título>. Fontes: <veículo 1>, <veículo 2>, <veículo 3>."
