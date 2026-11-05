@@ -14,6 +14,17 @@
         "n": 3,
         "titulo": "Justiça proíbe deputada de incentivar demissão por voto"
       }
+    },
+    {
+      "data": "2026-11-05",
+      "hora": "15:23",
+      "titulo": "Presidente do Paraguai renuncia",
+      "fontes": [
+        "https://www.investing.com/news/economy-news/paraguay-president-pena-resigns-under-mounting-pressure-from-bank-collapse-5005187",
+        "https://www.poder360.com.br/poder-internacional/santiago-pena-renuncia-ao-cargo-de-presidente-do-paraguai/",
+        "https://www.usnews.com/news/world/articles/2026-11-05/paraguay-president-santiago-pena-resigns-following-bank-collapse"
+      ],
+      "agendado_para": "2026-11-05T15:34:00-03:00"
     }
   ]
 }
