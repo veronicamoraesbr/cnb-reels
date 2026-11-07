@@ -1,48 +1,48 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
 <style>
-/* Tema da notícia vai no <html>; a tela de CTA usa sempre o tema oposto */
-.t-dark{--bg:#000;--fg:#e7e9ea;--muted:#8b9096;--line:#2f3336}
-.t-light{--bg:#fff;--fg:#0f1419;--muted:#536471;--line:#e6eaec}
-:root{--navy:#0f1f3d;--gold:#f5c22b;--red:#e5242b}
+/* Layout CNB (VECA, 07/11/2026): mesmo modelo dos carrosséis, em 1080x1920.
+   Conteúdo entre y 250 e 1520 (fora das áreas do Instagram). Tema da notícia no <html>; a tela de CTA usa o tema oposto.
+   Fundo azul = cor lisa do fundo da VECA; claro = #ebebeb. Arquivos (fontes, logos, imagem de venda) em ./visual/ */
+@font-face{font-family:K;font-weight:300;src:url(visual/kumbh-sans-latin-300-normal.woff2)}
+@font-face{font-family:K;font-weight:400;src:url(visual/kumbh-sans-latin-400-normal.woff2)}
+@font-face{font-family:K;font-weight:700;src:url(visual/kumbh-sans-latin-700-normal.woff2)}
+@font-face{font-family:LS;font-weight:700;src:url(visual/league-spartan-latin-700-normal.woff2)}
+.t-dark{--bg:#16273d;--fg:#ffffff;--line:rgba(255,255,255,.18)}
+.t-light{--bg:#ebebeb;--fg:#0b1527;--line:rgba(11,21,39,.14)}
+:root{--gold:#ffcc00;--red:#e5242b}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:var(--fg);font-family:Inter,"DejaVu Sans",sans-serif}
-.stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:0 80px}
-.av{width:124px;height:124px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;flex:none;font-weight:900;font-size:46px;color:#fff;letter-spacing:-1px}
-.av b{color:var(--gold);font-weight:900}
-.card{width:100%;animation:cardIn .55s cubic-bezier(.2,.8,.2,1) both, cardOut .6s cubic-bezier(.6,0,.4,1) 6.6s forwards}
-.head{display:flex;gap:26px;align-items:center}
-.name{font-weight:800;font-size:44px;line-height:1.15}
-.handle{font-size:38px;color:var(--muted);margin-top:4px}
-.text{font-size:60px;line-height:1.28;font-weight:500;margin-top:44px;letter-spacing:-.4px;animation:fade .5s ease .35s both}
-.text strong{font-weight:800}
-/* Foto com licença livre (it.foto): entre o cabeçalho e o texto, com crédito sobre a foto */
-.foto{display:none;position:relative;margin-top:40px;border-radius:24px;overflow:hidden;background:var(--line);animation:fade .5s ease .25s both}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:var(--fg);font-family:K,"DejaVu Sans",sans-serif}
+.L{position:absolute;left:125px;width:830px}
+.logo{position:absolute;left:50%;top:250px;height:70px;transform:translateX(-50%)}
+.card{position:absolute;inset:0;animation:cardIn .55s cubic-bezier(.2,.8,.2,1) both, cardOut .6s cubic-bezier(.6,0,.4,1) 6.6s forwards}
+.foto{display:none;top:370px;height:500px;border-radius:16px;overflow:hidden;background:var(--line);animation:fade .5s ease .25s both}
 .com-foto .foto{display:block}
-.foto img{display:block;width:100%;height:460px;object-fit:cover;object-position:50% 18%}
-.foto figcaption{position:absolute;right:0;bottom:0;max-width:100%;padding:8px 16px;font-size:24px;line-height:1.25;color:#fff;background:rgba(0,0,0,.62);border-top-left-radius:14px}
-.com-foto .text{margin-top:36px}
-.foot{margin-top:44px;padding-top:30px;border-top:2px solid var(--line);font-size:36px;color:var(--muted);display:flex;justify-content:space-between;animation:fade .5s ease .6s both}
-.bar{position:absolute;left:80px;right:80px;bottom:150px;height:6px;border-radius:3px;background:var(--line);overflow:hidden;animation:fadeOut .3s ease 6.5s forwards}
+.foto img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.foto figcaption{position:absolute;right:10px;bottom:9px;max-width:96%;padding:4px 10px;font:400 18px K;color:#fff;background:rgba(0,0,0,.5);border-radius:6px}
+.txt{top:370px;height:965px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;animation:fade .5s ease .35s both}
+.com-foto .txt{top:900px;height:435px;justify-content:flex-start}
+.titulo{font-family:LS,K;font-weight:700;font-size:96px;line-height:1.0;letter-spacing:-1px;text-wrap:balance;margin-bottom:16px}
+.resumo{font-weight:300;font-size:42px;line-height:1.16;text-align:justify}
+.com-foto .titulo{font-size:84px}
+.com-foto .resumo{font-size:38px}
+.fonte{top:1348px;font-size:28px;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;animation:fade .5s ease .6s both}
+.botao{top:1405px;height:76px;border-radius:12px;background:var(--gold);color:#0a0a0a;display:flex;align-items:center;justify-content:center;font-size:32px;letter-spacing:.3px;text-transform:uppercase}
+.card .botao{animation:fade .5s ease .7s both}
+/* barra de tempo enquanto a notícia é falada (do modelo antigo) */
+.bar{position:absolute;left:125px;width:830px;top:1508px;height:8px;border-radius:4px;background:var(--line);overflow:hidden;animation:fadeOut .3s ease 6.5s forwards}
 .bar i{display:block;height:100%;background:var(--gold);transform-origin:left;animation:grow 6.5s linear both}
 
 .cta{position:absolute;inset:0;background:var(--bg);color:var(--fg);animation:panelIn .65s cubic-bezier(.7,0,.2,1) 6.55s both}
-.cta .in{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 90px;gap:40px;animation:rise .55s cubic-bezier(.2,.8,.2,1) 7.0s both}
-.cta .av{width:220px;height:220px;font-size:82px}
-.cta h2{font-size:80px;line-height:1.08;font-weight:900;letter-spacing:-1.5px;text-wrap:balance}
-.cta p{font-size:46px;color:var(--muted);line-height:1.3;text-wrap:balance}
-.cta p.lead{color:var(--fg);font-weight:600}
-.price{display:flex;flex-direction:column;align-items:center;gap:6px}
-.price .de{font-size:46px;color:var(--muted)}
-.price .de s{color:var(--red);font-weight:700;text-decoration-thickness:5px}
-.price .por{font-size:54px;font-weight:700}
-.price .por b{display:inline-block;font-size:138px;font-weight:900;letter-spacing:-3px;background:var(--gold);color:#111;padding:0 26px;border-radius:18px;line-height:1.1;margin-left:10px;vertical-align:middle}
-.btn{font-size:44px;font-weight:800;padding:30px 64px;border-radius:999px;background:var(--fg);color:var(--bg);animation:pulse 1s ease-in-out 7.7s 2 both}
-.follow .btn{background:var(--gold);color:#111}
-/* CTA venda (02/11/2026): selo Publicidade no topo + marca Caixa Rápido, sem valores */
-.pub{position:absolute;top:150px;left:0;right:0;margin:0 auto;width:fit-content;font-size:34px;font-weight:800;letter-spacing:6px;text-transform:uppercase;color:var(--muted);border:3px solid var(--muted);border-radius:12px;padding:8px 26px;animation:rise .55s cubic-bezier(.2,.8,.2,1) 7.0s both}
-.sale .marca{display:inline-block;font-size:120px;font-weight:900;letter-spacing:-3px;line-height:1.1;background:var(--gold);color:#111;padding:6px 40px;border-radius:22px}
-.sale .lead{font-size:58px;line-height:1.25}
+.cta .in{position:absolute;inset:0;animation:rise .55s cubic-bezier(.2,.8,.2,1) 7.0s both}
+.cta .botao{animation:pulse 1s ease-in-out 7.7s 2 both}
+.slogo{position:absolute;left:50%;top:520px;height:220px;transform:translateX(-50%)}
+.stxt{top:820px;text-align:center;font-family:LS,K;font-weight:700;font-size:78px;line-height:1.08;text-wrap:balance}
+.pub{position:absolute;left:50%;top:255px;transform:translateX(-50%);font:700 28px K;letter-spacing:5px;border:2.5px solid var(--fg);border-radius:10px;padding:9px 22px 7px;white-space:nowrap}
+.mock{top:370px;height:500px;border-radius:16px;overflow:hidden}
+.mock img{width:100%;height:100%;object-fit:cover}
+.vtit{top:915px;text-align:center;font-family:LS,K;font-weight:700;font-size:104px;line-height:1;letter-spacing:-1px}
+.vtxt{top:1045px;text-align:center;font-weight:300;font-size:42px;line-height:1.2;text-wrap:balance}
 
 @keyframes cardIn{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
 @keyframes cardOut{to{opacity:0;transform:translateY(-220px)}}
@@ -51,13 +51,15 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:
 @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes panelIn{from{transform:translateY(100%)}to{transform:none}}
 @keyframes rise{from{opacity:0;transform:translateY(80px)}to{opacity:1;transform:none}}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 
-/* Plantão (it.urgente): carimbo URGENTE acima da notícia, tremida no impacto, barra vermelha */
+/* Plantão (it.urgente): carimbo URGENTE sobre o alto da foto/texto, tremida no impacto, barra vermelha */
 .stamp{display:none}
-.urg .stamp{display:flex;justify-content:center;margin-bottom:56px;animation:stampIn .32s cubic-bezier(.5,0,.75,0) .15s both}
-.stamp span{display:inline-block;transform:rotate(-4deg);border:16px solid var(--red);padding:6px 46px 2px;color:var(--red);
-  font-family:"DejaVu Serif Condensed","DejaVu Serif",serif;font-weight:700;font-size:150px;letter-spacing:4px;line-height:1.1;filter:url(#grunge)}
+.urg .stamp{display:flex;justify-content:center;position:absolute;left:0;right:0;top:400px;z-index:3;animation:stampIn .32s cubic-bezier(.5,0,.75,0) .15s both}
+.urg .txt{top:560px;height:775px}
+.urg.com-foto .txt{top:900px;height:435px}
+.stamp span{display:inline-block;transform:rotate(-4deg);border:12px solid var(--red);background:var(--bg);padding:4px 36px 0;color:var(--red);
+  font-family:"DejaVu Serif Condensed","DejaVu Serif",serif;font-weight:700;font-size:104px;letter-spacing:4px;line-height:1.1;filter:url(#grunge)}
 .urg .card{animation:cardIn .4s cubic-bezier(.2,.8,.2,1) both, shake .35s linear .47s both, cardOut .6s cubic-bezier(.6,0,.4,1) 6.6s forwards}
 .urg .bar i{background:var(--red)}
 .urg .flash{position:absolute;inset:0;background:var(--red);opacity:0;pointer-events:none;animation:flash .5s ease-out .47s forwards}
@@ -73,38 +75,46 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:
   <feTurbulence type="turbulence" baseFrequency=".9" numOctaves="1" seed="2" result="f"/>
   <feDisplacementMap in="worn" in2="f" scale="5"/></filter></svg>
 <div class="flash"></div>
-<div class="stage"><div class="card">
+<div class="card">
+  <img class="logo" id="logo" alt="">
   <div class="stamp"><span>URGENTE</span></div>
-  <div class="head"><div class="av">CN<b>B</b></div>
-    <div><div class="name" id="name"></div><div class="handle" id="handle"></div></div></div>
-  <figure class="foto"><img id="fotoimg" alt=""><figcaption id="fotocred"></figcaption></figure>
-  <div class="text" id="text"></div>
-  <div class="foot"><span id="when"></span><span id="src"></span></div>
-</div></div>
+  <figure class="L foto"><img id="fotoimg" alt=""><figcaption id="fotocred"></figcaption></figure>
+  <div class="L txt" id="txt"><h1 class="titulo" id="titulo"></h1><p class="resumo" id="resumo"></p></div>
+  <div class="L fonte" id="fonte"></div>
+  <div class="L botao">Siga o nosso perfil</div>
+</div>
 <div class="bar"><i></i></div>
 <div class="cta" id="cta"></div>
 <script>
-// Copys fixas dos CTAs (definidas pela VECA em 25/10/2026; CTA venda trocado pela VECA em 02/11/2026: sem valores, com selo Publicidade)
+// Telas de CTA (VECA, 07/11/2026). Venda: sem valores, com selo Publicidade no lugar da logo.
 const CTA = {
-  seguir: a => `<div class="in follow"><div class="av">CN<b>B</b></div>
-    <h2>Siga a CNB e fique por dentro de tudo que acontece no mundo.</h2>
-    <div class="btn">Seguir ${a}</div></div>`,
-  venda: () => `<div class="pub">Publicidade</div><div class="in sale">
-    <div class="marca">Caixa Rápido</div>
-    <p class="lead">Mais de 100 opções de serviço para você sair do aperto financeiro.</p>
-    <div class="btn">Clique no link da Bio e saiba mais</div></div>`
+  seguir: (a, logo) => `<div class="in"><img class="slogo" src="${logo}" alt="">
+    <div class="L stxt">Siga a CNB e fique por dentro de tudo que acontece no mundo.</div>
+    <div class="L botao">Seguir ${a}</div></div>`,
+  venda: () => `<div class="in"><div class="pub">PUBLICIDADE</div>
+    <div class="L mock"><img src="visual/venda_mockup.jpg" alt=""></div>
+    <div class="L vtit">Caixa Rápido</div>
+    <div class="L vtxt">Mais de 100 opções de serviço para sair do aperto financeiro, encontrar uma fonte de renda honesta ou dar o primeiro passo para mudar de carreira.</div>
+    <div class="L botao">Clique no link da bio</div></div>`
 };
 function setup(d){
   const $=id=>document.getElementById(id);
   const dark=d.tema!=="claro";
   document.documentElement.className=(dark?"t-dark":"t-light")+(d.urgente?" urg":"");
   $("cta").className="cta "+(dark?"t-light":"t-dark");
-  $("name").textContent=d.nome;$("handle").textContent=d.arroba;
-  $("text").innerHTML=d.texto;$("when").textContent=d.quando;$("src").textContent="Fonte: "+d.fonte;
-  $("cta").innerHTML=CTA[d.cta](d.arroba);
+  $("logo").src=dark?"visual/logo_escuro.png":"visual/logo_claro.png";
+  $("titulo").textContent=d.titulo;$("resumo").textContent=d.resumo;$("fonte").textContent="Fonte: "+d.fonte;
+  $("cta").innerHTML=CTA[d.cta](d.arroba, dark?"visual/logo_claro.png":"visual/logo_escuro.png");
   if(d.foto){document.documentElement.classList.add("com-foto");$("fotoimg").src=d.foto;if(d.fotoPosicao)$("fotoimg").style.objectPosition=d.fotoPosicao;$("fotocred").textContent=d.fotoCredito||"";}
-  let fs=60;const tx=$("text");const lim=d.foto?(d.urgente?440:640):(d.urgente?560:760);while(tx.scrollHeight>lim&&fs>40){fs-=2;tx.style.fontSize=fs+"px"}
+  ajustar();
   document.getAnimations().forEach(a=>a.pause());
+}
+// diminui título e resumo até caberem na caixa (chamar de novo depois que as fontes carregarem)
+function ajustar(){
+  const box=document.getElementById("txt"),t=document.getElementById("titulo"),r=document.getElementById("resumo");
+  t.style.fontSize=r.style.fontSize="";
+  let ts=parseFloat(getComputedStyle(t).fontSize),rs=parseFloat(getComputedStyle(r).fontSize);
+  while(box.scrollHeight>box.clientHeight+1&&ts>46){ts-=3;rs=Math.max(26,rs-0.6);t.style.fontSize=ts+"px";r.style.fontSize=rs+"px";}
 }
 function seek(ms){document.getAnimations().forEach(a=>{a.currentTime=ms})}
 </script>

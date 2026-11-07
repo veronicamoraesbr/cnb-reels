@@ -15,6 +15,17 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data do DIA DOS POSTS nesse fuso (AAAA
   - Aprovação: documento `aprovacoes/HOJE` → `{status: "aprovado"|"rejeitado", excluidos: [n...], em}`.
 - Metricool: brand `blogId` = `7648862`. **Plano Starter (5 marcas), pago pela VECA em 03/11/2026.** **Desde 03/11/2026 cada vídeo vai para 3 redes no mesmo post: Instagram (Reel), TikTok e YouTube (Short)** — pedido da VECA. Todas têm o link de venda no perfil.
 - Link público de um vídeo: `https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/HOJE/<arquivo>.mp4`
+- Link público das imagens de um carrossel: `https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/HOJE/cnb-HOJE-<NNN>-1.png` e `…-2.png` (ficam na mesma pasta dos vídeos).
+
+## Formato: metade Reels, metade carrossel (VECA, 07/11/2026 — vale a partir de 08/11/2026)
+
+- Cada item da pauta tem `"formato": "reels"` ou `"formato": "carrossel"`. Padrão para testar engajamento: **n com resto 1 ou 2 na divisão por 4 → reels; resto 3 ou 0 → carrossel** (n1 reels, n2 reels, n3 carrossel, n4 carrossel, n5 reels…). Assim os dois formatos têm fundo azul e fundo claro. 16 posts = 8 + 8; 17 = 9 reels + 8 carrosséis. Plantão é sempre Reels e fica fora da conta.
+- **Visual dos dois formatos (VECA, 07/11/2026; não mude sem ela):** logo CNB no alto, foto com cantos arredondados, título grande, resumo, "FONTE: …" e botão amarelo "SIGA O NOSSO PERFIL". Fundo azul (n ímpar) ou claro #ebebeb (n par); a tela/página de CTA sempre com o fundo oposto. CTA seguir: logo grande + "Siga a CNB e fique por dentro de tudo que acontece no mundo." + botão "SEGUIR @CANALNEWSDOBRASIL". CTA venda: selo PUBLICIDADE no lugar da logo, imagem do Caixa Rápido, título "Caixa Rápido", texto "Mais de 100 opções de serviço para sair do aperto financeiro, encontrar uma fonte de renda honesta ou dar o primeiro passo para mudar de carreira." + botão "CLIQUE NO LINK DA BIO", tudo centralizado. Arquivos em `ferramentas/visual/` (fontes, logos, fundo azul, imagem de venda).
+  - Reels (`template.html`, 1080x1920): mesmo layout, fundo azul em cor lisa, conteúdo entre y 250 e 1520; mantém a barra de tempo enquanto a notícia é falada, a narração, a trilha e o carimbo URGENTE do plantão.
+  - Carrossel (`carrossel.html` + `carrossel.js`, 1080x1350): página 1 = notícia (fundo azul com textura ou claro); página 2 = CTA. Sem narração (não gasta ElevenLabs).
+- Redes do carrossel: `"redes": ["instagram","tiktok"]` (o YouTube não aceita post de imagens). Reels continuam nas 3 redes.
+- A regra "Qual CTA usar" vale igual para os dois formatos; tente equilibrar seguir/venda dentro de cada formato.
+
 
 ## Calendário de volume
 
@@ -54,7 +65,7 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data do DIA DOS POSTS nesse fuso (AAAA
   - Se num dia não houver notícia forte o bastante de um tema de 3, complete com o próximo tema da lista (nunca com política).
 - **Dias de 8 a 16 (rampa de 04 a 08/11):** use a mesma lista, cortando vagas de baixo para cima (primeiro tecnologia/IA, curiosidades, mundo; depois os temas de 2; os 3 temas fortes ficam com pelo menos 2 cada). Política no máximo 1, só se for forte.
 - Dias de 80 (se a VECA voltar a esse volume): mesma lógica — política 1, nenhum tema com mais que a proporção dos temas fortes; redefinir com a VECA antes.
-- **Ajuste pelo engajamento (na Rodada 1 em que HOJE for segunda-feira, ou seja, a de domingo às 23h):** use as ferramentas de analytics do Metricool (getAnalyticsAvailableMetrics / getAnalyticsDataByMetrics, blogId 7648862, Instagram Reels dos últimos 7 dias) e compare alcance, curtidas, comentários, compartilhamentos e salvamentos por editoria (cruze com `tag` das pautas em `pautas/`). Reordene a distribuição dos dias de 17: os 3 temas com maior alcance médio (e, no empate, mais compartilhamentos/salvamentos) ficam com 3 posts cada, os seguintes com 2 ou 1; política sempre 1; nenhum tema acima de 3; total 17. Use também TikTok e YouTube quando houver dados. Com menos de 3 vídeos de um tema na semana, não tire conclusão sobre ele (mantenha a vaga). Registre a nova distribuição e o motivo na seção "Histórico de ajustes" (logo abaixo), atualize a lista "Dias de 17" e faça commit.
+- **Ajuste pelo engajamento (na Rodada 1 em que HOJE for segunda-feira, ou seja, a de domingo às 23h):** use as ferramentas de analytics do Metricool (getAnalyticsAvailableMetrics / getAnalyticsDataByMetrics, blogId 7648862, Instagram Reels dos últimos 7 dias) e compare alcance, curtidas, comentários, compartilhamentos e salvamentos por editoria (cruze com `tag` das pautas em `pautas/`). Reordene a distribuição dos dias de 17: os 3 temas com maior alcance médio (e, no empate, mais compartilhamentos/salvamentos) ficam com 3 posts cada, os seguintes com 2 ou 1; política sempre 1; nenhum tema acima de 3; total 17. Use também TikTok e YouTube quando houver dados. **Desde 08/11 compare também Reels × carrossel** (alcance, curtidas, comentários, compartilhamentos e salvamentos médios de cada formato no Instagram) e registre no Histórico; NÃO mude a proporção 50/50 sozinho: só informe o resultado na mensagem final para a VECA decidir. Com menos de 3 vídeos de um tema na semana, não tire conclusão sobre ele (mantenha a vaga). Registre a nova distribuição e o motivo na seção "Histórico de ajustes" (logo abaixo), atualize a lista "Dias de 17" e faça commit.
 - Ordem do dia: espalhe as editorias (nunca 3 seguidas iguais) e ponha as mais fortes nos horários de pico (12h–13h e 18h–22h).
 
 ### Histórico de ajustes
@@ -92,7 +103,7 @@ Fuso de tudo: America/Sao_Paulo. "HOJE" = data do DIA DOS POSTS nesse fuso (AAAA
 - **Notícia sobre uma pessoa específica (ou com foto de pessoa identificável) → SEMPRE CTA "seguir".** Nunca associar a imagem ou o nome de alguém à propaganda (uso comercial de imagem).
 - **CTA "venda" só em assuntos sem pessoa específica:** economia e bolso, serviços, loterias, clima, tecnologia, curiosidades sobre lugares/objetos, resultados de campeonato sem foco em um jogador, etc. A foto desses posts também não pode mostrar pessoa em destaque.
 - Busque metade "venda" e metade "seguir" no dia, mas a regra acima vence a proporção. A alternância por horário (ímpar/par) deixa de ser obrigatória: distribua os "venda" pelo dia sem deixar 2 seguidos quando der.
-- A propaganda (vídeo, narração e legenda) não cita valores nem promessas de ganho: só "Caixa Rápido" e "mais de 100 opções de serviço para sair do aperto financeiro".
+- A propaganda (vídeo, imagem, narração e legenda) não cita valores nem promessas de ganho: só "Caixa Rápido" e o texto aprovado ("mais de 100 opções de serviço para sair do aperto financeiro, encontrar uma fonte de renda honesta ou dar o primeiro passo para mudar de carreira").
 
 ## Legenda
 
@@ -120,12 +131,13 @@ CTA "venda" (a partir de 03/11/2026: selo de publicidade NA PRIMEIRA LINHA e pro
 Fonte: <fonte>
 [se tiver foto] Foto: <autor> / Wikimedia Commons (<licença>) <foto_fonte>
 
-Caixa Rápido: mais de 100 opções de serviço para você sair do aperto financeiro. Clique no link da bio e saiba mais.
+Caixa Rápido: mais de 100 opções de serviço para sair do aperto financeiro, encontrar uma fonte de renda honesta ou dar o primeiro passo para mudar de carreira. Clique no link da bio e saiba mais.
 
 🤖 Narração gerada por IA.
 
 #noticias #brasil #cnb <2 hashtags do assunto>
 ```
+**Carrossel:** mesmos modelos, mas SEM a linha "🤖 Narração gerada por IA." (não tem narração) e, no "seguir", acrescente "Arraste para o lado 👉" logo depois do resumo, numa linha própria.
 
 ---
 
@@ -136,11 +148,12 @@ Roda às 23h e prepara os posts do DIA SEGUINTE: aqui HOJE = amanhã (ex.: rodan
 1. Descubra HOJE e o volume/CTA/horários pelo calendário acima. (Compensações de plantão não existem mais desde o Metricool Starter.)
 2. Pesquise e selecione as notícias. Monte `pautas/HOJE.json`:
    ```json
-   {"data":"HOJE","itens":[{"n":1,"horario":"12:00","cat":"politica","tag":"Política","titulo":"…","resumo":"…","fonte":"…","url":"…","cta":"seguir","legenda":"…","video":"https://raw.githubusercontent.com/…/videos/HOJE/cnb-HOJE-001.mp4"}]}
+   {"data":"HOJE","itens":[{"n":1,"horario":"12:00","cat":"politica","tag":"Política","formato":"reels","titulo":"…","resumo":"…","fonte":"…","url":"…","cta":"seguir","legenda":"…","video":"https://raw.githubusercontent.com/…/videos/HOJE/cnb-HOJE-001.mp4"},
+    {"n":3,"horario":"…","formato":"carrossel","redes":["instagram","tiktok"],"…":"…","video":"https://raw.githubusercontent.com/…/videos/HOJE/cnb-HOJE-003-1.png","imagens":["…/cnb-HOJE-003-1.png","…/cnb-HOJE-003-2.png"]}]}
    ```
    Para cada item, tente uma foto livre (seção "Fotos"); com foto, inclua no item `foto`, `foto_credito`, `foto_fonte`, `foto_licenca` e a linha "Foto:" na legenda.
-   Valide com Python (quantidade certa, campos preenchidos, JSON válido, e todo item com `foto` tem `foto_credito` e a linha "Foto:" na legenda; legenda sem URL (exceto o link da foto na linha "Foto:"), com a linha "🤖 Narração gerada por IA.", legendas "venda" começando com "📢 Publicidade", nenhum "venda" sobre pessoa específica, no máximo 5 hashtags, e `redes` conforme o calendário, no modelo da seção Legenda).
-3. Gere os vídeos (1080x1920, NARRADOS, com a trilha da CNB baixa por baixo da voz):
+   Valide com Python (quantidade certa, campos preenchidos, JSON válido, e todo item com `foto` tem `foto_credito` e a linha "Foto:" na legenda; legenda sem URL (exceto o link da foto na linha "Foto:"), com a linha "🤖 Narração gerada por IA.", legendas "venda" começando com "📢 Publicidade", `formato` em todo item pela regra da seção Formato, carrossel sem a linha de narração por IA e com `redes` ["instagram","tiktok"], nenhum "venda" sobre pessoa específica, no máximo 5 hashtags, e `redes` conforme o calendário, no modelo da seção Legenda).
+3. Gere os vídeos dos itens `"formato": "reels"` (o batch pula os carrosséis sozinho; 1080x1920, NARRADOS, com a trilha da CNB baixa por baixo da voz). Narração do ElevenLabs só para os itens reels:
    `cd /home/claude/cnb-reels/ferramentas && node batch.js ../pautas/HOJE.json ../videos/HOJE`
    (fundo da notícia alterna por n; o CTA vem do campo `cta`; copys dos CTAs estão no template.html — não mude).
    - **Narração (padrão desde 28/10/2026, pedido da VECA): voz "Dyego Notícias" do ElevenLabs, pelo CONECTOR do ElevenLabs** (sem chave). Para cada item, ANTES de rodar o batch:
@@ -153,11 +166,12 @@ Roda às 23h e prepara os posts do DIA SEGUINTE: aqui HOJE = amanhã (ex.: rodan
      - **Créditos do ElevenLabs só para vídeos que vão ao ar** (regra da VECA, 03/11/2026): qualquer teste, amostra, modelo ou vídeo refeito por ajuste visual usa a voz grátis (sem `audio_noticia`) ou reaproveita um áudio do Dyego já baixado. Nunca gere áudio novo para testar.
    - Campo opcional `narracao` no item: texto falado no lugar de "título. resumo". Use quando a leitura automática puder sair errada: siglas que devem ser soletradas (ex.: "P F", "S T F"), números grandes ou com ponto, nomes estrangeiros. `narrar.py` já converte sozinho º/ª, R$, %, "3.076" e "(PL-RJ)".
    - Se a narração falhar (pip, download da voz ou piper), NÃO pare o dia: gere sem voz com `CNB_SEM_NARRACAO=1 node batch.js …` e avise na mensagem final "vídeos sem narração: <erro>".
-   - Tempo: ~40 s por vídeo narrado. Gere em lotes de até 4 itens (8 = 4+4; 10 = 4+3+3; 12 = 4+4+4; 14 = 4+4+3+3; 16 = 4×4; 17 = 4+4+3+3+3) (JSONs temporários com os mesmos `n`) para não estourar o tempo de cada comando.
+   - Tempo: ~40 s por vídeo narrado. Gere em lotes de até 4 itens (conte só os reels: 8 = 4+4; 9 = 3+3+3) (JSONs temporários com os mesmos `n`) para não estourar o tempo de cada comando.
    Confira 1 frame de 2 vídeos (ffmpeg, aos 3 s) para garantir que o texto coube.
-4. Commit e push de `pautas/HOJE.json` e `videos/HOJE/` (git user "CNB Agent", email noreply@anthropic.com). Antes do push: `git fetch origin main && git rebase origin/main`.
+3b. Gere os carrosséis: `cd /home/claude/cnb-reels/ferramentas && node carrossel.js ../pautas/HOJE.json ../videos/HOJE` (sai `cnb-HOJE-<NNN>-1.png` e `-2.png` para cada item carrossel). Abra 2 páginas 1 com Read para conferir texto e foto. Se aparecer "texto apertado", encurte o resumo daquele item e gere de novo.
+4. Commit e push de `pautas/HOJE.json` e `videos/HOJE/` (vídeos e imagens dos carrosséis) (git user "CNB Agent", email noreply@anthropic.com). Antes do push: `git fetch origin main && git rebase origin/main`.
 5. Grave a pauta na página: `ArtifactData` action `set`, collection `dias`, doc_id HOJE, data = o JSON da pauta + `"criadoEm": <ISO>`.
-6. Termine com uma mensagem curta (vai como notificação): "Pauta de DD/MM pronta: N Reels (1º às 05:00). Aprove até meia-noite (no máximo 00h30) na página Pauta CNB: https://claude.ai/artifact/V83YmaokEYY2h33EFJk5KY" + as 3 manchetes mais fortes.
+6. Termine com uma mensagem curta (vai como notificação): "Pauta de DD/MM pronta: R Reels e C carrosséis (1º às 05:00). Aprove até meia-noite (no máximo 00h30) na página Pauta CNB: https://claude.ai/artifact/V83YmaokEYY2h33EFJk5KY" + as 3 manchetes mais fortes.
 
 ## RODADA 2 – Agendamento (00:30)
 
@@ -165,7 +179,9 @@ Roda logo depois da meia-noite: HOJE = a data corrente (o dia que acabou de come
 
 1. Leia `aprovacoes/HOJE` (ArtifactData `get`).
    - Não existe ou `status` = "rejeitado": não agende nada. Termine com "Pauta de DD/MM não foi aprovada; nada foi agendado."
-2. Leia `dias/HOJE`. Para cada item cujo `n` NÃO está em `excluidos`, agende no Metricool com `createScheduledPost` — UM post por item, com as redes do campo `redes` (sem o campo: as 3). Inclua `tiktokData`/`youtubeData` só se a rede estiver na lista:
+2. Leia `dias/HOJE`. Para cada item cujo `n` NÃO está em `excluidos`, agende no Metricool com `createScheduledPost` — UM post por item, com as redes do campo `redes` (sem o campo: as 3). Inclua `tiktokData`/`youtubeData` só se a rede estiver na lista.
+   **Item carrossel** (`formato` = "carrossel"): `media` = as 2 imagens na ordem (`imagens` do item: -1.png, -2.png), SEM `videoCoverMilliseconds`, `"instagramData":{"type":"POST","isAiGenerated":false}`, `"tiktokData":{"privacyOption":"PUBLIC_TO_EVERYONE","disableComment":false,"autoAddMusic":true,"commercialContentThirdParty":false,"commercialContentOwnBrand":<true se venda>,"title":<titulo>,"photoCoverIndex":0}`, providers instagram e tiktok, sem youtubeData. Se o TikTok recusar o post de fotos, repita só com Instagram e registre. O resto do `info` é igual ao dos Reels.
+   **Item reels:**
    - `blogId` "7648862"; `date` = HOJE + horario com -03:00 (horários depois da meia-noite caem no dia seguinte); horário já passado → pule e registre.
    - `info`: `{"autoPublish":true,"draft":false,"descendants":[],"firstCommentText":"","hasNotReadNotes":false,"media":[<video>],"videoCoverMilliseconds":3000,"mediaAltText":[],"providers":<um {"network":…} para cada rede em `redes` do item (sem o campo: instagram, tiktok e youtube)>,"publicationDate":{"dateTime":"AAAA-MM-DDTHH:MM:00","timezone":"America/Sao_Paulo"},"shortener":false,"smartLinkData":{"ids":[]},"text":<legenda>,"instagramData":{"type":"REEL","showReelOnFeed":true,"isAiGenerated":false},"tiktokData":{"privacyOption":"PUBLIC_TO_EVERYONE","disableComment":false,"disableDuet":false,"disableStitch":false,"autoAddMusic":false,"commercialContentThirdParty":false,"commercialContentOwnBrand":<true se cta = "venda", senão false>,"isAigc":false,"title":<titulo>},"youtubeData":{"title":<titulo>,"type":"short","privacy":"public","madeForKids":false,"isAiGeneratedContent":false,"category":<"SPORTS" se cat for futebol/esporte, senão "NEWS_POLITICS">,"tags":["noticias","brasil","cnb",<as 2 hashtags do assunto, sem #>]}}`
    - YouTube: `title` = o `titulo` do item (até 100 caracteres, sem `<` nem `>`); a legenda vira a descrição do Short.
@@ -176,7 +192,7 @@ Roda logo depois da meia-noite: HOJE = a data corrente (o dia que acabou de come
    - Se recusar por limite do PLANO do Metricool, PARE e informe quantos foram agendados.
 3. Atualize a página: `ArtifactData` `update` em `dias/HOJE` com `{"agendado":{"em":<ISO>,"total":<qtd>}}`.
 4. O Metricool guarda cópia dos vídeos: apague `videos/HOJE/` do repositório (e pastas de dias anteriores que tenham sobrado), commit e push.
-5. Termine com: "DD/MM: X vídeos agendados no Instagram, TikTok e YouTube (Y seguir, Z venda). Primeiro às HH:MM." + qualquer erro ou rede que falhou.
+5. Termine com: "DD/MM: X Reels (Instagram, TikTok e YouTube) e C carrosséis (Instagram e TikTok) agendados (Y seguir, Z venda). Primeiro às HH:MM." + qualquer erro ou rede que falhou.
 
 ## RODADA 3 – Plantão (de hora em hora, o dia todo)
 

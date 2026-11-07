@@ -1,0 +1,62 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:K;font-weight:300;src:url(visual/kumbh-sans-latin-300-normal.woff2)}
+@font-face{font-family:K;font-weight:400;src:url(visual/kumbh-sans-latin-400-normal.woff2)}
+@font-face{font-family:K;font-weight:700;src:url(visual/kumbh-sans-latin-700-normal.woff2)}
+@font-face{font-family:LS;font-weight:700;src:url(visual/league-spartan-latin-700-normal.woff2)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden}
+body{position:relative;font-family:K,sans-serif}
+body.escuro{background:#0d1a2e url(visual/fundo_azul.jpg) center/cover;--t:#fff;--c:#fff}
+body.claro{background:#ebebeb;--t:#0b1527;--c:#0b1527}
+#logo{position:absolute;left:50%;top:40px;height:64px;transform:translateX(-50%)}
+#foto{position:absolute;left:108px;top:149px;width:864px;height:580px;border-radius:14px;overflow:hidden;background:#1c2a44}
+#foto img{width:100%;height:100%;object-fit:cover}
+#credito{position:absolute;right:10px;bottom:8px;font:400 15px K;color:#fff;background:rgba(0,0,0,.45);padding:3px 8px;border-radius:5px}
+#txt{position:absolute;left:108px;top:768px;width:864px;height:322px;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden}
+#titulo{font-family:LS,K;font-weight:700;color:var(--t);font-size:84px;line-height:1.0;letter-spacing:-1px;text-wrap:balance;margin-bottom:14px}
+#resumo{font-weight:300;color:var(--c);font-size:32px;line-height:1.13;text-align:justify;hyphens:auto}
+#fonte{position:absolute;left:108px;top:1100px;width:864px;font:400 28px K;color:var(--c);text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#botao{position:absolute;left:108px;top:1173px;width:864px;height:69px;border-radius:12px;background:#ffcc00;color:#0a0a0a;display:flex;align-items:center;justify-content:center;font:400 30px K;letter-spacing:.3px}
+
+.cta{display:none}
+body.t-seguir .noticia,body.t-venda .noticia{display:none}
+body.t-seguir .seguir,body.t-venda .venda{display:block}
+#pub{position:absolute;left:50%;top:50px;transform:translateX(-50%);font:700 26px K;letter-spacing:5px;color:var(--c);border:2.5px solid var(--c);border-radius:10px;padding:9px 22px 7px}
+#mock{position:absolute;left:108px;top:149px;width:864px;height:560px;border-radius:14px;overflow:hidden}
+#mock img{width:100%;height:100%;object-fit:cover}
+#vtit{position:absolute;left:108px;top:760px;width:864px;text-align:center;font-family:LS,K;font-weight:700;font-size:104px;line-height:1;color:var(--t);letter-spacing:-1px}
+#vtxt{position:absolute;left:108px;top:885px;width:864px;text-align:center;text-wrap:balance;font-weight:300;font-size:40px;line-height:1.2;color:var(--c)}
+#slogo{position:absolute;left:50%;top:370px;height:170px;transform:translateX(-50%)}
+#stxt{position:absolute;left:108px;top:640px;width:864px;text-align:center;font-family:LS,K;font-weight:700;font-size:72px;line-height:1.08;color:var(--t);text-wrap:balance}
+</style></head><body>
+<div class="noticia"><img id="logo"><div id="foto"><img id="fotoimg"><span id="credito"></span></div>
+<div id="txt"><h1 id="titulo"></h1><p id="resumo"></p></div>
+<div id="fonte"></div></div>
+<div class="cta venda"><span id="pub">PUBLICIDADE</span>
+<div id="mock"><img src="visual/venda_mockup.jpg"></div>
+<div id="vtit">Caixa Rápido</div>
+<div id="vtxt">Mais de 100 opções de serviço para sair do aperto financeiro, encontrar uma fonte de renda honesta ou dar o primeiro passo para mudar de carreira.</div></div>
+<div class="cta seguir"><img id="slogo" class="logo2">
+<div id="stxt">Siga a CNB e fique por dentro de tudo que acontece no mundo.</div></div>
+<div id="botao">SIGA O NOSSO PERFIL</div>
+<script>
+window.preencher=function(d){
+  document.body.className=d.tema+' t-'+(d.tipo||'noticia');
+  document.querySelectorAll('.logo2').forEach(i=>i.src=d.tema==='claro'?'visual/logo_claro.png':'visual/logo_escuro.png');
+  const bt=document.getElementById('botao');
+  if(d.tipo==='venda'){bt.textContent='CLIQUE NO LINK DA BIO';return {ok:true}}
+  if(d.tipo==='seguir'){bt.textContent='SEGUIR @CANALNEWSDOBRASIL';return {ok:true}}
+  document.getElementById('logo').src=d.tema==='claro'?'visual/logo_claro.png':'visual/logo_escuro.png';
+  const fi=document.getElementById('fotoimg');
+  if(d.foto){fi.src=d.foto;fi.style.objectPosition=d.foto_posicao||'50% 50%';document.getElementById('credito').textContent=d.foto_credito||'';}
+  else{document.getElementById('foto').style.display='none';document.getElementById('txt').style.top='170px';document.getElementById('txt').style.height='920px';document.getElementById('txt').style.justifyContent='center';}
+  document.getElementById('titulo').textContent=d.titulo;
+  document.getElementById('resumo').textContent=d.resumo;
+  document.getElementById('fonte').textContent='Fonte: '+d.fonte;
+  if(d.botao)document.getElementById('botao').textContent=d.botao;
+  const box=document.getElementById('txt'),t=document.getElementById('titulo'),r=document.getElementById('resumo');
+  let ts=d.foto?84:110,rs=d.foto?32:40;t.style.fontSize=ts+'px';r.style.fontSize=rs+'px';
+  while(box.scrollHeight>box.clientHeight+1&&ts>48){ts-=3;rs=Math.max(26,rs-0.5);t.style.fontSize=ts+'px';r.style.fontSize=rs+'px';}
+  return {ts,rs,ok:box.scrollHeight<=box.clientHeight+1};
+};
+</script></body></html>

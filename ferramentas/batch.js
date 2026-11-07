@@ -4,7 +4,7 @@
 // Narração (padrão desde 28/10/2026): cada vídeo é narrado com a voz de narrar.py; a notícia fica na tela o tempo
 // da leitura e a fala do CTA entra na tela final. Texto falado = it.narracao (se houver) ou "título. resumo".
 // Para gerar sem narração: CNB_SEM_NARRACAO=1 node batch.js ...  ou  "narrar": false no item.
-// Regras: n ímpar = notícia em fundo preto, n par = fundo branco; a tela de CTA usa o fundo oposto. CTA vem de it.cta ("seguir" ou "venda"). Copys dos CTAs ficam no template.html.
+// Layout novo (07/11/2026): mesmo modelo dos carrosséis (visual/). Regras: n ímpar = notícia no fundo azul, n par = fundo claro; a tela de CTA usa o fundo oposto. CTA vem de it.cta ("seguir" ou "venda"). Copys dos CTAs ficam no template.html.
 const { chromium } = require('playwright');
 const fs = require('fs'), path = require('path'), os = require('os'), { execFileSync } = require('child_process');
 
@@ -34,12 +34,13 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
   };
   const vozes = { elevenlabs: 0, gratis: 0 };
   const browser = await chromium.launch();
-  for (const it of day.itens) {
+  for (const it of day.itens.filter(i => i.formato !== 'carrossel')) {   // carrosséis saem do carrossel.js
     const urg = !!it.urgente;              // Plantão: fundo preto, carimbo URGENTE, trilha de alerta, CTA seguir
     const par = !urg && it.n % 2 === 0;
     const data = {
       tema: par ? 'claro' : 'escuro', nome: NOME, arroba: ARROBA, quando, fonte: it.fonte,
       texto: `<strong>${esc(it.titulo)}.</strong> ${esc(it.resumo)}`.replace('..</strong>', '.</strong>'),
+      titulo: it.titulo.replace(/[.!?]$/, ''), resumo: it.resumo,
       cta: urg ? 'seguir' : (it.cta || (par ? 'venda' : 'seguir')), urgente: urg,
     };
     // Foto com licença livre (opcional): it.foto = arquivo local (caminho absoluto ou relativo ao JSON) e
@@ -82,10 +83,14 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
       iniCta = 6.55 + desloc + 0.5;
       DUR = Math.ceil(Math.max(10 + desloc, iniCta + dC + 0.8) * 10) / 10;
     }
-    fs.writeFileSync(tmpHtml, TEMPLATE.replace(/(\d+\.\d+)s\b/g, (m, v) => Number(v) >= 6.4 ? `${(Number(v) + desloc).toFixed(2)}s` : m));
+    fs.writeFileSync(tmpHtml, TEMPLATE.replace('<head>', `<head><base href="file://${__dirname}/">`).replace(/(\d+\.\d+)s\b/g, (m, v) => Number(v) >= 6.4 ? `${(Number(v) + desloc).toFixed(2)}s` : m));
     const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
     await page.goto('file://' + tmpHtml);
-    await page.evaluate(async x => { setup(x); const i = document.getElementById('fotoimg'); if (x.foto) await i.decode(); }, data);
+    await page.evaluate(async x => {
+      setup(x); await document.fonts.ready;
+      await Promise.all([...document.images].filter(i => i.getAttribute('src')).map(i => i.decode().catch(() => {})));
+      ajustar();
+    }, data);
     for (let f = 0; f < FPS * DUR; f++) {
       await page.evaluate(ms => seek(ms), f * 1000 / FPS);
       await page.screenshot({ path: `${frames}/${String(f).padStart(4, '0')}.png` });
