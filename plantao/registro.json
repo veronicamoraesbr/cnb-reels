@@ -36,6 +36,17 @@
         "https://www.band.com.br/nacional/sp/predio-de-quatro-andares-desaba-no-bras-na-regiao-central-de-sao-paulo"
       ],
       "agendado_para": "2026-11-06T20:34:00-03:00"
+    },
+    {
+      "data": "2026-11-07",
+      "hora": "13:26",
+      "titulo": "Ataque a tiros mata ao menos 5 em Cracóvia",
+      "fontes": [
+        "https://www.cnnbrasil.com.br/internacional/tiroteio-cracovia-polonia/",
+        "https://www.cnn.com/2026/11/07/europe/krakow-shooting-poland-killed-intl",
+        "https://www.france24.com/en/europe/20261107-at-least-three-people-killed-shooting-in-polish-city-of-krakow-police-say"
+      ],
+      "agendado_para": "2026-11-07T13:36:00-03:00"
     }
   ]
 }
