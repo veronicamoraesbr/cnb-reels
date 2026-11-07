@@ -32,7 +32,7 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
     const [dur, voz] = execFileSync('python3', [path.join(__dirname, 'narrar.py'), wav, txt], { env }).toString().trim().split(/\s+/);
     return { dur: Number(dur), voz };
   };
-  const vozes = { elevenlabs: 0, gratis: 0 };
+  const vozes = { elevenlabs: 0, gratis: 0, sem: 0 };
   const browser = await chromium.launch();
   for (const it of day.itens.filter(i => i.formato !== 'carrossel')) {   // carrosséis saem do carrossel.js
     const urg = !!it.urgente;              // Plantão: fundo preto, carimbo URGENTE, trilha de alerta, CTA seguir
@@ -55,7 +55,10 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
     }
     const frames = fs.mkdtempSync(path.join(os.tmpdir(), 'cnbf-'));
     // Narração: mede a fala e empurra a saída do card / entrada do CTA (tempos >= 6,4 s do template) pelo necessário
-    const comVoz = process.env.CNB_SEM_NARRACAO !== '1' && it.narrar !== false;
+    // Sem áudio do ElevenLabs (créditos acabaram/falha) → vídeo SEM narração, só com a trilha (VECA, 07/11/2026).
+    // A voz grátis (narrar.py) só é usada em testes, com CNB_VOZ_GRATIS=1.
+    const comVoz = process.env.CNB_SEM_NARRACAO !== '1' && it.narrar !== false && (!!it.audio_noticia || process.env.CNB_VOZ_GRATIS === '1');
+    if (!comVoz) vozes.sem++;
     let DUR = 10, desloc = 0, vozN, vozC, iniCta;
     if (comVoz) {
       vozN = path.join(frames, 'noticia.wav'); vozC = path.join(frames, 'cta.wav');
@@ -117,6 +120,6 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
   }
   await browser.close();
   fs.rmSync(tmpHtml, { force: true });
-  if (vozes.elevenlabs + vozes.gratis) console.log(`VOZES: ${vozes.elevenlabs} ElevenLabs, ${vozes.gratis} voz grátis` +
+  console.log(`VOZES: ${vozes.elevenlabs} ElevenLabs, ${vozes.gratis} voz grátis, ${vozes.sem} sem narração (só trilha)` +
     (fs.existsSync(path.join(__dirname, 'voz', '.elevenlabs_sem_creditos')) ? ' (ElevenLabs SEM CRÉDITOS)' : ''));
 })();
