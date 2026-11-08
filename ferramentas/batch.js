@@ -55,9 +55,8 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
     }
     const frames = fs.mkdtempSync(path.join(os.tmpdir(), 'cnbf-'));
     // Narração: mede a fala e empurra a saída do card / entrada do CTA (tempos >= 6,4 s do template) pelo necessário
-    // Sem áudio do ElevenLabs (créditos acabaram/falha) → vídeo SEM narração, só com a trilha (VECA, 07/11/2026).
-    // A voz grátis (narrar.py) só é usada em testes, com CNB_VOZ_GRATIS=1.
-    const comVoz = process.env.CNB_SEM_NARRACAO !== '1' && it.narrar !== false && (!!it.audio_noticia || process.env.CNB_VOZ_GRATIS === '1');
+    // Sem áudio do ElevenLabs (créditos acabaram/falha) → voz grátis de IA (narrar.py) no vídeo inteiro (VECA, 08/11/2026).
+    const comVoz = process.env.CNB_SEM_NARRACAO !== '1' && it.narrar !== false;   // sem áudio do ElevenLabs → voz grátis (VECA, 08/11/2026)
     if (!comVoz) vozes.sem++;
     let DUR = 10, desloc = 0, vozN, vozC, iniCta;
     if (comVoz) {
