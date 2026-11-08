@@ -1,0 +1,375 @@
+{
+ "data": "2026-11-08",
+ "itens": [
+  {
+   "n": 1,
+   "horario": "05:00",
+   "cat": "servico",
+   "tag": "Serviço e saúde",
+   "formato": "reels",
+   "titulo": "Domingo tem frio no Sul e chuva em São Paulo",
+   "resumo": "Segundo a Climatempo, o ar polar derruba as mínimas para 4°C a 6°C nas serras do RS e de SC, com chance de geada fraca, enquanto a capital paulista tem chuva desde cedo e máxima de 19°C.",
+   "fonte": "Climatempo",
+   "url": "https://www.climatempo.com.br/noticia/fim-de-semana/previsao-fim-de-semana-07-e-08-11-frente-fria-favorece-temporais-e-ventos-fortes-em-algumas-areas",
+   "cta": "venda",
+   "legenda": "📢 Publicidade\n\nSegundo a Climatempo, o ar polar derruba as mínimas para 4°C a 6°C nas serras do RS e de SC, com chance de geada fraca, enquanto a capital paulista tem chuva desde cedo e máxima de 19°C.\n\nFonte: Climatempo\n\nCaixa Rápido: mais de 100 opções de serviço para sair do aperto financeiro, encontrar uma fonte de renda honesta ou dar o primeiro passo para mudar de carreira. Clique no link da bio e saiba mais.\n\n🤖 Narração gerada por IA.\n\n#noticias #brasil #cnb #previsaodotempo #frio",
+   "narracao": "Domingo tem frio no Sul e chuva em São Paulo. Segundo a Climatempo, o ar polar derruba as mínimas para quatro a seis graus nas serras do Rio Grande do Sul e de Santa Catarina, com chance de geada fraca, enquanto a capital paulista tem chuva desde cedo e máxima de dezenove graus.",
+   "redes": [
+    "instagram",
+    "tiktok",
+    "youtube"
+   ],
+   "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-001.mp4",
+   "audio_noticia": "/tmp/audios-2026-11-08/n-001.mp3"
+  },
+  {
+   "n": 2,
+   "horario": "06:00",
+   "cat": "mundo",
+   "tag": "Mundo",
+   "formato": "reels",
+   "titulo": "Ex-presidente do Paraguai, Peña tem prisão decretada",
+   "resumo": "Destituído pelo Congresso na sexta (6) após a crise do banco digital Ueno, Santiago Peña foi denunciado pelo Ministério Público e teve a prisão preventiva decretada por um juiz neste sábado (7).",
+   "fonte": "CNN Brasil e Agência Brasil",
+   "url": "https://www.cnnbrasil.com.br/internacional/juiz-do-paraguai-decreta-prisao-preventiva-do-ex-presidente-santiago-pena/",
+   "cta": "seguir",
+   "legenda": "Destituído pelo Congresso na sexta (6) após a crise do banco digital Ueno, Santiago Peña foi denunciado pelo Ministério Público e teve a prisão preventiva decretada por um juiz neste sábado (7).\n\nFonte: CNN Brasil e Agência Brasil\nFoto: Francarballopy / Wikimedia Commons (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Santiago_Pe%C3%B1a_(cropped).jpg\n\nSiga a CNB e fique por dentro de tudo que acontece no mundo.\n\n🤖 Narração gerada por IA.\n\n#noticias #brasil #cnb #paraguai #mundo",
+   "foto": "/tmp/fotos-2026-11-08/Santiago_Pe_a_cropped_.jpg",
+   "foto_credito": "Foto: Francarballopy / Wikimedia Commons, CC BY-SA 4.0",
+   "foto_fonte": "https://commons.wikimedia.org/wiki/File:Santiago_Pe%C3%B1a_(cropped).jpg",
+   "foto_licenca": "CC BY-SA 4.0",
+   "redes": [
+    "instagram",
+    "tiktok",
+    "youtube"
+   ],
+   "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-002.mp4",
+   "audio_noticia": "/tmp/audios-2026-11-08/n-002.mp3"
+  },
+  {
+   "n": 3,
+   "horario": "07:00",
+   "cat": "servico",
+   "tag": "Serviço e saúde",
+   "formato": "carrossel",
+   "titulo": "Enem é hoje: portões fecham às 13h em ponto",
+   "resumo": "Os portões abrem às 12h, a prova de Linguagens, Ciências Humanas e Redação começa às 13h30, e é obrigatório levar documento oficial com foto e caneta preta de corpo transparente.",
+   "fonte": "Agência Brasil",
+   "url": "https://agenciabrasil.ebc.com.br/educacao/noticia/2026-11/enem-confira-regras-os-horarios-e-os-itens-proibidos-na-prova",
+   "cta": "venda",
+   "legenda": "📢 Publicidade\n\nOs portões abrem às 12h, a prova de Linguagens, Ciências Humanas e Redação começa às 13h30, e é obrigatório levar documento oficial com foto e caneta preta de corpo transparente.\n\nFonte: Agência Brasil\n\nCaixa Rápido: mais de 100 opções de serviço para sair do aperto financeiro, encontrar uma fonte de renda honesta ou dar o primeiro passo para mudar de carreira. Clique no link da bio e saiba mais.\n\n#noticias #brasil #cnb #enem #enem2026",
+   "redes": [
+    "instagram",
+    "tiktok"
+   ],
+   "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-003-1.png",
+   "imagens": [
+    "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-003-1.png",
+    "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-003-2.png"
+   ]
+  },
+  {
+   "n": 4,
+   "horario": "08:00",
+   "cat": "economia",
+   "tag": "Bolso e economia",
+   "formato": "carrossel",
+   "titulo": "Dólar sobe para R$ 5,51 e acumula alta na semana",
+   "resumo": "A moeda americana fechou a sexta (6) com alta de 0,44% e ganho de 1,20% na semana, enquanto o Ibovespa avançou 1,39% e terminou aos 168.498 pontos.",
+   "fonte": "Agência Brasil",
+   "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/dolar-sobe-para-r-551-com-dados-de-emprego-nos-eua",
+   "cta": "seguir",
+   "legenda": "A moeda americana fechou a sexta (6) com alta de 0,44% e ganho de 1,20% na semana, enquanto o Ibovespa avançou 1,39% e terminou aos 168.498 pontos.\n\nArraste para o lado 👉\n\nFonte: Agência Brasil\nFoto: Aisrotkev8000 / Wikimedia Commons (Public domain) https://commons.wikimedia.org/wiki/File:Obverse_of_the_series_2021_$1_Federal_Reserve_Note.jpg\n\nSiga a CNB e fique por dentro de tudo que acontece no mundo.\n\n#noticias #brasil #cnb #dolar #economia",
+   "foto": "/tmp/fotos-2026-11-08/Obverse_of_the_series_2021_1_Federal_Reserve_Note.jpg",
+   "foto_credito": "Foto: Aisrotkev8000 / Wikimedia Commons, Public domain",
+   "foto_fonte": "https://commons.wikimedia.org/wiki/File:Obverse_of_the_series_2021_$1_Federal_Reserve_Note.jpg",
+   "foto_licenca": "Public domain",
+   "redes": [
+    "instagram",
+    "tiktok"
+   ],
+   "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-004-1.png",
+   "imagens": [
+    "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-004-1.png",
+    "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-004-2.png"
+   ]
+  },
+  {
+   "n": 5,
+   "horario": "09:00",
+   "cat": "economia",
+   "tag": "Bolso e economia",
+   "formato": "reels",
+   "titulo": "Mega-Sena sorteia R$ 60 milhões hoje às 11h",
+   "resumo": "Como ninguém acertou as seis dezenas na sexta (6), o concurso 3083 tem prêmio estimado em R$ 60 milhões e será sorteado neste domingo em São Paulo, com transmissão nas redes da Caixa.",
+   "fonte": "CNN Brasil",
+   "url": "https://www.cnnbrasil.com.br/economia/seu-bolso/loterias/mega-sena-3083/",
+   "cta": "venda",
+   "legenda": "📢 Publicidade\n\nComo ninguém acertou as seis dezenas na sexta (6), o concurso 3083 tem prêmio estimado em R$ 60 milhões e será sorteado neste domingo em São Paulo, com transmissão nas redes da Caixa.\n\nFonte: CNN Brasil\n\nCaixa Rápido: mais de 100 opções de serviço para sair do aperto financeiro, encontrar uma fonte de renda honesta ou dar o primeiro passo para mudar de carreira. Clique no link da bio e saiba mais.\n\n🤖 Narração gerada por IA.\n\n#noticias #brasil #cnb #megasena #loteria",
+   "narracao": "Mega-Sena sorteia sessenta milhões de reais hoje às onze horas. Como ninguém acertou as seis dezenas na sexta, o concurso três mil e oitenta e três tem prêmio estimado em sessenta milhões de reais e será sorteado neste domingo em São Paulo, com transmissão nas redes da Caixa.",
+   "redes": [
+    "instagram",
+    "tiktok",
+    "youtube"
+   ],
+   "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-005.mp4",
+   "audio_noticia": "/tmp/audios-2026-11-08/n-005.mp3"
+  },
+  {
+   "n": 6,
+   "horario": "10:00",
+   "cat": "famosos",
+   "tag": "Famosos, TV, reality e música",
+   "formato": "reels",
+   "titulo": "Tati Machado se despede do Mais Você para ter bebê",
+   "resumo": "A apresentadora deixou o programa da Globo na sexta (6) para entrar em licença-maternidade, emocionada com a surpresa da equipe, e prometeu voltar em breve com o filho nos braços.",
+   "fonte": "CNN Brasil",
+   "url": "https://www.cnnbrasil.com.br/pop/celebridades/tati-machado-chora-em-despedida-da-tv-para-licenca-maternidade-assista/",
+   "cta": "seguir",
+   "legenda": "A apresentadora deixou o programa da Globo na sexta (6) para entrar em licença-maternidade, emocionada com a surpresa da equipe, e prometeu voltar em breve com o filho nos braços.\n\nFonte: CNN Brasil\n\nSiga a CNB e fique por dentro de tudo que acontece no mundo.\n\n🤖 Narração gerada por IA.\n\n#noticias #brasil #cnb #tatimachado #maisvoce",
+   "redes": [
+    "instagram",
+    "tiktok",
+    "youtube"
+   ],
+   "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-006.mp4",
+   "audio_noticia": "/tmp/audios-2026-11-08/n-006.mp3"
+  },
+  {
+   "n": 7,
+   "horario": "11:00",
+   "cat": "esporte",
+   "tag": "Esporte além do G12",
+   "formato": "carrossel",
+   "titulo": "GP de São Paulo larga às 14h; veja onde assistir",
+   "resumo": "A corrida de Interlagos neste domingo tem transmissão da TV Globo, do sportv 3, do Globoplay e da F1 TV Pro, e a chance de chuva pode atrasar a largada.",
+   "fonte": "Lance!",
+   "url": "https://www.lance.com.br/futebol-nacional/gp-de-sao-paulo-pode-coincidir-com-vasco-x-palmeiras-entenda-a-transmissao.html",
+   "cta": "venda",
+   "legenda": "📢 Publicidade\n\nA corrida de Interlagos neste domingo tem transmissão da TV Globo, do sportv 3, do Globoplay e da F1 TV Pro, e a chance de chuva pode atrasar a largada.\n\nFonte: Lance!\nFoto: Morio / Wikimedia Commons (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:Autodromo_Jose_Carlos_Pace_main_straight.jpg\n\nCaixa Rápido: mais de 100 opções de serviço para sair do aperto financeiro, encontrar uma fonte de renda honesta ou dar o primeiro passo para mudar de carreira. Clique no link da bio e saiba mais.\n\n#noticias #brasil #cnb #f1 #gpsaopaulo",
+   "foto": "/tmp/fotos-2026-11-08/Autodromo_Jose_Carlos_Pace_main_straight.jpg",
+   "foto_credito": "Foto: Morio / Wikimedia Commons, CC BY-SA 3.0",
+   "foto_fonte": "https://commons.wikimedia.org/wiki/File:Autodromo_Jose_Carlos_Pace_main_straight.jpg",
+   "foto_licenca": "CC BY-SA 3.0",
+   "redes": [
+    "instagram",
+    "tiktok"
+   ],
+   "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-007-1.png",
+   "imagens": [
+    "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-007-1.png",
+    "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-007-2.png"
+   ]
+  },
+  {
+   "n": 8,
+   "horario": "12:00",
+   "cat": "esporte",
+   "tag": "Esporte além do G12",
+   "formato": "carrossel",
+   "titulo": "Norris é pole em SP; Câmara larga em 11º",
+   "resumo": "Numa classificação com chuva e duas bandeiras vermelhas, o piloto da McLaren garantiu a pole, o estreante Rafael Câmara bateu no Q2 e sai em 11º, e Gabriel Bortoleto larga em 19º.",
+   "fonte": "CNN Brasil",
+   "url": "https://www.cnnbrasil.com.br/esportes/automobilismo/camara-se-recupera-apos-rodar-mas-bate-no-q2-bortoleto-cai-no-q1/",
+   "cta": "seguir",
+   "legenda": "Numa classificação com chuva e duas bandeiras vermelhas, o piloto da McLaren garantiu a pole, o estreante Rafael Câmara bateu no Q2 e sai em 11º, e Gabriel Bortoleto larga em 19º.\n\nArraste para o lado 👉\n\nFonte: CNN Brasil\nFoto: Lukas Raich / Wikimedia Commons (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:FIA_F1_Austria_2025_Nr._4_Norris.jpg\n\nSiga a CNB e fique por dentro de tudo que acontece no mundo.\n\n#noticias #brasil #cnb #f1 #interlagos",
+   "foto": "/tmp/fotos-2026-11-08/FIA_F1_Austria_2025_Nr._4_Norris.jpg",
+   "foto_credito": "Foto: Lukas Raich / Wikimedia Commons, CC BY-SA 4.0",
+   "foto_fonte": "https://commons.wikimedia.org/wiki/File:FIA_F1_Austria_2025_Nr._4_Norris.jpg",
+   "foto_licenca": "CC BY-SA 4.0",
+   "redes": [
+    "instagram",
+    "tiktok"
+   ],
+   "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-008-1.png",
+   "imagens": [
+    "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-008-1.png",
+    "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-008-2.png"
+   ]
+  },
+  {
+   "n": 9,
+   "horario": "13:00",
+   "cat": "futebol",
+   "tag": "Futebol G12",
+   "formato": "reels",
+   "titulo": "Vasco e Palmeiras decidem vaga na final hoje",
+   "resumo": "Pela volta da semifinal da Copa do Brasil, às 17h em São Januário, o Palmeiras joga pelo empate após vencer a ida por 1 a 0, e quem avançar enfrenta o Grêmio na final.",
+   "fonte": "Lance!",
+   "url": "https://www.lance.com.br/onde-assistir/vasco-x-palmeiras-onde-assistir-horario-e-escalacoes.html",
+   "cta": "venda",
+   "legenda": "📢 Publicidade\n\nPela volta da semifinal da Copa do Brasil, às 17h em São Januário, o Palmeiras joga pelo empate após vencer a ida por 1 a 0, e quem avançar enfrenta o Grêmio na final.\n\nFonte: Lance!\nFoto: Diego Baravelli / Wikimedia Commons (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Est%C3%A1dio_de_S%C3%A3o_Janu%C3%A1rio_by_Diego_Baravelli.jpg\n\nCaixa Rápido: mais de 100 opções de serviço para sair do aperto financeiro, encontrar uma fonte de renda honesta ou dar o primeiro passo para mudar de carreira. Clique no link da bio e saiba mais.\n\n🤖 Narração gerada por IA.\n\n#noticias #brasil #cnb #vasco #copadobrasil",
+   "foto": "/tmp/fotos-2026-11-08/Est_dio_de_S_o_Janu_rio_by_Diego_Baravelli.jpg",
+   "foto_credito": "Foto: Diego Baravelli / Wikimedia Commons, CC BY-SA 4.0",
+   "foto_fonte": "https://commons.wikimedia.org/wiki/File:Est%C3%A1dio_de_S%C3%A3o_Janu%C3%A1rio_by_Diego_Baravelli.jpg",
+   "foto_licenca": "CC BY-SA 4.0",
+   "redes": [
+    "instagram",
+    "tiktok",
+    "youtube"
+   ],
+   "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-009.mp4",
+   "audio_noticia": "/tmp/audios-2026-11-08/n-009.mp3"
+  },
+  {
+   "n": 10,
+   "horario": "14:00",
+   "cat": "politica",
+   "tag": "Política",
+   "formato": "reels",
+   "titulo": "Lula viaja à COP31 na Turquia nesta segunda",
+   "resumo": "O presidente disse que embarca na segunda (9) para a conferência do clima em Antália, onde discursa na cúpula de líderes, e que levará o deputado André Janones na comitiva.",
+   "fonte": "CNN Brasil e Agência Brasil",
+   "url": "https://www.cnnbrasil.com.br/politica/lula-diz-que-tenta-curar-rouquidao-antes-de-retomar-agenda-internacional/",
+   "cta": "seguir",
+   "legenda": "O presidente disse que embarca na segunda (9) para a conferência do clima em Antália, onde discursa na cúpula de líderes, e que levará o deputado André Janones na comitiva.\n\nFonte: CNN Brasil e Agência Brasil\nFoto: Ricardo Stuckert/PR / Wikimedia Commons (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Foto_oficial_do_Presidente_da_Rep%C3%BAblica_Luiz_In%C3%A1cio_Lula_da_Silva.jpg\n\nSiga a CNB e fique por dentro de tudo que acontece no mundo.\n\n🤖 Narração gerada por IA.\n\n#noticias #brasil #cnb #lula #cop31",
+   "foto": "/tmp/fotos-2026-11-08/Foto_oficial_do_Presidente_da_Rep_blica_Luiz_In_cio_Lula_da_Silva.jpg",
+   "foto_credito": "Foto: Ricardo Stuckert/PR / Wikimedia Commons, CC BY 2.0",
+   "foto_fonte": "https://commons.wikimedia.org/wiki/File:Foto_oficial_do_Presidente_da_Rep%C3%BAblica_Luiz_In%C3%A1cio_Lula_da_Silva.jpg",
+   "foto_licenca": "CC BY 2.0",
+   "redes": [
+    "instagram",
+    "tiktok",
+    "youtube"
+   ],
+   "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-010.mp4",
+   "audio_noticia": "/tmp/audios-2026-11-08/n-010.mp3"
+  },
+  {
+   "n": 11,
+   "horario": "15:00",
+   "cat": "economia",
+   "tag": "Bolso e economia",
+   "formato": "carrossel",
+   "titulo": "Vale-refeição passa a valer em mais maquininhas",
+   "resumo": "Desde sábado (7), cartões de VR e VA de operadoras diferentes podem passar em qualquer maquininha habilitada nos locais que aceitam o benefício, com taxa máxima de 3,6% para as operadoras.",
+   "fonte": "Agência Brasil",
+   "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/vr-e-va-podem-ser-aceitos-em-mais-maquininhas-partir-deste-sabado",
+   "cta": "venda",
+   "legenda": "📢 Publicidade\n\nDesde sábado (7), cartões de VR e VA de operadoras diferentes podem passar em qualquer maquininha habilitada nos locais que aceitam o benefício, com taxa máxima de 3,6% para as operadoras.\n\nFonte: Agência Brasil\n\nCaixa Rápido: mais de 100 opções de serviço para sair do aperto financeiro, encontrar uma fonte de renda honesta ou dar o primeiro passo para mudar de carreira. Clique no link da bio e saiba mais.\n\n#noticias #brasil #cnb #valerefeicao #seubolso",
+   "redes": [
+    "instagram",
+    "tiktok"
+   ],
+   "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-011-1.png",
+   "imagens": [
+    "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-011-1.png",
+    "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-011-2.png"
+   ]
+  },
+  {
+   "n": 12,
+   "horario": "17:00",
+   "cat": "famosos",
+   "tag": "Famosos, TV, reality e música",
+   "formato": "carrossel",
+   "titulo": "Karoline Lima anuncia fim do noivado com Leo Pereira",
+   "resumo": "A influenciadora contou nas redes que foi ela quem terminou, negou traição e disse que vai ficar com a aliança do jogador, com quem estava noiva desde julho.",
+   "fonte": "CNN Brasil",
+   "url": "https://www.cnnbrasil.com.br/pop/celebridades/karoline-lima-anuncia-termino-com-leo-pereira-e-cita-marina-ruy-barbosa/",
+   "cta": "seguir",
+   "legenda": "A influenciadora contou nas redes que foi ela quem terminou, negou traição e disse que vai ficar com a aliança do jogador, com quem estava noiva desde julho.\n\nArraste para o lado 👉\n\nFonte: CNN Brasil\n\nSiga a CNB e fique por dentro de tudo que acontece no mundo.\n\n#noticias #brasil #cnb #karolinelima #famosos",
+   "redes": [
+    "instagram",
+    "tiktok"
+   ],
+   "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-012-1.png",
+   "imagens": [
+    "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-012-1.png",
+    "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-012-2.png"
+   ]
+  },
+  {
+   "n": 13,
+   "horario": "18:00",
+   "cat": "futebol",
+   "tag": "Futebol G12",
+   "formato": "reels",
+   "titulo": "Líder, Flamengo tem 4 jogos para buscar o título",
+   "resumo": "Com 76 pontos, três à frente do Palmeiras, o time enfrenta Athletico-PR, Palmeiras, Coritiba e Chapecoense na reta final do Brasileirão, entre 18 de novembro e 2 de dezembro.",
+   "fonte": "Lance!",
+   "url": "https://lance.com.br/flamengo/veja-datas-e-horarios-dos-quatro-jogos-que-restam-para-o-flamengo-no-brasileirao.html",
+   "cta": "venda",
+   "legenda": "📢 Publicidade\n\nCom 76 pontos, três à frente do Palmeiras, o time enfrenta Athletico-PR, Palmeiras, Coritiba e Chapecoense na reta final do Brasileirão, entre 18 de novembro e 2 de dezembro.\n\nFonte: Lance!\nFoto: Arthur Boppré / Wikimedia Commons (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Maracan%C3%A3_Stadium_in_Rio_de_Janeiro.jpg\n\nCaixa Rápido: mais de 100 opções de serviço para sair do aperto financeiro, encontrar uma fonte de renda honesta ou dar o primeiro passo para mudar de carreira. Clique no link da bio e saiba mais.\n\n🤖 Narração gerada por IA.\n\n#noticias #brasil #cnb #flamengo #brasileirao",
+   "foto": "/tmp/fotos-2026-11-08/Maracan_Stadium_in_Rio_de_Janeiro.jpg",
+   "foto_credito": "Foto: Arthur Boppré / Wikimedia Commons, CC BY 2.0",
+   "foto_fonte": "https://commons.wikimedia.org/wiki/File:Maracan%C3%A3_Stadium_in_Rio_de_Janeiro.jpg",
+   "foto_licenca": "CC BY 2.0",
+   "redes": [
+    "instagram",
+    "tiktok",
+    "youtube"
+   ],
+   "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-013.mp4",
+   "audio_noticia": "/tmp/audios-2026-11-08/n-013.mp3"
+  },
+  {
+   "n": 14,
+   "horario": "19:00",
+   "cat": "esporte",
+   "tag": "Esporte além do G12",
+   "formato": "reels",
+   "titulo": "Karine Silva vence Gabriella Fernandes no UFC",
+   "resumo": "A brasileira ganhou por decisão unânime no card preliminar do UFC Vegas 124, em Las Vegas, neste sábado (7), e José Souza também venceu, por nocaute no primeiro round.",
+   "fonte": "UFC Brasil",
+   "url": "https://www.ufc.com.br/news/ufc-fight-night-vegas-124-cortes-acosta-walker-resultados",
+   "cta": "seguir",
+   "legenda": "A brasileira ganhou por decisão unânime no card preliminar do UFC Vegas 124, em Las Vegas, neste sábado (7), e José Souza também venceu, por nocaute no primeiro round.\n\nFonte: UFC Brasil\n\nSiga a CNB e fique por dentro de tudo que acontece no mundo.\n\n🤖 Narração gerada por IA.\n\n#noticias #brasil #cnb #ufc #mma",
+   "redes": [
+    "instagram",
+    "tiktok",
+    "youtube"
+   ],
+   "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-014.mp4",
+   "audio_noticia": "/tmp/audios-2026-11-08/n-014.mp3"
+  },
+  {
+   "n": 15,
+   "horario": "20:00",
+   "cat": "tecnologia",
+   "tag": "Tecnologia e IA",
+   "formato": "carrossel",
+   "titulo": "Nubank suspende operações com cripto por horas",
+   "resumo": "Na sexta (6), o banco interrompeu depósitos e saques de criptomoedas por falha de um fornecedor externo de dados, normalizou o serviço à noite e disse que os ativos seguem protegidos.",
+   "fonte": "CNN Brasil",
+   "url": "https://www.cnnbrasil.com.br/economia/money/tecnologia/nubank-suspende-saques-e-depositos-de-criptomoedas-2/",
+   "cta": "venda",
+   "legenda": "📢 Publicidade\n\nNa sexta (6), o banco interrompeu depósitos e saques de criptomoedas por falha de um fornecedor externo de dados, normalizou o serviço à noite e disse que os ativos seguem protegidos.\n\nFonte: CNN Brasil\n\nCaixa Rápido: mais de 100 opções de serviço para sair do aperto financeiro, encontrar uma fonte de renda honesta ou dar o primeiro passo para mudar de carreira. Clique no link da bio e saiba mais.\n\n#noticias #brasil #cnb #nubank #cripto",
+   "redes": [
+    "instagram",
+    "tiktok"
+   ],
+   "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-015-1.png",
+   "imagens": [
+    "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-015-1.png",
+    "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-015-2.png"
+   ]
+  },
+  {
+   "n": 16,
+   "horario": "21:30",
+   "cat": "futebol",
+   "tag": "Futebol G12",
+   "formato": "carrossel",
+   "titulo": "Grêmio empata com o Atlético-MG e está na final",
+   "resumo": "O 1 a 1 na Arena MRV garantiu o time gaúcho na decisão da Copa do Brasil, em jogo único no dia 6 de dezembro, em Brasília, onde busca o sexto título.",
+   "fonte": "CNN Brasil",
+   "url": "https://www.cnnbrasil.com.br/esportes/futebol/copa-do-brasil/gremio-segura-empate-com-atletico-mg-e-avanca-a-final-da-copa-do-brasil/",
+   "cta": "seguir",
+   "legenda": "O 1 a 1 na Arena MRV garantiu o time gaúcho na decisão da Copa do Brasil, em jogo único no dia 6 de dezembro, em Brasília, onde busca o sexto título.\n\nArraste para o lado 👉\n\nFonte: CNN Brasil\nFoto: Cecilia Heinen / Wikimedia Commons (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Arena_do_Gr%C3%AAmio.jpg\n\nSiga a CNB e fique por dentro de tudo que acontece no mundo.\n\n#noticias #brasil #cnb #gremio #copadobrasil",
+   "foto": "/tmp/fotos-2026-11-08/Arena_do_Gr_mio.jpg",
+   "foto_credito": "Foto: Cecilia Heinen / Wikimedia Commons, CC BY 2.0",
+   "foto_fonte": "https://commons.wikimedia.org/wiki/File:Arena_do_Gr%C3%AAmio.jpg",
+   "foto_licenca": "CC BY 2.0",
+   "redes": [
+    "instagram",
+    "tiktok"
+   ],
+   "video": "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-016-1.png",
+   "imagens": [
+    "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-016-1.png",
+    "https://raw.githubusercontent.com/veronicamoraesbr/cnb-reels/main/videos/2026-11-08/cnb-2026-11-08-016-2.png"
+   ]
+  }
+ ]
+}
