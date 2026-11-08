@@ -1,6 +1,6 @@
 // Gera os carrosséis (2 imagens 1080x1350) dos itens da pauta com "formato": "carrossel".
 // uso: node carrossel.js <pauta.json> <pasta_saida>
-// Saída: cnb-<data>-<NNN>-1.png (notícia) e cnb-<data>-<NNN>-2.png (CTA "seguir" ou "venda", fundo oposto).
+// Saída: cnb-<data>-<NNN>-1.jpg (notícia) e cnb-<data>-<NNN>-2.jpg (CTA "seguir" ou "venda", fundo oposto).
 // Regras (VECA, 07/11/2026): n ímpar = notícia no fundo azul, n par = fundo claro; página 2 sempre com o fundo oposto.
 // Visual: carrossel.html + visual/ (fontes, logos, fundo azul, imagem de venda). Texto que não cabe diminui sozinho.
 const { chromium } = require('playwright');
@@ -28,8 +28,8 @@ const fs = require('fs'), path = require('path');
       await page.evaluate(async () => { await document.fonts.ready; await Promise.all([...document.images].filter(i => i.getAttribute('src')).map(i => i.decode().catch(() => {}))); });
       const r = await page.evaluate(d => preencher(d), paginas[p]);   // de novo, com as fontes carregadas
       if (r && r.ok === false) { erros++; console.log('AVISO: texto não coube', it.n); }
-      const f = path.join(outDir, `cnb-${day.data}-${String(it.n).padStart(3, '0')}-${p + 1}.png`);
-      await page.screenshot({ path: f });
+      const f = path.join(outDir, `cnb-${day.data}-${String(it.n).padStart(3, '0')}-${p + 1}.jpg`);
+      await page.screenshot({ path: f, type: 'jpeg', quality: 92 });   // JPG: o TikTok recusa foto em PNG
       console.log('ok', f);
     }
   }
