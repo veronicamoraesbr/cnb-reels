@@ -4,6 +4,18 @@ Instruções das duas rodadas diárias do perfil @canalnewsdobrasil (dona: VECA)
 Fuso de tudo: America/Sao_Paulo. "HOJE" = data do DIA DOS POSTS nesse fuso (AAAA-MM-DD).
 **Desde 03/11/2026 (VECA): a Rodada 1 roda às 23h da VÉSPERA, então nela HOJE = AMANHÃ (a data do dia seguinte).** Nas Rodadas 2 (00h30) e 3 (plantão), HOJE = a data corrente.
 
+## ⚠️ REGRA TEMPORÁRIA A PARTIR DE 09/11/2026 (VECA, 08/11/2026) — vale acima de qualquer outra regra deste arquivo
+
+Até a VECA fazer a transição para o G12 Radar Sports, a CNB fica assim:
+- **8 posts por dia, TODOS Reels (vídeo)** — sem carrossel. Todo item com `"formato": "reels"`.
+- **Só YouTube e Instagram:** todo item com `"redes": ["instagram","youtube"]`. **TikTok não recebe mais nada** (não inclua `tiktokData` nem o provider tiktok).
+- **Todas as notícias são de FUTEBOL.** Distribuição dos 8: 1 Flamengo, 1 Cruzeiro, 1 Palmeiras, 1 Corinthians, 1 Santos (sempre ligado ao Neymar), 1 em rodízio entre Fluminense, Vasco, Botafogo, São Paulo, Grêmio, Internacional e Atlético-MG (um diferente por dia), e 2 de futebol em geral (Brasileirão, Copa do Brasil, Libertadores, seleção, mercado da bola, outros clubes). Prefira notícia útil para o torcedor: desfalques, retrospecto, próximo jogo e ONDE ASSISTIR (canal de TV/streaming), mercado (interesse, proposta, acerto), resultado com contexto. Sem política, economia, famosos etc.
+- **Horários:** 07:00, 09:00, 11:00, 12:30, 15:00, 18:00, 19:30, 21:00.
+- **Plantão desligado** (a Rodada 3 não roda mais).
+- CTA, visual, narração e legenda continuam como descritos abaixo (marca CNB). Regra do CTA continua: notícia sobre pessoa específica (inclusive Neymar) → "seguir". YouTube `category` = "SPORTS".
+- Na legenda, troque `#noticias #brasil #cnb` por `#futebol #cnb` + até 3 hashtags do assunto (time, campeonato).
+- Mensagem final da Rodada 1: "Pauta de DD/MM pronta: 8 Reels de futebol (YouTube e Instagram)…". Na Rodada 2: "DD/MM: 8 Reels agendados no YouTube e Instagram (Y seguir, Z venda)…".
+
 ## Referências fixas
 
 - Repositório (ferramentas, pautas e vídeos): `veronicamoraesbr/cnb-reels` (público, branch `main`).
