@@ -47,6 +47,17 @@
         "https://www.france24.com/en/europe/20261107-at-least-three-people-killed-shooting-in-polish-city-of-krakow-police-say"
       ],
       "agendado_para": "2026-11-07T13:36:00-03:00"
+    },
+    {
+      "data": "2026-11-08",
+      "hora": "12:24",
+      "titulo": "Carro cai em lago e 10 morrem em Barra Mansa (RJ)",
+      "fontes": [
+        "https://agenciabrasil.ebc.com.br/geral/noticia/2026-11/dez-pessoas-morrem-em-acidente-em-barra-mansa-no-rio-de-janeiro",
+        "https://www.cnnbrasil.com.br/nacional/sudeste/rj/acidente-deixa-10-mortos-incluindo-criancas-no-sul-do-rio-de-janeiro/",
+        "https://sbtnews.sbt.com.br/noticia/brasil/carro-cai-em-lago-e-10-morrem-no-rio-de-janeiro"
+      ],
+      "agendado_para": "2026-11-08T12:35:00-03:00"
     }
   ]
 }
