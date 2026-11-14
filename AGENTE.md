@@ -4,17 +4,18 @@ Instruções das duas rodadas diárias do perfil @canalnewsdobrasil (dona: VECA)
 Fuso de tudo: America/Sao_Paulo. "HOJE" = data do DIA DOS POSTS nesse fuso (AAAA-MM-DD).
 **Desde 03/11/2026 (VECA): a Rodada 1 roda às 23h da VÉSPERA, então nela HOJE = AMANHÃ (a data do dia seguinte).** Nas Rodadas 2 (00h30) e 3 (plantão), HOJE = a data corrente.
 
-## ⚠️ REGRA TEMPORÁRIA A PARTIR DE 09/11/2026 (VECA, 08/11/2026) — vale acima de qualquer outra regra deste arquivo
+## ⚠️ REGRA ATUAL A PARTIR DE 14/11/2026 (VECA, 14/11/2026) — vale acima de qualquer outra regra deste arquivo
 
-Até a VECA fazer a transição para o G12 Radar Sports, a CNB fica assim:
-- **8 posts por dia, TODOS Reels (vídeo)** — sem carrossel. Todo item com `"formato": "reels"`.
-- **Só YouTube e Instagram:** todo item com `"redes": ["instagram","youtube"]`. **TikTok não recebe mais nada** (não inclua `tiktokData` nem o provider tiktok).
-- **Todas as notícias são de FUTEBOL.** Distribuição dos 8: 1 Flamengo, 1 Cruzeiro, 1 Palmeiras, 1 Corinthians, 1 Santos (sempre ligado ao Neymar), 1 em rodízio entre Fluminense, Vasco, Botafogo, São Paulo, Grêmio, Internacional e Atlético-MG (um diferente por dia), e 2 de futebol em geral (Brasileirão, Copa do Brasil, Libertadores, seleção, mercado da bola, outros clubes). Prefira notícia útil para o torcedor: desfalques, retrospecto, próximo jogo e ONDE ASSISTIR (canal de TV/streaming), mercado (interesse, proposta, acerto), resultado com contexto. Sem política, economia, famosos etc.
-- **Horários:** 07:00, 09:00, 11:00, 12:30, 15:00, 18:00, 19:30, 21:00.
-- **Plantão desligado** (a Rodada 3 não roda mais).
-- CTA, visual, narração e legenda continuam como descritos abaixo (marca CNB). Regra do CTA continua: notícia sobre pessoa específica (inclusive Neymar) → "seguir". YouTube `category` = "SPORTS".
-- Na legenda, troque `#noticias #brasil #cnb` por `#futebol #cnb` + até 3 hashtags do assunto (time, campeonato).
-- Mensagem final da Rodada 1: "Pauta de DD/MM pronta: 8 Reels de futebol (YouTube e Instagram)…". Na Rodada 2: "DD/MM: 8 Reels agendados no YouTube e Instagram (Y seguir, Z venda)…".
+O YouTube caiu bastante quando a CNB passou a postar só futebol (09–13/11). A VECA pediu para voltar às notícias variadas, subir para 12 posts e religar o plantão:
+- **12 posts por dia, TODOS Reels (vídeo)** — sem carrossel. Todo item com `"formato": "reels"`.
+- **Só YouTube e Instagram:** todo item com `"redes": ["instagram","youtube"]`. **TikTok não recebe nada** (sem `tiktokData` nem provider tiktok) — vale também para o plantão.
+- **Notícias VARIADAS** (como antes de 09/11). Distribuição dos 12: 3 futebol (G12, times diferentes; jogo/onde assistir/mercado), 2 outros esportes (seleção, F1, UFC, vôlei, tênis, outros clubes), 2 bolso e economia, 1 serviço e saúde, 1 famosos/TV/música, 1 política (só se for forte; senão outro tema), 1 mundo, 1 curiosidades ou tecnologia/IA. Nenhum tema acima de 3; política no máximo 1. Espalhe os temas (nunca 3 seguidos iguais) e ponha os mais fortes nos picos (12h–13h e 18h–22h).
+- **Horários:** 07:00, 08:00, 09:00, 10:30, 12:00, 13:00, 15:00, 17:00, 18:00, 19:30, 20:30, 21:30.
+- **Plantão LIGADO** (Rodada 3, de hora em hora), postando só em Instagram e YouTube, como post extra.
+- CTA, visual, narração e legenda continuam como descritos abaixo (marca CNB). Regra do CTA continua: notícia sobre pessoa específica → "seguir". YouTube `category`: "SPORTS" se for esporte, senão "NEWS_POLITICS".
+- Legenda: hashtags `#noticias #cnb` + até 3 do assunto (no máximo 5 no total).
+- Mensagem final da Rodada 1: "Pauta de DD/MM pronta: 12 Reels (YouTube e Instagram)…". Na Rodada 2: "DD/MM: 12 Reels agendados no YouTube e Instagram (Y seguir, Z venda)…".
+- Histórico: 09–13/11/2026 foram 8 Reels/dia só de futebol, sem plantão (regra temporária de 08/11, encerrada em 14/11).
 
 ## Referências fixas
 
