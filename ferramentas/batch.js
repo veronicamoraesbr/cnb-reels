@@ -45,7 +45,9 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
     };
     // Foto com licença livre (opcional): it.foto = arquivo local (caminho absoluto ou relativo ao JSON) e
     // it.foto_credito = texto do crédito exibido sobre a foto (ex.: "Foto: Fulano / Wikimedia Commons, CC BY 4.0")
-    if (it.foto) {
+    if (it.foto && !(fs.existsSync(path.resolve(path.dirname(dayPath), it.foto)) && fs.statSync(path.resolve(path.dirname(dayPath), it.foto)).size > 1000)) {
+      console.log('AVISO: foto ausente/vazia, item', it.n, 'sai sem foto:', it.foto);
+    } else if (it.foto) {
       const fp = path.resolve(path.dirname(dayPath), it.foto);
       const ext = path.extname(fp).toLowerCase();
       const mime = ext === '.png' ? 'image/png' : ext === '.webp' ? 'image/webp' : 'image/jpeg';
@@ -93,6 +95,13 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
       await Promise.all([...document.images].filter(i => i.getAttribute('src')).map(i => i.decode().catch(() => {})));
       ajustar();
     }, data);
+    // Foto que não decodifica: refaz o card sem foto (nada de caixa cinza)
+    if (data.foto && !(await page.evaluate(() => document.getElementById('fotoimg').naturalWidth > 0))) {
+      console.log('AVISO: foto não carregou, item', it.n, '- saindo sem foto');
+      delete data.foto; delete data.fotoCredito; delete data.fotoPosicao;
+      await page.goto('file://' + tmpHtml);
+      await page.evaluate(async x => { setup(x); await document.fonts.ready; ajustar(); }, data);
+    }
     for (let f = 0; f < FPS * DUR; f++) {
       await page.evaluate(ms => seek(ms), f * 1000 / FPS);
       await page.screenshot({ path: `${frames}/${String(f).padStart(4, '0')}.png` });

@@ -17,13 +17,25 @@ const fs = require('fs'), path = require('path');
   for (const it of itens) {
     const tema = it.n % 2 === 1 ? 'escuro' : 'claro', inv = tema === 'claro' ? 'escuro' : 'claro';
     const base = { titulo: it.titulo.replace(/[.!?]$/, ''), resumo: it.resumo, fonte: it.fonte };
+    let fotoOk = false;
     if (it.foto) {
+      const fp = path.resolve(path.dirname(dayPath), it.foto);
+      fotoOk = fs.existsSync(fp) && fs.statSync(fp).size > 1000;
+      if (!fotoOk) { erros++; console.log('AVISO: foto ausente/vazia, item', it.n, 'sai sem foto:', fp); }
+    }
+    if (fotoOk) {
       base.foto = 'file://' + path.resolve(path.dirname(dayPath), it.foto);
       base.foto_credito = it.foto_credito || ''; base.foto_posicao = it.foto_posicao;
     }
     const paginas = [{ ...base, tema, tipo: 'noticia' }, { tema: inv, tipo: it.cta === 'venda' ? 'venda' : 'seguir' }];
     for (let p = 0; p < 2; p++) {
       await page.goto('file://' + path.join(__dirname, 'carrossel.html'));
+      await page.evaluate(d => preencher(d), paginas[p]);
+      // Foto que não decodifica (arquivo corrompido, HTML de erro salvo como .jpg): remove a foto e usa o layout sem foto (sem caixa cinza)
+      if (paginas[p].foto) {
+        const ok = await page.evaluate(async () => { const i = document.getElementById('fotoimg'); await i.decode().catch(() => {}); return i.naturalWidth > 0; });
+        if (!ok) { console.log('AVISO: foto não carregou, item', it.n, '- saindo sem foto'); erros++; delete paginas[p].foto; await page.goto('file://' + path.join(__dirname, 'carrossel.html')); }
+      }
       await page.evaluate(d => preencher(d), paginas[p]);
       await page.evaluate(async () => { await document.fonts.ready; await Promise.all([...document.images].filter(i => i.getAttribute('src')).map(i => i.decode().catch(() => {}))); });
       const r = await page.evaluate(d => preencher(d), paginas[p]);   // de novo, com as fontes carregadas
