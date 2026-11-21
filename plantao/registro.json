@@ -58,6 +58,17 @@
         "https://sbtnews.sbt.com.br/noticia/brasil/carro-cai-em-lago-e-10-morrem-no-rio-de-janeiro"
       ],
       "agendado_para": "2026-11-08T12:35:00-03:00"
+    },
+    {
+      "data": "2026-11-21",
+      "hora": "08:23",
+      "titulo": "Temporal destrói cidade no RS e deixa 3 mortos",
+      "fontes": [
+        "https://www.cnnbrasil.com.br/nacional/sul/rs/duas-mortes-sao-investigadas-apos-tempestade-que-destruiu-tupancireta-rs/",
+        "https://agenciabrasil.ebc.com.br/radioagencia-nacional/meio-ambiente/audio/2026-11/chega-tres-os-mortos-e-60-feridos-emr-temporal-em-tupancireta-no-rs",
+        "https://www.correiobraziliense.com.br/brasil/2026/11/7542013-cidade-gaucha-precisa-de-ajuda-apos-temporal-deixar-rastro-de-destruicao.html"
+      ],
+      "agendado_para": "2026-11-21T08:35:00-03:00"
     }
   ]
 }
